@@ -103,7 +103,7 @@ function FormLabel({
       {...props}
     >
       {props.children}
-      {required && <span className="text-red-500">*</span>}
+      {required && <span className="text-destructive">*</span>}
     </Label>
   );
 }

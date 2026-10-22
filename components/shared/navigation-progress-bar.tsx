@@ -114,8 +114,10 @@ export function NavigationProgressBar() {
       }`}
       style={{
         width: `${progress}%`,
-        background: "linear-gradient(90deg, #003366 0%, #ebb343 50%, #facc15 100%)",
-        boxShadow: "0 0 8px rgba(235, 179, 67, 0.7)",
+        background:
+          "linear-gradient(90deg, var(--primary) 0%, var(--secondary) 50%, var(--secondary-hover) 100%)",
+        boxShadow:
+          "0 0 8px color-mix(in srgb, var(--secondary) 70%, transparent)",
       }}
     />
   );

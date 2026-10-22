@@ -6,7 +6,7 @@ import { User, LogOut } from "lucide-react";
 import { DropdownMenu } from "./dropdown-menu";
 import { InlineLogo, InlineLogoLight } from "./shared/logo";
 import { usePathname } from "next/navigation";
-import { useScrollState } from "@/hooks/useScrollState";
+import { useScrollState } from "@/hooks/use-scroll-state";
 import { useCustomerAuthStore } from "@/stores/customer-auth-store";
 
 export function Header() {
@@ -121,7 +121,7 @@ export function Header() {
                   onClick={logout}
                   title="Sair da conta"
                   className={`p-1.5 rounded-full transition cursor-pointer ${
-                    solidHeader ? "text-slate-400 hover:text-red-600" : "text-white/70 hover:text-white"
+                    solidHeader ? "text-muted-foreground/70 hover:text-destructive" : "text-white/70 hover:text-white"
                   }`}
                 >
                   <LogOut className="size-3.5" />
@@ -133,7 +133,7 @@ export function Header() {
                 className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold transition shadow-xs ${
                   solidHeader
                     ? "bg-secondary text-primary hover:bg-secondary/90 shadow-secondary/20"
-                    : "bg-white text-primary hover:bg-white/90"
+                    : "bg-card text-primary hover:bg-muted"
                 }`}
               >
                 <User className="size-3.5" />

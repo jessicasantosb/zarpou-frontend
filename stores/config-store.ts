@@ -9,6 +9,7 @@ import {
   StorageBucketConfig,
 } from "@/types/config";
 import { api } from "@/lib/api";
+import { whatsappNumber } from "@/lib/whatsapp-link";
 
 export const defaultWhatsappApi: WhatsAppApiConfig = {
   provider: "meta_cloud",
@@ -60,7 +61,7 @@ const defaultConfig: AgencyConfig = {
   tradingName: "Zarpou Viagens",
   cnpj: process.env.NEXT_PUBLIC_CNPJ || "55.849.201/0001-38",
   cadastur: "34.120.948/0001-90",
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5531984210000",
+  whatsapp: whatsappNumber,
   whatsappMessage: "Olá! Gostaria de planejar minha próxima viagem com a Zarpou.",
   email: process.env.NEXT_PUBLIC_EMAIL || "contato@zarpouviagens.com.br",
   phone: "(31) 3245-8900",

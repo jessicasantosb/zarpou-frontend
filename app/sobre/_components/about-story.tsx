@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import {
   Target,
@@ -10,26 +9,16 @@ import {
   Sparkles,
   MapPin,
 } from "lucide-react";
-import { useConfigStore } from "@/stores/config-store";
+import { useAboutStory } from "../_hooks/use-about-story";
 
 export function AboutStory() {
-  const { config } = useConfigStore();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const address = mounted ? config.address : "Belo Horizonte - MG, Brasil";
-  const cadastur = mounted ? config.cadastur : "34.120.948/0001-90";
-  const cnpj = mounted ? config.cnpj : "55.849.201/0001-38";
+  const { address, cadastur, cnpj } = useAboutStory();
 
   return (
     <section className="py-16 md:py-24 max-w-6xl mx-auto px-4">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-        {/* COLUNA ESQUERDA: HISTÓRIA & PROPÓSITO (7 colunas) */}
         <div className="lg:col-span-7 space-y-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-wide">
             <Sparkles className="size-3.5 text-secondary fill-secondary" />
             <span>Nossa Trajetória</span>
           </div>
@@ -50,9 +39,8 @@ export function AboutStory() {
             </p>
           </div>
 
-          {/* PILARES: MISSÃO, VISÃO E VALORES */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-4">
-            <div className="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-xs hover:border-primary/40 transition">
+            <div className="bg-card p-4 rounded-2xl border border-border/80 shadow-xs hover:border-primary/40 transition">
               <div className="size-9 rounded-xl bg-blue-50 text-primary flex items-center justify-center mb-2.5">
                 <Target className="size-5" />
               </div>
@@ -64,8 +52,8 @@ export function AboutStory() {
               </p>
             </div>
 
-            <div className="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-xs hover:border-secondary/40 transition">
-              <div className="size-9 rounded-xl bg-amber-50 text-[#ebb343] flex items-center justify-center mb-2.5">
+            <div className="bg-card p-4 rounded-2xl border border-border/80 shadow-xs hover:border-secondary/40 transition">
+              <div className="size-9 rounded-xl bg-amber-50 text-secondary flex items-center justify-center mb-2.5">
                 <Compass className="size-5" />
               </div>
               <h4 className="font-extrabold text-slate-900 text-xs sm:text-sm">
@@ -76,7 +64,7 @@ export function AboutStory() {
               </p>
             </div>
 
-            <div className="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-xs hover:border-emerald-400/40 transition">
+            <div className="bg-card p-4 rounded-2xl border border-border/80 shadow-xs hover:border-emerald-400/40 transition">
               <div className="size-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-2.5">
                 <Heart className="size-5" />
               </div>
@@ -90,10 +78,8 @@ export function AboutStory() {
           </div>
         </div>
 
-        {/* COLUNA DIREITA: COMPOSIÇÃO VISUAL & BADGES (5 colunas) */}
         <div className="lg:col-span-5 space-y-4">
-          {/* Card Principal de Imagem */}
-          <div className="relative aspect-4/5 rounded-3xl overflow-hidden shadow-2xl border border-slate-200 group">
+          <div className="relative aspect-4/5 rounded-3xl overflow-hidden shadow-xl border border-border group">
             <Image
               src="/about/do-seu-jeito.png"
               alt="Experiência Zarpou Viagens"
@@ -101,17 +87,15 @@ export function AboutStory() {
               sizes="(max-width: 1024px) 100vw, 40vw"
               className="object-cover group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/25 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/25 to-transparent" />
 
-            {/* Badge de Localização no topo */}
             <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md rounded-full px-3.5 py-1.5 shadow-md border border-white/40 flex items-center gap-1.5 text-xs font-bold text-slate-800">
               <MapPin className="size-3.5 text-secondary" />
               <span>{address.split("-")[0].trim()}</span>
             </div>
 
-            {/* Mensagem em destaque na base da foto (totalmente desobstruída) */}
             <div className="absolute bottom-6 left-6 right-6 text-white space-y-2">
-              <span className="text-[11px] uppercase tracking-wider font-extrabold text-[#ebb343] bg-amber-400/20 backdrop-blur-xs px-2.5 py-0.5 rounded-full inline-block">
+              <span className="text-[11px] tracking-wide font-extrabold text-secondary bg-amber-400/20 backdrop-blur-xs px-2.5 py-0.5 rounded-full inline-block">
                 Turismo Sob Medida
               </span>
               <h3 className="text-xl sm:text-2xl font-black leading-snug">
@@ -120,8 +104,7 @@ export function AboutStory() {
             </div>
           </div>
 
-          {/* Card de Credenciamento Oficial (Cadastur + CNPJ) posicionado com elegância abaixo da foto */}
-          <div className="bg-white rounded-2xl p-4 shadow-lg border border-slate-200/90 flex items-center justify-between gap-3">
+          <div className="bg-card rounded-2xl p-4 shadow-lg border border-border/90 flex items-center justify-between gap-3">
             <div className="flex items-center gap-3">
               <div className="size-11 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 border border-emerald-100">
                 <ShieldCheck className="size-6" />

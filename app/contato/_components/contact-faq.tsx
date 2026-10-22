@@ -46,7 +46,7 @@ export function ContactFaq() {
   return (
     <section className="w-full max-w-6xl mx-auto px-4 py-16">
       <div className="text-center max-w-2xl mx-auto mb-10">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-2">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-wide mb-2">
           <HelpCircle className="size-3.5" />
           <span>Tire Suas Dúvidas</span>
         </div>
@@ -67,7 +67,7 @@ export function ContactFaq() {
               className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
                 isOpen
                   ? "bg-white border-primary/40 shadow-md"
-                  : "bg-white/80 border-slate-200 hover:border-slate-300"
+                  : "bg-card/80 border-border hover:border-input"
               }`}
             >
               <button
@@ -88,7 +88,7 @@ export function ContactFaq() {
               </button>
 
               {isOpen && (
-                <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 animate-in fade-in duration-200">
+                <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-muted-foreground leading-relaxed border-t border-border/60 animate-in fade-in duration-200">
                   {item.answer}
                 </div>
               )}

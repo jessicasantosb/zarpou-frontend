@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { AddonItem, CreditCardData, PaymentMethod, PriceSummary, TravelerInfo } from "@/types/checkout";
+import { AddonItem, AppliedCoupon, CreditCardData, PaymentMethod, PriceSummary, TravelerInfo } from "@/types/checkout";
 import { Flight, Hotel, Package, Room } from "@/types/product";
 import { Booking } from "@/types/booking";
 import { api } from "@/lib/api";
@@ -20,6 +20,7 @@ interface CurrentBookingState {
   paymentMethod: PaymentMethod;
   installments: number;
   creditCard?: CreditCardData;
+  coupon?: AppliedCoupon;
 }
 
 interface BookingStore {
@@ -48,6 +49,7 @@ interface BookingStore {
     installments?: number,
     cardData?: CreditCardData
   ) => void;
+  setCoupon: (coupon?: AppliedCoupon) => void;
   calculatePricing: () => PriceSummary;
   confirmBooking: () => Promise<Booking>;
   fetchUserBookings: () => Promise<void>;
@@ -192,6 +194,14 @@ export const useBookingStore = create<BookingStore>()((set, get) => ({
           },
         })),
 
+      setCoupon: (coupon) =>
+        set((state) => ({
+          currentBooking: {
+            ...state.currentBooking,
+            coupon,
+          },
+        })),
+
       calculatePricing: () => {
         const { currentBooking } = get();
         let base = 0;
@@ -210,14 +220,28 @@ export const useBookingStore = create<BookingStore>()((set, get) => ({
           .reduce((sum, a) => sum + a.price, 0);
 
         // Desconto Pix (5% de desconto à vista)
-        const discount = currentBooking.paymentMethod === "pix" ? Math.round((base + taxes) * 0.05) : 0;
-        const finalAmount = base + taxes + addons - discount;
+        const pixDiscount = currentBooking.paymentMethod === "pix" ? Math.round((base + taxes) * 0.05) : 0;
+
+        // Cupom de desconto: aplicado sobre o total já com os descontos da forma de pagamento (mesma regra do backend)
+        const preCouponAmount = base + taxes + addons - pixDiscount;
+        let couponDiscount = 0;
+        if (currentBooking.coupon) {
+          couponDiscount =
+            currentBooking.coupon.discountType === "percent"
+              ? Math.round(preCouponAmount * currentBooking.coupon.discountValue) / 100
+              : Math.min(currentBooking.coupon.discountValue, preCouponAmount);
+        }
+
+        const finalAmount = preCouponAmount - couponDiscount;
 
         return {
           baseAmount: base,
           taxesAndFees: taxes,
           addonsAmount: addons,
-          discountAmount: discount,
+          discountAmount: pixDiscount,
+          couponDiscount,
+          couponCode: currentBooking.coupon?.code,
+          preCouponAmount,
           finalAmount,
         };
       },
@@ -244,6 +268,7 @@ export const useBookingStore = create<BookingStore>()((set, get) => ({
             paymentMethod: currentBooking.paymentMethod,
             installments: currentBooking.installments,
             creditCard: currentBooking.creditCard,
+            couponCode: currentBooking.coupon?.code,
           };
 
           const res = await api.post<any>("/bookings/checkout", payload);

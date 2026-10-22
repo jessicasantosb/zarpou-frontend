@@ -83,16 +83,16 @@ export function SearchEngine() {
 
   return (
     <div className="w-full max-w-5xl mx-auto -mt-16 md:-mt-20 relative z-40 px-4 overflow-visible" style={{ overflow: "visible" }}>
-      <div className="bg-white rounded-3xl shadow-2xl border border-slate-100 relative overflow-visible" style={{ overflow: "visible" }}>
+      <div className="bg-card rounded-3xl shadow-xl border border-border/60 relative overflow-visible" style={{ overflow: "visible" }}>
         {/* Abas Superiores de Pesquisa */}
-        <div className="flex border-b border-slate-100 overflow-x-auto bg-slate-50/70 p-2 gap-2 scrollbar-none rounded-t-3xl">
+        <div className="flex border-b border-border/60 overflow-x-auto bg-muted/70 p-2 gap-2 scrollbar-none rounded-t-3xl">
           <button
             type="button"
             onClick={() => setActiveTab("hospedagens")}
             className={`flex items-center gap-2.5 px-5 py-3 rounded-2xl font-semibold text-sm transition whitespace-nowrap cursor-pointer ${
               activeTab === "hospedagens"
                 ? "bg-primary text-white shadow-md shadow-primary/20"
-                : "text-slate-600 hover:text-primary hover:bg-white"
+                : "text-slate-600 hover:text-primary hover:bg-card"
             }`}
           >
             <Hotel className="size-4" />
@@ -105,7 +105,7 @@ export function SearchEngine() {
             className={`flex items-center gap-2.5 px-5 py-3 rounded-2xl font-semibold text-sm transition whitespace-nowrap cursor-pointer ${
               activeTab === "passagens"
                 ? "bg-primary text-white shadow-md shadow-primary/20"
-                : "text-slate-600 hover:text-primary hover:bg-white"
+                : "text-slate-600 hover:text-primary hover:bg-card"
             }`}
           >
             <Plane className="size-4" />
@@ -118,7 +118,7 @@ export function SearchEngine() {
             className={`flex items-center gap-2.5 px-5 py-3 rounded-2xl font-semibold text-sm transition whitespace-nowrap cursor-pointer ${
               activeTab === "pacotes"
                 ? "bg-primary text-white shadow-md shadow-primary/20"
-                : "text-slate-600 hover:text-primary hover:bg-white"
+                : "text-slate-600 hover:text-primary hover:bg-card"
             }`}
           >
             <Luggage className="size-4" />

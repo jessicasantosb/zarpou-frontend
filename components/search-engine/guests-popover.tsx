@@ -83,11 +83,11 @@ export function GuestsPopover({
         ref={buttonRef}
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
-        className="w-full h-14 bg-white border border-slate-300 hover:border-primary/70 rounded-xl px-4 flex items-center gap-3 text-left transition shadow-xs focus:ring-2 focus:ring-primary/20 focus:outline-hidden cursor-pointer"
+        className="w-full h-14 bg-card border border-input hover:border-primary/70 rounded-xl px-4 flex items-center gap-3 text-left transition shadow-xs focus:ring-2 focus:ring-primary/20 focus:outline-hidden cursor-pointer"
       >
         <Users className="size-5 text-primary shrink-0" />
         <div className="flex flex-col truncate">
-          <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">
+          <span className="text-[11px] font-semibold text-muted-foreground tracking-wide">
             {showRooms ? "Hóspedes e Quartos" : "Passageiros"}
           </span>
           <span className="text-sm font-medium text-slate-900 truncate">
@@ -100,7 +100,7 @@ export function GuestsPopover({
       {isOpen && coords && mounted && typeof document !== "undefined" && createPortal(
         <div
           ref={popoverRef}
-          className="fixed w-80 max-w-[calc(100vw-2rem)] bg-white border border-slate-200 rounded-2xl shadow-2xl p-5 animate-in fade-in zoom-in-95 duration-150 ring-1 ring-slate-900/10 pointer-events-auto"
+          className="fixed w-80 max-w-[calc(100vw-2rem)] bg-card border border-border rounded-2xl shadow-xl p-5 animate-in fade-in zoom-in-95 duration-150 ring-1 ring-foreground/10 pointer-events-auto"
           style={{
             top: coords.top,
             right: coords.right,
@@ -109,10 +109,10 @@ export function GuestsPopover({
         >
           <div className="space-y-4">
             {/* Adultos */}
-            <div className="flex items-center justify-between gap-3 pb-3 border-b border-slate-100">
+            <div className="flex items-center justify-between gap-3 pb-3 border-b border-border/60">
               <div className="min-w-0 pr-2">
                 <p className="font-semibold text-slate-900 text-sm">Adultos</p>
-                <p className="text-xs text-slate-500">12 anos ou mais</p>
+                <p className="text-xs text-muted-foreground">12 anos ou mais</p>
               </div>
               <div className="flex items-center gap-3 shrink-0">
                 <button
@@ -129,7 +129,7 @@ export function GuestsPopover({
                       rooms: rooms > newTotal ? newTotal : rooms,
                     });
                   }}
-                  className="size-8 rounded-full border border-slate-300 flex items-center justify-center text-slate-700 hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed transition shrink-0 cursor-pointer"
+                  className="size-8 rounded-full border border-input flex items-center justify-center text-foreground/80 hover:bg-muted disabled:opacity-40 disabled:cursor-not-allowed transition shrink-0 cursor-pointer"
                 >
                   <Minus className="size-3.5" />
                 </button>
@@ -148,7 +148,7 @@ export function GuestsPopover({
                       rooms,
                     });
                   }}
-                  className="size-8 rounded-full border border-slate-300 flex items-center justify-center text-slate-700 hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed transition shrink-0 cursor-pointer"
+                  className="size-8 rounded-full border border-input flex items-center justify-center text-foreground/80 hover:bg-muted disabled:opacity-40 disabled:cursor-not-allowed transition shrink-0 cursor-pointer"
                 >
                   <Plus className="size-3.5" />
                 </button>
@@ -156,10 +156,10 @@ export function GuestsPopover({
             </div>
 
             {/* Crianças */}
-            <div className="flex items-center justify-between gap-3 pb-3 border-b border-slate-100">
+            <div className="flex items-center justify-between gap-3 pb-3 border-b border-border/60">
               <div className="min-w-0 pr-2">
                 <p className="font-semibold text-slate-900 text-sm">Crianças</p>
-                <p className="text-xs text-slate-500">0 a 11 anos</p>
+                <p className="text-xs text-muted-foreground">0 a 11 anos</p>
               </div>
               <div className="flex items-center gap-3 shrink-0">
                 <button
@@ -176,7 +176,7 @@ export function GuestsPopover({
                       rooms: rooms > newTotal ? newTotal : rooms,
                     });
                   }}
-                  className="size-8 rounded-full border border-slate-300 flex items-center justify-center text-slate-700 hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed transition shrink-0 cursor-pointer"
+                  className="size-8 rounded-full border border-input flex items-center justify-center text-foreground/80 hover:bg-muted disabled:opacity-40 disabled:cursor-not-allowed transition shrink-0 cursor-pointer"
                 >
                   <Minus className="size-3.5" />
                 </button>
@@ -195,7 +195,7 @@ export function GuestsPopover({
                       rooms,
                     });
                   }}
-                  className="size-8 rounded-full border border-slate-300 flex items-center justify-center text-slate-700 hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed transition shrink-0 cursor-pointer"
+                  className="size-8 rounded-full border border-input flex items-center justify-center text-foreground/80 hover:bg-muted disabled:opacity-40 disabled:cursor-not-allowed transition shrink-0 cursor-pointer"
                 >
                   <Plus className="size-3.5" />
                 </button>
@@ -207,7 +207,7 @@ export function GuestsPopover({
               <div className="flex items-center justify-between gap-3">
                 <div className="min-w-0 pr-2">
                   <p className="font-semibold text-slate-900 text-sm">Quartos</p>
-                  <p className="text-xs text-slate-500">Acomodações</p>
+                  <p className="text-xs text-muted-foreground">Acomodações</p>
                 </div>
                 <div className="flex items-center gap-3 shrink-0">
                   <button
@@ -222,7 +222,7 @@ export function GuestsPopover({
                         rooms: Math.max(1, rooms - 1),
                       });
                     }}
-                    className="size-8 rounded-full border border-slate-300 flex items-center justify-center text-slate-700 hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed transition shrink-0 cursor-pointer"
+                    className="size-8 rounded-full border border-input flex items-center justify-center text-foreground/80 hover:bg-muted disabled:opacity-40 disabled:cursor-not-allowed transition shrink-0 cursor-pointer"
                   >
                     <Minus className="size-3.5" />
                   </button>
@@ -243,7 +243,7 @@ export function GuestsPopover({
                         rooms: rooms + 1,
                       });
                     }}
-                    className="size-8 rounded-full border border-slate-300 flex items-center justify-center text-slate-700 hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed transition shrink-0 cursor-pointer"
+                    className="size-8 rounded-full border border-input flex items-center justify-center text-foreground/80 hover:bg-muted disabled:opacity-40 disabled:cursor-not-allowed transition shrink-0 cursor-pointer"
                   >
                     <Plus className="size-3.5" />
                   </button>

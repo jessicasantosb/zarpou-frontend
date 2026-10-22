@@ -116,7 +116,7 @@ export function ConfirmDialogProvider({ children }: { children: React.ReactNode 
 
     if (icon === "trash" || variant === "destructive") {
       return (
-        <div className="size-11 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center shrink-0">
+        <div className="size-11 rounded-2xl bg-destructive/10 text-destructive flex items-center justify-center shrink-0">
           <Trash2 className="size-5" />
         </div>
       );
@@ -157,7 +157,7 @@ export function ConfirmDialogProvider({ children }: { children: React.ReactNode 
       <Dialog open={confirmOpen} onOpenChange={(open) => !open && handleConfirmClose(false)}>
         <DialogContent
           showCloseButton={false}
-          className="sm:max-w-md bg-white border border-slate-200 shadow-2xl rounded-2xl p-6"
+          className="sm:max-w-md bg-card border border-border shadow-xl rounded-2xl p-6"
         >
           <div className="flex items-start gap-4">
             {renderIcon()}
@@ -180,7 +180,7 @@ export function ConfirmDialogProvider({ children }: { children: React.ReactNode 
               type="button"
               variant="outline"
               onClick={() => handleConfirmClose(false)}
-              className="text-xs font-semibold px-4 py-2 h-auto rounded-xl border-slate-200 text-slate-700 hover:bg-slate-100 cursor-pointer"
+              className="text-xs font-semibold px-4 py-2 h-auto rounded-xl border-border text-slate-700 hover:bg-slate-100 cursor-pointer"
             >
               {confirmOptions.cancelText || "Cancelar"}
             </Button>
@@ -192,7 +192,7 @@ export function ConfirmDialogProvider({ children }: { children: React.ReactNode 
                 confirmOptions.variant === "warning"
                   ? "bg-amber-600 hover:bg-amber-700 text-white"
                   : confirmOptions.variant === "destructive"
-                  ? "bg-red-600 hover:bg-red-700 text-white"
+                  ? "bg-destructive hover:bg-destructive/90 text-white"
                   : "bg-primary hover:bg-primary/90 text-white"
               }`}
             >
@@ -206,7 +206,7 @@ export function ConfirmDialogProvider({ children }: { children: React.ReactNode 
       <Dialog open={promptOpen} onOpenChange={(open) => !open && handlePromptClose(false)}>
         <DialogContent
           showCloseButton={false}
-          className="sm:max-w-md bg-white border border-slate-200 shadow-2xl rounded-2xl p-6"
+          className="sm:max-w-md bg-card border border-border shadow-xl rounded-2xl p-6"
         >
           <DialogHeader className="text-left space-y-1.5 p-0">
             <DialogTitle className="text-base font-bold text-slate-900 leading-tight">
@@ -233,7 +233,7 @@ export function ConfirmDialogProvider({ children }: { children: React.ReactNode 
               placeholder={promptOptions.placeholder}
               value={promptValue}
               onChange={(e) => setPromptValue(e.target.value)}
-              className="w-full px-3.5 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-secondary focus:border-transparent transition"
+              className="w-full px-3.5 py-2.5 text-xs bg-slate-50 border border-border rounded-xl focus:bg-card focus:outline-hidden focus:ring-2 focus:ring-secondary focus:border-transparent transition"
             />
 
             <DialogFooter className="flex-row justify-end gap-2.5 sm:gap-2 sm:justify-end">
@@ -241,7 +241,7 @@ export function ConfirmDialogProvider({ children }: { children: React.ReactNode 
                 type="button"
                 variant="outline"
                 onClick={() => handlePromptClose(false)}
-                className="text-xs font-semibold px-4 py-2 h-auto rounded-xl border-slate-200 text-slate-700 hover:bg-slate-100 cursor-pointer"
+                className="text-xs font-semibold px-4 py-2 h-auto rounded-xl border-border text-slate-700 hover:bg-slate-100 cursor-pointer"
               >
                 {promptOptions.cancelText || "Cancelar"}
               </Button>

@@ -1,3 +1,4 @@
-const number = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
+export const FALLBACK_WHATSAPP_NUMBER = "5531984210000";
 
-export const whatsappLink = `https://wa.me//${number}`;
+export const whatsappNumber =
+  process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || FALLBACK_WHATSAPP_NUMBER;

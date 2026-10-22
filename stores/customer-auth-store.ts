@@ -12,7 +12,6 @@ export interface PendingTwoFactorCustomerAuth {
   availableMethods: ("email" | "authenticator")[];
   currentMethod: "email" | "authenticator";
   maskedEmail: string;
-  expectedEmailCode?: string;
   expiresAt: number;
 }
 
@@ -131,15 +130,15 @@ export const useCustomerAuthStore = create<CustomerAuthStore>()(
                 ? "authenticator"
                 : "email";
 
-            let generatedCode = "";
             if (defaultMethod === "email") {
               try {
-                const sendRes = await api.post<{ code?: string }>(
+                // O código de verificação só chega ao cliente por e-mail — o backend
+                // não o devolve mais na resposta (o verify usa /2fa/verify).
+                await api.post(
                   "/auth/customer/2fa/send-code",
                   { email: targetUser.email, name: targetUser.name },
                   { skipAuth: true }
                 );
-                if (sendRes?.code) generatedCode = sendRes.code;
               } catch {
                 // Backend despacha o e-mail no servidor
               }
@@ -153,7 +152,6 @@ export const useCustomerAuthStore = create<CustomerAuthStore>()(
                 availableMethods,
                 currentMethod: defaultMethod,
                 maskedEmail: maskEmail(targetUser.email),
-                expectedEmailCode: generatedCode,
                 expiresAt: Date.now() + 10 * 60 * 1000,
               },
             });

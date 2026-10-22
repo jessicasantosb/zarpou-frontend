@@ -22,18 +22,14 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main className="bg-slate-50 min-h-screen">
-      {/* 1. HERO COM VÍDEO/IMAGEM E APRESENTAÇÃO INSTITUCIONAL */}
       <Hero>
         <AboutHeroContent />
       </Hero>
 
-      {/* 2. HISTÓRIA, MISSÃO, VISÃO, VALORES E FOTO COM BADGE CADASTRADO */}
       <AboutStory />
 
-      {/* 3. NÚMEROS E IMPACTO DA AGÊNCIA (RIBBON ESCURO) */}
       <AboutStats />
 
-      {/* 4. PILARES DE SERVIÇOS & BANNER CTA FINAL */}
       <Services />
     </main>
   );

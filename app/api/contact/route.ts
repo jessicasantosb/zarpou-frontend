@@ -1,11 +1,12 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
+import { serverEnv } from "@/lib/env";
 import { getContactEmailHtml } from "../(utils)/get-contact-email-html";
 
 export async function POST(req: Request) {
   try {
-    const apiKey = process.env.RESEND_API_KEY;
+    const apiKey = serverEnv.RESEND_API_KEY;
     if (!apiKey) {
       console.warn("RESEND_API_KEY não configurada.");
       return NextResponse.json({ success: true, message: "Modo simulação de e-mail ativo." });

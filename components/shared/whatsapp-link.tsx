@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useConfigStore } from "@/stores/config-store";
+import { whatsappNumber } from "@/lib/whatsapp-link";
 
 export function WhatsappLink({
   children,
@@ -17,7 +18,7 @@ export function WhatsappLink({
     setMounted(true);
   }, []);
 
-  const number = mounted ? config.whatsapp : (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5531984210000");
+  const number = mounted ? config.whatsapp : whatsappNumber;
   const message = mounted ? encodeURIComponent(config.whatsappMessage || "Olá! Gostaria de mais informações sobre viagens.") : "";
   const link = `https://wa.me/${number}${message ? `?text=${message}` : ""}`;
 

@@ -11,7 +11,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { StepTravelSchema } from "@/schemas/step-travel-info";
+import { StepTravelSchema } from "@/schemas/contact-form/step-travel-info";
 import { useInfoStore } from "@/stores/info-store";
 import { SetStepProps } from "@/types/checkout-steps";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -27,7 +27,6 @@ export function StepTravelInfo({ setStep }: SetStepProps) {
 
   const onSubmit = (values: z.infer<typeof StepTravelSchema>) => {
     setTravelInfo(values);
-    console.log(values);
     setStep("finish");
   };
 
@@ -197,7 +196,7 @@ export function StepTravelInfo({ setStep }: SetStepProps) {
           />
         </div>
 
-        <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between gap-3">
+        <div className="mt-6 pt-4 border-t border-border/60 flex items-center justify-between gap-3">
           <Button
             type="button"
             variant="outline"
@@ -209,7 +208,7 @@ export function StepTravelInfo({ setStep }: SetStepProps) {
 
           <Button
             type="submit"
-            className="h-11 px-6 rounded-xl bg-primary hover:bg-[#084574] text-white font-bold text-xs flex items-center gap-2 cursor-pointer shadow-md"
+            className="h-11 px-6 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold text-xs flex items-center gap-2 cursor-pointer shadow-md"
           >
             <span>Revisar Solicitação</span>
             <span className="text-secondary font-bold">→</span>

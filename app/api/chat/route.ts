@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { serverEnv } from "@/lib/env";
 
 interface ChatMessage {
   role: "user" | "assistant" | "system";
@@ -31,7 +32,7 @@ export async function POST(req: Request) {
       );
     }
 
-    const apiKey = config?.apiKey || process.env.AI_API_KEY || process.env.OPENAI_API_KEY;
+    const apiKey = config?.apiKey || serverEnv.AI_API_KEY || serverEnv.OPENAI_API_KEY;
     const provider = config?.provider || "gemini";
     const model = config?.model || (provider === "gemini" ? "gemini-1.5-flash" : "gpt-4o-mini");
     const systemPrompt =

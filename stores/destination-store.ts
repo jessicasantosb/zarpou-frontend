@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { DestinationItem } from "@/data/home/destinations";
+import { DestinationItem } from "@/types/destination";
 import { api } from "@/lib/api";
 
 function serializeDestinationPayload(d: DestinationItem) {
@@ -52,11 +52,15 @@ function serializeDestinationUpdatePayload(updated: Partial<DestinationItem>) {
   if (updated.flag !== undefined) payload.flag = updated.flag;
   if (updated.category !== undefined) payload.category = updated.category;
   if (updated.tag !== undefined) payload.tag = updated.tag;
-  if (updated.description !== undefined) payload.description = updated.description;
-  if (updated.bestTimeToVisit !== undefined) payload.best_time_to_visit = updated.bestTimeToVisit;
+  if (updated.description !== undefined)
+    payload.description = updated.description;
+  if (updated.bestTimeToVisit !== undefined)
+    payload.best_time_to_visit = updated.bestTimeToVisit;
   if (updated.highlights !== undefined) payload.highlights = updated.highlights;
-  if (updated.startingPrice !== undefined) payload.starting_price = Number(updated.startingPrice);
-  if (updated.accommodationsCount !== undefined) payload.accommodations_count = Number(updated.accommodationsCount);
+  if (updated.startingPrice !== undefined)
+    payload.starting_price = Number(updated.startingPrice);
+  if (updated.accommodationsCount !== undefined)
+    payload.accommodations_count = Number(updated.accommodationsCount);
   if (updated.link !== undefined) payload.link = updated.link;
   if (updated.image_url !== undefined) payload.image_url = updated.image_url;
   return payload;
@@ -66,7 +70,10 @@ interface DestinationStore {
   destinations: DestinationItem[];
   fetchDestinations: () => Promise<void>;
   addDestination: (destination: DestinationItem) => Promise<void> | void;
-  updateDestination: (id: string, destination: Partial<DestinationItem>) => Promise<void> | void;
+  updateDestination: (
+    id: string,
+    destination: Partial<DestinationItem>,
+  ) => Promise<void> | void;
   deleteDestination: (id: string) => Promise<void> | void;
   resetDestinations: () => void;
 }
@@ -87,11 +94,17 @@ export const useDestinationStore = create<DestinationStore>()((set, get) => ({
           tag: d.tag || "",
           description: d.description || "",
           startingPrice: Number(d.starting_price ?? d.startingPrice ?? 0),
-          accommodationsCount: Number(d.accommodations_count ?? d.accommodationsCount ?? 0),
+          accommodationsCount: Number(
+            d.accommodations_count ?? d.accommodationsCount ?? 0,
+          ),
           link: d.link || `/hospedagens?city=${encodeURIComponent(d.title)}`,
-          image_url: d.image_url || d.imageUrl || "https://images.pexels.com/photos/12039523/pexels-photo-12039523.jpeg",
+          image_url:
+            d.image_url ||
+            d.imageUrl ||
+            "https://images.pexels.com/photos/12039523/pexels-photo-12039523.jpeg",
           state: d.state || undefined,
-          bestTimeToVisit: d.best_time_to_visit || d.bestTimeToVisit || undefined,
+          bestTimeToVisit:
+            d.best_time_to_visit || d.bestTimeToVisit || undefined,
           highlights: Array.isArray(d.highlights) ? d.highlights : undefined,
         }));
         set({ destinations: mapped });
@@ -119,12 +132,15 @@ export const useDestinationStore = create<DestinationStore>()((set, get) => ({
   updateDestination: async (id, updated) => {
     set((state) => ({
       destinations: state.destinations.map((d) =>
-        d.id === id ? { ...d, ...updated } : d
+        d.id === id ? { ...d, ...updated } : d,
       ),
     }));
 
     try {
-      await api.put(`/destinations/${id}`, serializeDestinationUpdatePayload(updated));
+      await api.put(
+        `/destinations/${id}`,
+        serializeDestinationUpdatePayload(updated),
+      );
     } catch (err) {
       console.warn("Falha ao atualizar destino na API:", err);
     }

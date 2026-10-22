@@ -190,3 +190,14 @@ export function maskEmail(email: string): string {
   const last = local.charAt(local.length - 1);
   return `${first}${"*".repeat(Math.max(local.length - 2, 3))}${last}@${domain}`;
 }
+
+export async function buildTotpSetup(
+  email: string,
+  issuer: string,
+  existingSecret?: string,
+): Promise<{ secret: string; qrUrl: string }> {
+  const secret = existingSecret || generateBase32Secret(16);
+  const uri = generateOtpauthUri(email, secret, issuer);
+  const qrUrl = await generateQrCodeDataUrl(uri);
+  return { secret, qrUrl };
+}

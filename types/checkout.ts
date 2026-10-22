@@ -43,4 +43,30 @@ export interface PriceSummary {
   addonsAmount: number;
   discountAmount: number;
   finalAmount: number;
+  /** Desconto do cupom de desconto (se houver) — separado do desconto Pix. */
+  couponDiscount?: number;
+  /** Código do cupom aplicado (se houver). */
+  couponCode?: string;
+  /** Total do pedido antes da aplicação do cupom (usado para revalidar no backend). */
+  preCouponAmount?: number;
+}
+
+export interface AppliedCoupon {
+  code: string;
+  description?: string | null;
+  discountType: "percent" | "fixed";
+  discountValue: number;
+  discountAmount: number;
+}
+
+/** Resposta de POST /coupons/validate (backend: CouponValidateResponse). */
+export interface CouponValidateResponse {
+  valid: boolean;
+  code: string;
+  description?: string | null;
+  discount_type: "percent" | "fixed";
+  discount_value: number;
+  discount_amount: number;
+  min_order_amount?: number | null;
+  valid_to?: string | null;
 }

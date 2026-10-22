@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { whatsappNumber } from "@/lib/whatsapp-link";
 import {
   MapPin,
   Phone,
@@ -17,7 +18,7 @@ import { Container } from "../shared/container";
 const PaymentBadge = ({ icon, label }: { icon: string; label: string }) => {
   return (
     <div
-      className="flex items-center gap-2.5 bg-slate-800/90 border border-slate-700/80 px-3.5 py-2.5 rounded-xl text-slate-200 text-xs font-semibold hover:border-slate-600 transition min-w-0"
+      className="flex items-center gap-2.5 bg-white/5 border border-white/10 px-3.5 py-2.5 rounded-xl text-primary-foreground/80 text-xs font-semibold hover:border-white/20 transition min-w-0"
       title={label}
     >
       <div className="relative w-7 h-5 shrink-0 flex items-center justify-center">
@@ -43,9 +44,7 @@ export function FooterLinks() {
     setMounted(true);
   }, []);
 
-  const whatsappNum = mounted
-    ? config.whatsapp
-    : process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5531984210000";
+  const whatsappNum = mounted ? config.whatsapp : whatsappNumber;
   const instagramUser = mounted
     ? config.instagram
     : process.env.NEXT_PUBLIC_INSTAGRAM_USERNAME || "zarpouviagens";
@@ -75,7 +74,7 @@ export function FooterLinks() {
               />
             </div>
 
-            <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
+            <p className="text-xs text-muted-foreground leading-relaxed max-w-sm">
               Sua agência de turismo digital completa. Conectamos viajantes aos
               melhores hotéis, resorts e companhias aéreas do mundo com
               pagamento próprio, transparência e suporte humanizado.
@@ -103,14 +102,14 @@ export function FooterLinks() {
 
             {/* REDES SOCIAIS COM BOTÕES MODERNOS */}
             <div className="pt-3">
-              <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">
+              <p className="text-[11px] font-bold text-muted-foreground tracking-wide mb-2">
                 Conecte-se Conosco:
               </p>
               <div className="flex items-center gap-2.5">
                 <Link
                   href={`https://wa.me/${whatsappNum}`}
                   target="_blank"
-                  className="size-9 rounded-xl bg-slate-800 hover:bg-emerald-600 border border-slate-700 flex items-center justify-center transition-all p-2"
+                  className="size-9 rounded-xl bg-foreground/90 hover:bg-emerald-600 border border-white/10 flex items-center justify-center transition-all p-2"
                   title="WhatsApp Zarpou"
                 >
                   <Image
@@ -124,7 +123,7 @@ export function FooterLinks() {
                 <Link
                   href={`https://www.instagram.com/${instagramUser}`}
                   target="_blank"
-                  className="size-9 rounded-xl bg-slate-800 hover:bg-pink-600 border border-slate-700 flex items-center justify-center transition-all p-2"
+                  className="size-9 rounded-xl bg-foreground/90 hover:bg-pink-600 border border-white/10 flex items-center justify-center transition-all p-2"
                   title="Instagram Zarpou"
                 >
                   <Image
@@ -138,7 +137,7 @@ export function FooterLinks() {
                 <Link
                   href={`https://www.linkedin.com/company/${linkedinUser}`}
                   target="_blank"
-                  className="size-9 rounded-xl bg-slate-800 hover:bg-sky-600 border border-slate-700 flex items-center justify-center transition-all p-2"
+                  className="size-9 rounded-xl bg-foreground/90 hover:bg-sky-600 border border-white/10 flex items-center justify-center transition-all p-2"
                   title="LinkedIn Zarpou"
                 >
                   <Image
@@ -154,10 +153,10 @@ export function FooterLinks() {
 
           {/* COLUNA 2: PRODUTOS & SERVIÇOS (2 colunas) */}
           <div className="lg:col-span-2 space-y-3">
-            <h4 className="font-extrabold text-white text-sm uppercase tracking-wider">
+            <h4 className="font-extrabold text-white text-sm tracking-wide">
               Explorar Zarpou
             </h4>
-            <ul className="space-y-2 text-xs text-slate-400 font-medium">
+            <ul className="space-y-2 text-xs text-muted-foreground font-medium">
               <li>
                 <Link
                   href="/hospedagens"
@@ -208,14 +207,14 @@ export function FooterLinks() {
 
           {/* COLUNA 3: ÁREA DO VIAJANTE & INSTITUCIONAL (2 colunas) */}
           <div className="lg:col-span-2 space-y-3">
-            <h4 className="font-extrabold text-white text-sm uppercase tracking-wider">
+            <h4 className="font-extrabold text-white text-sm tracking-wide">
               Área do Viajante
             </h4>
-            <ul className="space-y-2 text-xs text-slate-400 font-medium">
+            <ul className="space-y-2 text-xs text-muted-foreground font-medium">
               <li>
                 <Link
                   href="/minhas-viagens"
-                  className="hover:text-secondary transition flex items-center gap-1.5 font-bold text-slate-200"
+                  className="hover:text-secondary transition flex items-center gap-1.5 font-bold text-primary-foreground/80"
                 >
                   <ArrowRight className="size-3 text-secondary" />
                   Minhas Viagens & Vouchers
@@ -263,10 +262,10 @@ export function FooterLinks() {
           {/* COLUNA 4: FORMAS DE PAGAMENTO & SEGURANÇA (4 colunas) */}
           <div className="lg:col-span-4 space-y-4">
             <div>
-              <h4 className="font-extrabold text-white text-sm uppercase tracking-wider mb-2">
+              <h4 className="font-extrabold text-white text-sm tracking-wide mb-2">
                 Pagamento Facilitado
               </h4>
-              <p className="text-[11px] text-slate-400 mb-2.5">
+              <p className="text-[11px] text-muted-foreground mb-2.5">
                 Cartões em até 12x s/ juros ou Pix c/ 5% OFF:
               </p>
               <div className="grid grid-cols-2 gap-2.5 max-w-sm">
@@ -279,13 +278,13 @@ export function FooterLinks() {
             </div>
 
             {/* CERTIFICAÇÕES E SELOS */}
-            <div className="pt-2 border-t border-slate-800 space-y-2">
-              <h5 className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+            <div className="pt-2 border-t border-white/10 space-y-2">
+              <h5 className="text-[11px] font-bold text-muted-foreground tracking-wide">
                 Certificações Oficiais:
               </h5>
               <div className="flex items-center gap-3">
                 <div
-                  className="bg-slate-800/90 border border-slate-700/80 px-3 py-2 rounded-xl shrink-0 flex items-center justify-center hover:border-slate-600 transition"
+                  className="bg-white/5 border border-white/10 px-3 py-2 rounded-xl shrink-0 flex items-center justify-center hover:border-white/20 transition"
                   title="Cadastur - Ministério do Turismo"
                 >
                   <Image
@@ -296,7 +295,7 @@ export function FooterLinks() {
                     className="select-none object-contain h-5 w-auto"
                   />
                 </div>
-                <div className="text-[10px] text-slate-400 font-medium">
+                <div className="text-[10px] text-muted-foreground font-medium">
                   <div className="flex items-center gap-1 text-emerald-400 font-bold">
                     <ShieldCheck className="size-3.5" />
                     Ambiente 100% Seguro

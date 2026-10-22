@@ -4,6 +4,7 @@ import { safeLocalStorage } from "@/lib/storage";
 import { api, ApiError } from "@/lib/api";
 import { AdminUser } from "@/types/user";
 import { verifyTotpCode, maskEmail } from "@/lib/two-factor";
+import { syncAdminSession } from "@/lib/admin-session-client";
 
 export interface PendingTwoFactorAuth {
   user: AdminUser;
@@ -12,7 +13,6 @@ export interface PendingTwoFactorAuth {
   availableMethods: ("email" | "authenticator")[];
   currentMethod: "email" | "authenticator";
   maskedEmail: string;
-  expectedEmailCode?: string;
   expiresAt: number;
 }
 
@@ -85,23 +85,14 @@ export const useAuthStore = create<AuthStore>()(
                 ? "authenticator"
                 : "email";
 
-            let generatedCode = "";
-            try {
-              const res = await fetch("/api/auth/2fa/send-code", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                  email: authenticatedUser.email,
-                  name: authenticatedUser.name,
-                }),
-              });
-              const resData = await res.json();
-              if (resData.code) {
-                generatedCode = resData.code;
-              }
-            } catch {
-              // fallback
-            }
+            await fetch("/api/auth/2fa/send-code", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                email: authenticatedUser.email,
+                name: authenticatedUser.name,
+              }),
+            }).catch(() => null);
 
             set({
               pendingTwoFactor: {
@@ -111,7 +102,6 @@ export const useAuthStore = create<AuthStore>()(
                 availableMethods,
                 currentMethod: defaultMethod,
                 maskedEmail: maskEmail(authenticatedUser.email),
-                expectedEmailCode: generatedCode,
                 expiresAt: Date.now() + 10 * 60 * 1000,
               },
             });
@@ -127,6 +117,7 @@ export const useAuthStore = create<AuthStore>()(
           if (typeof window !== "undefined") {
             localStorage.setItem("zarpou-admin-token", authToken);
           }
+          await syncAdminSession(authToken);
 
           set({ isAuthenticated: true, user: authenticatedUser, token: authToken, pendingTwoFactor: null });
           return { success: true, requiresTwoFactor: false };
@@ -152,6 +143,7 @@ export const useAuthStore = create<AuthStore>()(
 
           if (typeof window !== "undefined" && pending.token) {
             localStorage.setItem("zarpou-admin-token", pending.token);
+            await syncAdminSession(pending.token);
           }
           set({
             isAuthenticated: true,
@@ -170,6 +162,7 @@ export const useAuthStore = create<AuthStore>()(
           if (isValid) {
             if (typeof window !== "undefined" && pending.token) {
               localStorage.setItem("zarpou-admin-token", pending.token);
+              await syncAdminSession(pending.token);
             }
             set({
               isAuthenticated: true,
@@ -188,19 +181,38 @@ export const useAuthStore = create<AuthStore>()(
             return { success: false, message: "O código de verificação expirou. Solicite um novo." };
           }
 
-          if (cleanCode === pending.expectedEmailCode) {
-            if (typeof window !== "undefined" && pending.token) {
-              localStorage.setItem("zarpou-admin-token", pending.token);
-            }
-            set({
-              isAuthenticated: true,
-              user: pending.user,
-              token: pending.token,
-              pendingTwoFactor: null,
+          try {
+            const res = await fetch("/api/auth/2fa/verify-code", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ email: pending.email, code: cleanCode }),
             });
-            return { success: true };
+
+            if (res.ok) {
+              if (typeof window !== "undefined" && pending.token) {
+                localStorage.setItem("zarpou-admin-token", pending.token);
+                await syncAdminSession(pending.token);
+              }
+              set({
+                isAuthenticated: true,
+                user: pending.user,
+                token: pending.token,
+                pendingTwoFactor: null,
+              });
+              return { success: true };
+            }
+
+            const data = await res.json().catch(() => null);
+            return {
+              success: false,
+              message:
+                data?.reason === "expired"
+                  ? data?.error || "O código de verificação expirou. Solicite um novo."
+                  : "Código de e-mail incorreto. Tente novamente.",
+            };
+          } catch {
+            return { success: false, message: "Falha ao verificar o código. Tente novamente." };
           }
-          return { success: false, message: "Código de e-mail incorreto. Tente novamente." };
         }
 
         return { success: false, message: "Método de verificação desconhecido." };
@@ -215,7 +227,7 @@ export const useAuthStore = create<AuthStore>()(
         if (!pending) return { success: false, message: "Nenhuma sessão ativa." };
 
         try {
-          const res = await fetch("/api/auth/2fa/send-code", {
+          await fetch("/api/auth/2fa/send-code", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -223,13 +235,10 @@ export const useAuthStore = create<AuthStore>()(
               name: pending.user.name,
             }),
           });
-          const data = await res.json();
-          const newCode = data.code || Math.floor(100000 + Math.random() * 900000).toString();
 
           set({
             pendingTwoFactor: {
               ...pending,
-              expectedEmailCode: newCode,
               expiresAt: Date.now() + 10 * 60 * 1000,
             },
           });
@@ -328,6 +337,7 @@ export const useAuthStore = create<AuthStore>()(
         if (typeof window !== "undefined") {
           localStorage.removeItem("zarpou-admin-token");
         }
+        void syncAdminSession(null);
         set({ isAuthenticated: false, user: null, token: null, pendingTwoFactor: null });
       },
 
@@ -338,6 +348,7 @@ export const useAuthStore = create<AuthStore>()(
         try {
           const user = await api.get<AdminUser>("/auth/me", { token });
           set({ isAuthenticated: true, user, token });
+          await syncAdminSession(token);
         } catch {
           get().logout();
         }

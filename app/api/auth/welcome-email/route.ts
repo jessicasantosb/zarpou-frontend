@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { serverEnv } from "@/lib/env";
 import { getWelcomeEmailHtml } from "../../(utils)/get-welcome-email-html";
 
 export async function POST(req: Request) {
@@ -14,7 +15,7 @@ export async function POST(req: Request) {
       );
     }
 
-    const apiKey = process.env.RESEND_API_KEY || resendApiKey;
+    const apiKey = serverEnv.RESEND_API_KEY || resendApiKey;
 
     if (!apiKey) {
       console.warn(

@@ -104,11 +104,10 @@ const trustPillars = [
 
 export function Menu() {
   return (
-    <section className="py-14 bg-gradient-to-b from-white via-slate-50/60 to-white select-none">
+    <section className="py-14 bg-gradient-to-b from-card via-muted/60 to-card select-none">
       <Container>
-        {/* TÍTULO E SUBTÍTULO */}
         <div className="text-center max-w-2xl mx-auto mb-10">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/20 text-primary text-[11px] font-black uppercase tracking-wider mb-3">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/20 text-primary text-[11px] font-black tracking-wide mb-3">
             ✦ Plataforma Integrada de Viagens
           </span>
           <Title
@@ -117,17 +116,15 @@ export function Menu() {
           />
         </div>
 
-        {/* GRADE DE RECURSOS / SERVIÇOS (ESTÁTICA, MODERNA, SEM SENSAÇÃO DE CLIQUE) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((item, index) => {
             const Icon = item.icon;
             return (
               <div
                 key={index}
-                className="bg-white rounded-3xl p-7 border border-slate-200/80 shadow-xs flex flex-col justify-between cursor-default"
+                className="bg-card rounded-3xl p-7 border border-border/80 shadow-xs flex flex-col justify-between cursor-default"
               >
                 <div>
-                  {/* TOPO DO CARD: ÍCONE MODERNO E BADGE */}
                   <div className="flex items-center justify-between gap-2 mb-5">
                     <div
                       className={`size-12 rounded-2xl flex items-center justify-center border ${item.accentColor}`}
@@ -135,13 +132,12 @@ export function Menu() {
                       <Icon className="size-6" />
                     </div>
                     <span
-                      className={`text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider ${item.badgeColor}`}
+                      className={`text-[10px] font-bold px-2.5 py-1 rounded-full tracking-wide ${item.badgeColor}`}
                     >
                       {item.badge}
                     </span>
                   </div>
 
-                  {/* TÍTULO E DESCRIÇÃO INFORMATIVA */}
                   <h3 className="text-lg font-bold text-slate-900 mb-2 leading-snug">
                     {item.title}
                   </h3>
@@ -150,8 +146,7 @@ export function Menu() {
                   </p>
                 </div>
 
-                {/* LISTA DE DESTAQUES COM CHECKMARK SUAVE */}
-                <div className="pt-4 border-t border-slate-100 space-y-1.5">
+                <div className="pt-4 border-t border-border/60 space-y-1.5">
                   {item.highlights.map((highlight, hIndex) => (
                     <div
                       key={hIndex}
@@ -167,7 +162,6 @@ export function Menu() {
           })}
         </div>
 
-        {/* FAIXA INFORMATIVA DE CONFIANÇA & BENEFÍCIOS */}
         <div className="mt-10 bg-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-sm">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {trustPillars.map((pillar, pIndex) => {

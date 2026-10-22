@@ -5,24 +5,20 @@ import { Sparkles, ShieldCheck, HeartHandshake, Plane, Star } from "lucide-react
 export function AboutHeroContent() {
   return (
     <div className="flex flex-col items-center justify-center text-center gap-6 max-w-4xl mx-auto px-4">
-      {/* BADGE ELEGANTE */}
       <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-semibold text-secondary shadow-lg">
         <Sparkles className="size-4 text-secondary animate-pulse" />
         <span>Quem Somos • Zarpou Viagens e Turismo</span>
       </div>
 
-      {/* TÍTULO PRINCIPAL */}
       <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-tight sm:leading-tight md:leading-tight">
         Muito mais do que uma agência: sua{" "}
         <span className="text-secondary drop-shadow-sm">parceira de viagens</span>
       </h1>
 
-      {/* SUBTÍTULO */}
-      <p className="max-w-2xl text-sm sm:text-base md:text-lg text-slate-200 font-normal leading-relaxed">
+      <p className="max-w-2xl text-sm sm:text-base md:text-lg text-primary-foreground/80 font-normal leading-relaxed">
         Conectamos pessoas a experiências reais e inesquecíveis pelo Brasil e pelo mundo, combinando curadoria humana especializada, tecnologia ágil e total segurança.
       </p>
 
-      {/* STAT PILLS */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 w-full max-w-3xl">
         <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-3 text-center">
           <div className="flex items-center justify-center gap-1.5 text-secondary text-xs font-bold mb-1">

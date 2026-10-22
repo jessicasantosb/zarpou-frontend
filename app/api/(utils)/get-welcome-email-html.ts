@@ -1,3 +1,5 @@
+import { serverEnv } from "@/lib/env";
+
 export interface WelcomeEmailData {
   name: string;
   email: string;
@@ -6,7 +8,7 @@ export interface WelcomeEmailData {
 export const getWelcomeEmailHtml = ({ name, email }: WelcomeEmailData): string => {
   const firstName = (name || "Viajante").split(" ")[0];
   const logoUrl = "https://www.zarpouviagens.com.br/logo/logo.png";
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.zarpouviagens.com.br";
+  const siteUrl = serverEnv.NEXT_PUBLIC_SITE_URL || "https://www.zarpouviagens.com.br";
 
   return `
     <!DOCTYPE html>

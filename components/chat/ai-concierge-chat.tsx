@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
+import { whatsappNumber } from "@/lib/whatsapp-link";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -222,7 +223,7 @@ export function AiConciergeChat() {
           {parts.map((part, pIdx) => {
             if (part.startsWith("**") && part.endsWith("**")) {
               return (
-                <strong key={pIdx} className="font-semibold text-slate-900">
+                <strong key={pIdx} className="font-semibold text-foreground">
                   {part.slice(2, -2)}
                 </strong>
               );
@@ -237,7 +238,7 @@ export function AiConciergeChat() {
                   href={linkHref}
                   target={isExternal ? "_blank" : undefined}
                   rel={isExternal ? "noopener noreferrer" : undefined}
-                  className="font-semibold text-[#0b548f] underline hover:text-[#ebb343] transition inline-flex items-center gap-0.5 mx-0.5"
+                  className="font-semibold text-primary-light underline hover:text-secondary transition inline-flex items-center gap-0.5 mx-0.5"
                 >
                   {linkText}
                   {isExternal && <ExternalLink className="size-2.5 opacity-60 inline" />}
@@ -251,9 +252,7 @@ export function AiConciergeChat() {
     });
   };
 
-  const whatsappNum = mounted
-    ? config.whatsapp
-    : process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5531984210000";
+  const whatsappNum = mounted ? config.whatsapp : whatsappNumber;
 
   return (
     <>
@@ -261,19 +260,19 @@ export function AiConciergeChat() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-40 group flex items-center gap-3 bg-gradient-to-r from-[#05345b] to-[#0b548f] text-white px-5 py-3.5 rounded-full shadow-2xl hover:shadow-[#05345b]/30 hover:scale-105 active:scale-95 transition-all duration-300 border border-white/20"
+          className="fixed bottom-6 right-6 z-40 group flex items-center gap-3 bg-gradient-to-r from-primary to-primary-light text-white px-5 py-3.5 rounded-full shadow-xl hover:shadow-primary/30 hover:scale-105 active:scale-95 transition-all duration-300 border border-white/20"
           aria-label="Abrir chat com a IA"
         >
-          <div className="relative flex items-center justify-center size-9 rounded-full bg-white/15 backdrop-blur-sm text-[#ebb343] group-hover:rotate-12 transition-transform duration-300">
+          <div className="relative flex items-center justify-center size-9 rounded-full bg-card/15 backdrop-blur-sm text-secondary group-hover:rotate-12 transition-transform duration-300">
             <Sparkles className="size-5" />
-            <span className="absolute -top-0.5 -right-0.5 size-2.5 bg-emerald-400 border-2 border-[#05345b] rounded-full animate-pulse" />
+            <span className="absolute -top-0.5 -right-0.5 size-2.5 bg-emerald-400 border-2 border-primary rounded-full animate-pulse" />
           </div>
           <div className="text-left hidden sm:block">
             <div className="flex items-center gap-1.5">
               <span className="text-xs font-semibold tracking-wide uppercase text-white/80">
                 Concierge 24h
               </span>
-              <span className="px-1.5 py-0.2 text-[9px] font-bold bg-[#ebb343] text-[#05345b] rounded-full">
+              <span className="px-1.5 py-0.2 text-[9px] font-bold bg-secondary text-primary rounded-full">
                 IA
               </span>
             </div>
@@ -289,20 +288,20 @@ export function AiConciergeChat() {
 
       {/* Floating Chat Modal Window */}
       {isOpen && (
-        <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-[calc(100vw-32px)] sm:w-[420px] h-[580px] max-h-[85vh] bg-white rounded-3xl shadow-2xl border border-slate-200/90 flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-5 duration-200">
+        <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-[calc(100vw-32px)] sm:w-[420px] h-[580px] max-h-[85vh] bg-card rounded-3xl shadow-xl border border-border/90 flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-5 duration-200">
           {/* Header */}
-          <div className="bg-gradient-to-r from-[#05345b] via-[#084574] to-[#05345b] p-4 text-white flex items-center justify-between shadow-md relative">
+          <div className="bg-gradient-to-r from-primary via-primary-hover to-primary p-4 text-white flex items-center justify-between shadow-md relative">
             <div className="flex items-center gap-3">
-              <div className="relative size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 text-[#ebb343]">
+              <div className="relative size-10 rounded-full bg-card/10 backdrop-blur-md flex items-center justify-center border border-white/20 text-secondary">
                 <Bot className="size-6" />
-                <span className="absolute bottom-0 right-0 size-3 bg-emerald-400 border-2 border-[#05345b] rounded-full" />
+                <span className="absolute bottom-0 right-0 size-3 bg-emerald-400 border-2 border-primary rounded-full" />
               </div>
               <div>
                 <div className="flex items-center gap-2">
                   <h3 className="text-sm font-bold tracking-tight">
                     Concierge Zarpou IA
                   </h3>
-                  <span className="px-1.5 py-0.5 text-[9px] font-bold bg-[#ebb343] text-[#05345b] rounded">
+                  <span className="px-1.5 py-0.5 text-[9px] font-bold bg-secondary text-primary rounded">
                     BETA
                   </span>
                 </div>
@@ -317,14 +316,14 @@ export function AiConciergeChat() {
               <button
                 onClick={handleReset}
                 title="Reiniciar conversa"
-                className="p-1.5 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition"
+                className="p-1.5 text-white/80 hover:text-white hover:bg-card/10 rounded-lg transition"
               >
                 <RotateCcw className="size-4" />
               </button>
               <button
                 onClick={() => setIsOpen(false)}
                 title="Fechar chat"
-                className="p-1.5 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition"
+                className="p-1.5 text-white/80 hover:text-white hover:bg-card/10 rounded-lg transition"
               >
                 <X className="size-5" />
               </button>
@@ -332,7 +331,7 @@ export function AiConciergeChat() {
           </div>
 
           {/* Messages Body */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-[#f8fafc] text-sm">
+          <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-muted text-sm">
             {messages.map((msg) => {
               const isBot = msg.role === "assistant";
               return (
@@ -343,7 +342,7 @@ export function AiConciergeChat() {
                   }`}
                 >
                   {isBot && (
-                    <div className="size-7 rounded-full bg-[#05345b] text-[#ebb343] flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                    <div className="size-7 rounded-full bg-primary text-secondary flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
                       <Sparkles className="size-3.5" />
                     </div>
                   )}
@@ -351,22 +350,22 @@ export function AiConciergeChat() {
                   <div
                     className={`max-w-[82%] rounded-2xl p-3.5 text-[13px] shadow-xs ${
                       isBot
-                        ? "bg-white text-slate-800 rounded-tl-xs border border-slate-200/80"
-                        : "bg-[#05345b] text-white rounded-tr-xs"
+                        ? "bg-card text-foreground rounded-tl-xs border border-border/80"
+                        : "bg-primary text-white rounded-tr-xs"
                     }`}
                   >
                     <div className="space-y-1">
                       {renderMessageContent(msg.content)}
                     </div>
                     {msg.suggestedActions && msg.suggestedActions.length > 0 && (
-                      <div className="mt-2.5 pt-2 border-t border-slate-100 flex flex-wrap gap-1.5">
+                      <div className="mt-2.5 pt-2 border-t border-border/60 flex flex-wrap gap-1.5">
                         {msg.suggestedActions.map((action, idx) => (
                           <Link
                             key={idx}
                             href={action.url}
                             target={action.url.startsWith("http") ? "_blank" : undefined}
                             rel={action.url.startsWith("http") ? "noopener noreferrer" : undefined}
-                            className="inline-flex items-center gap-1 px-2.5 py-1 text-[11px] font-medium rounded-full bg-slate-100 hover:bg-[#ebb343]/20 hover:text-[#05345b] text-slate-700 transition border border-slate-200"
+                            className="inline-flex items-center gap-1 px-2.5 py-1 text-[11px] font-medium rounded-full bg-muted hover:bg-secondary/20 hover:text-primary text-foreground/80 transition border border-border"
                           >
                             <span>{action.label}</span>
                             <ExternalLink className="size-2.5 opacity-60" />
@@ -376,7 +375,7 @@ export function AiConciergeChat() {
                     )}
                     <div
                       className={`text-[10px] mt-1.5 text-right ${
-                        isBot ? "text-slate-400" : "text-white/60"
+                        isBot ? "text-muted-foreground" : "text-white/60"
                       }`}
                     >
                       {msg.timestamp}
@@ -384,7 +383,7 @@ export function AiConciergeChat() {
                   </div>
 
                   {!isBot && (
-                    <div className="size-7 rounded-full bg-[#ebb343] text-[#05345b] flex items-center justify-center shrink-0 mt-0.5 shadow-sm font-bold text-xs">
+                    <div className="size-7 rounded-full bg-secondary text-primary flex items-center justify-center shrink-0 mt-0.5 shadow-sm font-bold text-xs">
                       <User className="size-3.5" />
                     </div>
                   )}
@@ -395,14 +394,14 @@ export function AiConciergeChat() {
             {/* Typing Indicator */}
             {isTyping && (
               <div className="flex gap-2.5 justify-start items-center">
-                <div className="size-7 rounded-full bg-[#05345b] text-[#ebb343] flex items-center justify-center shrink-0 shadow-sm">
+                <div className="size-7 rounded-full bg-primary text-secondary flex items-center justify-center shrink-0 shadow-sm">
                   <Sparkles className="size-3.5" />
                 </div>
-                <div className="bg-white text-slate-500 rounded-2xl rounded-tl-xs px-4 py-3 border border-slate-200/80 shadow-xs flex items-center gap-1.5">
-                  <span className="size-2 bg-slate-400 rounded-full animate-bounce [animation-delay:-0.3s]" />
-                  <span className="size-2 bg-slate-400 rounded-full animate-bounce [animation-delay:-0.15s]" />
-                  <span className="size-2 bg-slate-400 rounded-full animate-bounce" />
-                  <span className="text-xs ml-1 text-slate-400 font-medium">
+                <div className="bg-card text-muted-foreground rounded-2xl rounded-tl-xs px-4 py-3 border border-border/80 shadow-xs flex items-center gap-1.5">
+                  <span className="size-2 bg-muted-foreground/70 rounded-full animate-pulse [animation-delay:-0.3s]" />
+                  <span className="size-2 bg-muted-foreground/70 rounded-full animate-pulse [animation-delay:-0.15s]" />
+                  <span className="size-2 bg-muted-foreground/70 rounded-full animate-pulse" />
+                  <span className="text-xs ml-1 text-muted-foreground font-medium">
                     Digitando...
                   </span>
                 </div>
@@ -414,12 +413,12 @@ export function AiConciergeChat() {
 
           {/* Quick Suggestions */}
           {messages.length <= 2 && (
-            <div className="px-4 py-2 bg-white border-t border-slate-100 flex items-center gap-1.5 overflow-x-auto no-scrollbar">
+            <div className="px-4 py-2 bg-card border-t border-border/60 flex items-center gap-1.5 overflow-x-auto no-scrollbar">
               {QUICK_SUGGESTIONS.map((suggestion, sIdx) => (
                 <button
                   key={sIdx}
                   onClick={() => handleSend(suggestion)}
-                  className="whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700 hover:bg-[#05345b] hover:text-white transition duration-150 border border-slate-200/60"
+                  className="whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-medium bg-muted text-foreground/80 hover:bg-primary hover:text-white transition duration-150 border border-border/60"
                 >
                   {suggestion}
                 </button>
@@ -449,7 +448,7 @@ export function AiConciergeChat() {
               e.preventDefault();
               handleSend();
             }}
-            className="p-3 bg-white border-t border-slate-200 flex items-center gap-2"
+            className="p-3 bg-card border-t border-border flex items-center gap-2"
           >
             <input
               ref={inputRef}
@@ -457,13 +456,13 @@ export function AiConciergeChat() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Digite sua dúvida ou destino dos sonhos..."
-              className="flex-1 bg-slate-50 border border-slate-200 focus:border-[#05345b] focus:bg-white rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none transition"
+              className="flex-1 bg-muted border border-border focus:border-primary focus:bg-card rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-foreground placeholder:text-muted-foreground focus:outline-none transition"
               disabled={isTyping}
             />
             <button
               type="submit"
               disabled={!input.trim() || isTyping}
-              className="size-10 rounded-xl bg-[#05345b] hover:bg-[#084574] disabled:opacity-40 disabled:hover:bg-[#05345b] text-white flex items-center justify-center shrink-0 transition shadow-sm active:scale-95"
+              className="size-10 rounded-xl bg-primary hover:bg-primary-hover disabled:opacity-40 disabled:hover:bg-primary text-white flex items-center justify-center shrink-0 transition shadow-sm active:scale-95"
               aria-label="Enviar mensagem"
             >
               <Send className="size-4" />

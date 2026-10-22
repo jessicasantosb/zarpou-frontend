@@ -5,6 +5,7 @@ import Link from "next/link";
 import { MessageCircle, Search, Sparkles, Shield, Clock } from "lucide-react";
 import { Container } from "@/components/shared/container";
 import { useConfigStore } from "@/stores/config-store";
+import { whatsappNumber } from "@/lib/whatsapp-link";
 
 export function FooterCta() {
   const { config } = useConfigStore();
@@ -14,9 +15,7 @@ export function FooterCta() {
     setMounted(true);
   }, []);
 
-  const whatsappNum = mounted
-    ? config.whatsapp
-    : process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5531984210000";
+  const whatsappNum = mounted ? config.whatsapp : whatsappNumber;
 
   const defaultMsg = encodeURIComponent(
     config?.whatsappMessage ||
@@ -28,7 +27,7 @@ export function FooterCta() {
       <Container>
         <div className="max-w-4xl mx-auto text-center space-y-6">
           {/* BADGE SUPERIOR */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/15 border border-secondary/30 text-primary text-xs font-black uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/15 border border-secondary/30 text-primary text-xs font-black tracking-wide">
             <Sparkles className="size-3.5 fill-secondary text-secondary" />
             <span>Consultoria Personalizada sem Custo</span>
           </div>
@@ -70,7 +69,7 @@ export function FooterCta() {
           </div>
 
           {/* MICRO PROVAS SOCIAIS */}
-          <div className="pt-6 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-500 font-medium border-t border-slate-200/80">
+          <div className="pt-6 flex flex-wrap items-center justify-center gap-6 text-xs text-muted-foreground font-medium border-t border-border/80">
             <span className="flex items-center gap-1.5">
               <Clock className="size-3.5 text-primary" />
               Resposta rápida no WhatsApp

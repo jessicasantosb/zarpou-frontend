@@ -25,7 +25,7 @@ export function LoadingScreen({
     <div
       className={`flex flex-col items-center justify-center select-none transition-all duration-300 animate-in fade-in duration-300 ${
         fullScreen
-          ? `min-h-screen min-h-[100dvh] h-screen w-full ${isDark ? "bg-slate-950 text-white" : "bg-slate-50 text-slate-900"}`
+          ? `min-h-screen min-h-[100dvh] h-screen w-full ${isDark ? "bg-foreground/80 text-white" : "bg-muted/50 text-foreground"}`
           : `py-12 px-4 w-full min-h-[40vh] ${isDark ? "bg-slate-900/90 text-white" : "bg-transparent text-slate-800"}`
       }`}
     >
@@ -34,16 +34,16 @@ export function LoadingScreen({
         <div className="relative size-20 sm:size-24 flex items-center justify-center mb-5">
           {/* Anel giratório sutil com degradê Zarpou */}
           <div className="absolute inset-0 rounded-full border-3 border-transparent border-t-primary border-r-secondary animate-spin [animation-duration:1.2s]" />
-          <div className="absolute inset-1.5 rounded-full border border-slate-200/50 dark:border-slate-800" />
+          <div className="absolute inset-1.5 rounded-full border border-border/50 dark:border-white/10" />
 
           {/* Círculo central com logo/ícone */}
           <div
             className={`relative size-14 sm:size-16 rounded-full flex items-center justify-center shadow-lg transition-transform ${
-              isDark ? "bg-slate-900 border border-slate-800" : "bg-white border border-slate-100"
+              isDark ? "bg-surface-dark border border-white/10" : "bg-card border border-border/60"
             }`}
           >
             {type === "admin" ? (
-              <Compass className="size-6 text-[#ebb343] animate-pulse" />
+              <Compass className="size-6 text-secondary animate-pulse" />
             ) : type === "payment" ? (
               <ShieldCheck className="size-6 text-emerald-500 animate-pulse" />
             ) : type === "flight" ? (
@@ -64,7 +64,7 @@ export function LoadingScreen({
         {/* TÍTULO PRINCIPAL */}
         <h3
           className={`text-base sm:text-lg font-bold tracking-tight ${
-            isDark ? "text-white" : "text-[#05345b]"
+            isDark ? "text-white" : "text-primary"
           }`}
         >
           {title}
@@ -73,20 +73,20 @@ export function LoadingScreen({
         {/* SUBTÍTULO DESCRITIVO */}
         <p
           className={`text-xs sm:text-[13px] mt-1 leading-relaxed font-normal max-w-sm ${
-            isDark ? "text-slate-400" : "text-slate-500"
+            isDark ? "text-muted-foreground" : "text-muted-foreground"
           }`}
         >
           {subtitle}
         </p>
 
         {/* BARRA DE PROGRESSO COM BRILHO PULSANTE */}
-        <div className="w-36 sm:w-44 h-1 bg-slate-200/80 dark:bg-slate-800 rounded-full mt-4 overflow-hidden relative">
-          <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-[#05345b] via-[#ebb343] to-[#05345b] rounded-full w-full animate-[progress_1.6s_ease-in-out_infinite]" />
+        <div className="w-36 sm:w-44 h-1 bg-muted/80 dark:bg-foreground/90 rounded-full mt-4 overflow-hidden relative">
+          <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-primary via-secondary to-primary rounded-full w-full animate-[progress_1.6s_ease-in-out_infinite]" />
         </div>
 
         {/* RODAPÉ DO LOADER */}
-        <div className="flex items-center gap-1.5 mt-3 text-[10px] uppercase tracking-wider font-semibold text-slate-400">
-          <Sparkles className="size-3 text-[#ebb343]" />
+        <div className="flex items-center gap-1.5 mt-3 text-[10px] tracking-wide font-semibold text-muted-foreground">
+          <Sparkles className="size-3 text-secondary" />
           <span>Zarpou Viagens</span>
         </div>
       </div>
@@ -103,7 +103,7 @@ export function ProductCardSkeleton() {
         <div className="h-4 bg-slate-200 rounded w-3/4" />
         <div className="h-3 bg-slate-200 rounded w-1/2" />
       </div>
-      <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+      <div className="pt-4 border-t border-border/60 flex items-center justify-between">
         <div className="h-6 bg-slate-200 rounded w-24" />
         <div className="h-9 bg-slate-200 rounded-xl w-28" />
       </div>

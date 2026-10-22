@@ -94,7 +94,7 @@ export function DropdownMenu({ scrolled }: DropdownMenuProps) {
                         logout();
                         setOpen(false);
                       }}
-                      className="px-2.5 py-1.5 bg-white border border-slate-200 rounded-lg text-red-600 hover:bg-red-50 flex items-center gap-1.5 justify-center cursor-pointer"
+                      className="px-2.5 py-1.5 bg-card border border-border rounded-lg text-destructive hover:bg-destructive/20 flex items-center gap-1.5 justify-center cursor-pointer"
                     >
                       <LogOut className="size-3 shrink-0" />
                       Sair
@@ -209,7 +209,7 @@ export function DropdownMenu({ scrolled }: DropdownMenuProps) {
           </div>
         </div>
 
-        <SheetFooter className="border-t border-slate-100 pt-4 flex flex-col items-center">
+        <SheetFooter className="border-t border-border/60 pt-4 flex flex-col items-center">
           <Image
             alt="logo"
             src={"/logo/logo.svg"}

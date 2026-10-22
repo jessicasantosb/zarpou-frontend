@@ -10,6 +10,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { AiConciergeChat } from "@/components/chat/ai-concierge-chat";
 import { NavigationProgressBar } from "@/components/shared/navigation-progress-bar";
+import { PendingCouponCapture } from "@/components/shared/pending-coupon-capture";
 import { ConfirmDialogProvider } from "@/components/shared/confirm-dialog-provider";
 import {
   defaultKeywords,
@@ -56,6 +57,7 @@ export default function RootLayout({
           <Suspense fallback={null}>
             <NavigationProgressBar />
           </Suspense>
+          <PendingCouponCapture />
           <ToastContainer position="bottom-center" />
           <Header />
           {children}

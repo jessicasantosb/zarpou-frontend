@@ -1,6 +1,5 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -14,49 +13,29 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { Container } from "@/components/shared/container";
-import { useProductStore } from "@/stores/product-store";
-import { useBookingStore } from "@/stores/booking-store";
 import { calculateHotelRating } from "@/lib/rating-utils";
 import { Hotel } from "@/types/product";
+import { useTopHotels } from "../_hooks/use-top-hotels";
 
 export function TopHotels() {
-  const { hotels, fetchHotels } = useProductStore();
-  const { bookings } = useBookingStore();
-  const [mounted, setMounted] = useState(false);
-  const [selectedCity, setSelectedCity] = useState<string>("all");
-
-  useEffect(() => {
-    setMounted(true);
-    if (hotels.length === 0) {
-      fetchHotels();
-    }
-  }, [hotels.length, fetchHotels]);
-
-  const safeHotels = mounted ? hotels : [];
-
-  // Obter cidades únicas disponíveis para os chips de filtro rápido
-  const cities = ["all", ...Array.from(new Set(safeHotels.map((h) => h.city)))];
-
-  const filteredHotels =
-    selectedCity === "all"
-      ? safeHotels.slice(0, 3)
-      : safeHotels.filter((h) => h.city === selectedCity).slice(0, 3);
+  const { bookings, cities, selectedCity, onCityChange, filteredHotels } =
+    useTopHotels();
 
   return (
     <section className="py-16 bg-white select-none">
       <Container>
-        {/* CABEÇALHO DA SEÇÃO */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/15 text-primary text-[11px] font-black uppercase tracking-wider mb-2.5">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/15 text-primary text-[11px] font-black tracking-wide mb-2.5">
               <Sparkles className="size-3 text-secondary fill-secondary" />
               Curadoria Premium Zarpou
             </div>
             <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">
               Hospede-se com Estilo
             </h2>
-            <p className="text-xs md:text-sm text-slate-500 mt-1 max-w-xl">
-              Acomodações selecionadas a dedo com alto padrão de conforto, localização privilegiada e as melhores avaliações de hóspedes.
+            <p className="text-xs md:text-sm text-muted-foreground mt-1 max-w-xl">
+              Acomodações selecionadas a dedo com alto padrão de conforto,
+              localização privilegiada e as melhores avaliações de hóspedes.
             </p>
           </div>
 
@@ -69,16 +48,15 @@ export function TopHotels() {
           </Link>
         </div>
 
-        {/* CHIPS DE FILTRO RÁPIDO POR CIDADE */}
         <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-6 scrollbar-none">
-          <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider shrink-0 mr-1">
+          <span className="text-[11px] font-bold text-muted-foreground tracking-wide shrink-0 mr-1">
             Destinos:
           </span>
           {cities.map((city) => (
             <button
               key={city}
               type="button"
-              onClick={() => setSelectedCity(city)}
+              onClick={() => onCityChange(city)}
               className={`px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition cursor-pointer ${
                 selectedCity === city
                   ? "bg-primary text-white shadow-xs font-bold"
@@ -90,7 +68,6 @@ export function TopHotels() {
           ))}
         </div>
 
-        {/* GRADE DE CARDS DE HOTÉIS */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
           {filteredHotels.map((hotel: Hotel) => {
             const installmentValue = (
@@ -100,10 +77,9 @@ export function TopHotels() {
             return (
               <div
                 key={hotel.id}
-                className="group bg-white rounded-3xl border border-slate-200/90 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                className="group bg-card rounded-3xl border border-border/90 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  {/* IMAGEM PRINCIPAL COM BADGES MODERNOS */}
                   <div className="relative h-60 w-full overflow-hidden bg-slate-100">
                     <Image
                       src={hotel.imageUrl}
@@ -113,22 +89,23 @@ export function TopHotels() {
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
 
-                    {/* Gradiente escuro para contraste de texto */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/30" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-foreground/30" />
 
-                    {/* Selo Promocional ou de Recomendação */}
                     <div className="absolute top-3.5 left-3.5 flex flex-col gap-1.5 items-start">
                       {hotel.badges && hotel.badges[0] && (
-                        <span className="bg-secondary text-primary text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-xs">
+                        <span className="bg-secondary text-primary text-[10px] font-black px-2.5 py-1 rounded-full tracking-wide shadow-xs">
                           {hotel.badges[0]}
                         </span>
                       )}
                     </div>
 
-                    {/* Nota de Avaliação (Só exibe se não for nula e não for muito baixa) */}
                     {(() => {
-                      const ratingInfo = calculateHotelRating(hotel, bookings);
-                      if (!ratingInfo.shouldShow || !ratingInfo.rating) return null;
+                      const ratingInfo = calculateHotelRating(
+                        hotel,
+                        bookings,
+                      );
+                      if (!ratingInfo.shouldShow || !ratingInfo.rating)
+                        return null;
                       return (
                         <div className="absolute top-3.5 right-3.5 bg-primary/95 text-white backdrop-blur-xs px-2.5 py-1 rounded-xl shadow-xs flex items-center gap-1.5 text-xs font-black">
                           <Star className="size-3 fill-secondary text-secondary" />
@@ -137,15 +114,21 @@ export function TopHotels() {
                       );
                     })()}
 
-                    {/* Localização na parte inferior da foto */}
                     <div className="absolute bottom-3.5 left-3.5 right-3.5 flex items-center justify-between text-white text-xs">
                       <span className="flex items-center gap-1 font-semibold drop-shadow-xs truncate">
                         <MapPin className="size-3.5 text-secondary shrink-0" />
                         {hotel.neighborhood || hotel.city}, {hotel.state}
                       </span>
                       {(() => {
-                        const ratingInfo = calculateHotelRating(hotel, bookings);
-                        if (!ratingInfo.shouldShow || ratingInfo.reviewCount <= 0) return null;
+                        const ratingInfo = calculateHotelRating(
+                          hotel,
+                          bookings,
+                        );
+                        if (
+                          !ratingInfo.shouldShow ||
+                          ratingInfo.reviewCount <= 0
+                        )
+                          return null;
                         return (
                           <span className="text-[11px] text-white/90 font-medium shrink-0">
                             {ratingInfo.reviewCount} avaliações
@@ -155,9 +138,7 @@ export function TopHotels() {
                     </div>
                   </div>
 
-                  {/* CORPO DO CARD */}
                   <div className="p-5 space-y-3">
-                    {/* Estrelas do Hotel */}
                     <div className="flex items-center gap-1">
                       {Array.from({ length: hotel.stars }).map((_, i) => (
                         <Star
@@ -165,22 +146,19 @@ export function TopHotels() {
                           className="size-3.5 fill-amber-400 text-amber-400"
                         />
                       ))}
-                      <span className="text-[11px] font-semibold text-slate-500 ml-1">
+                      <span className="text-[11px] font-semibold text-muted-foreground ml-1">
                         Hotel {hotel.stars} estrelas
                       </span>
                     </div>
 
-                    {/* Nome do Hotel */}
                     <h3 className="font-extrabold text-slate-900 text-base leading-snug group-hover:text-primary transition line-clamp-1">
                       {hotel.name}
                     </h3>
 
-                    {/* Descrição resumida */}
-                    <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
+                    <p className="text-xs text-muted-foreground line-clamp-2 leading-relaxed">
                       {hotel.description}
                     </p>
 
-                    {/* Comodidades em destaque */}
                     <div className="flex flex-wrap items-center gap-2 pt-1">
                       <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-[10px] font-semibold">
                         <Coffee className="size-3 text-amber-600" />
@@ -198,25 +176,27 @@ export function TopHotels() {
                   </div>
                 </div>
 
-                {/* RODAPÉ DO CARD: PREÇO & CTA */}
-                <div className="p-5 pt-3 border-t border-slate-100 bg-slate-50/50 flex items-end justify-between gap-3">
+                <div className="p-5 pt-3 border-t border-border/60 bg-muted/50 flex items-end justify-between gap-3">
                   <div>
                     {hotel.originalPricePerNight &&
                       hotel.originalPricePerNight > hotel.basePricePerNight && (
-                        <p className="text-[11px] text-slate-400 line-through">
-                          De R$ {hotel.originalPricePerNight.toLocaleString("pt-BR")}
+                        <p className="text-[11px] text-muted-foreground line-through">
+                          De R${" "}
+                          {hotel.originalPricePerNight.toLocaleString("pt-BR")}
                         </p>
                       )}
                     <div className="flex items-baseline gap-1">
-                      <span className="text-xs font-bold text-slate-500">Por</span>
+                      <span className="text-xs font-bold text-muted-foreground">
+                        Por
+                      </span>
                       <span className="text-xl font-black text-primary">
                         R$ {hotel.basePricePerNight.toLocaleString("pt-BR")}
                       </span>
-                      <span className="text-[10px] text-slate-400 font-semibold">
+                      <span className="text-[10px] text-muted-foreground font-semibold">
                         / noite
                       </span>
                     </div>
-                    <p className="text-[10px] text-slate-500 font-medium">
+                    <p className="text-[10px] text-muted-foreground font-medium">
                       ou até {hotel.maxInstallments}x de R${" "}
                       {Number(installmentValue).toLocaleString("pt-BR", {
                         minimumFractionDigits: 2,
@@ -238,8 +218,7 @@ export function TopHotels() {
           })}
         </div>
 
-        {/* BENEFÍCIO COMPLEMENTAR NO FINAL DA SEÇÃO */}
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-500 font-medium">
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-xs text-muted-foreground font-medium">
           <span className="flex items-center gap-1.5">
             <ShieldCheck className="size-4 text-emerald-600" />
             Cancelamento Grátis em hotéis selecionados

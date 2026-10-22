@@ -32,8 +32,8 @@ export function AboutStats() {
 
   return (
     <section className="max-w-6xl mx-auto px-4 py-8">
-      <div className="bg-gradient-to-r from-slate-900 via-[#05345b] to-slate-900 rounded-3xl p-8 sm:p-12 text-white shadow-2xl border border-slate-800">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 divide-y sm:divide-y-0 sm:divide-x divide-slate-800">
+      <div className="bg-gradient-to-r from-primary via-primary-light to-primary rounded-3xl p-8 sm:p-12 text-white shadow-xl border border-white/10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
           {stats.map((stat, idx) => {
             const Icon = stat.icon;
             return (
@@ -43,13 +43,13 @@ export function AboutStats() {
                   idx > 0 ? "pt-6 sm:pt-0 sm:pl-6" : ""
                 }`}
               >
-                <div className="size-12 rounded-2xl bg-white/10 backdrop-blur-md text-[#ebb343] flex items-center justify-center mb-3 border border-white/10">
+                <div className="size-12 rounded-2xl bg-card/10 backdrop-blur-md text-secondary flex items-center justify-center mb-3 border border-white/10">
                   <Icon className="size-6" />
                 </div>
                 <p className="text-3xl sm:text-4xl font-black text-white tracking-tight">
                   {stat.value}
                 </p>
-                <h4 className="text-sm font-bold text-slate-200 mt-1 uppercase tracking-wider">
+                <h4 className="text-sm font-bold text-primary-foreground/80 mt-1 tracking-wide">
                   {stat.label}
                 </h4>
                 <p className="text-xs text-slate-400 mt-1 max-w-[200px]">

@@ -56,6 +56,7 @@ export const AVAILABLE_ADMIN_SCREENS: AdminScreenOption[] = [
   { id: "dashboard", name: "Dashboard / Visão Geral", category: "Geral", description: "Métricas gerais e faturamento" },
   { id: "hero", name: "Hero & Banner Principal", category: "Conteúdo", description: "Banners de destaque da página inicial" },
   { id: "promocoes", name: "Promoções & Banners", category: "Marketing", description: "Ofertas e cupons promocionais" },
+  { id: "cupons", name: "Cupons de Desconto", category: "Marketing", description: "Criação, limites e notificações de cupons de desconto" },
   { id: "hospedagens", name: "Hospedagens (Hotéis)", category: "Catálogo", description: "Catálogo de hotéis, pousadas e quartos" },
   { id: "passagens", name: "Passagens Aéreas", category: "Catálogo", description: "Voos nacionais e internacionais" },
   { id: "destinos", name: "Destinos & Roteiros", category: "Catálogo", description: "Cidades turísticas e pacotes" },

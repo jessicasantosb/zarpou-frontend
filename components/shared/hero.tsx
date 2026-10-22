@@ -60,7 +60,7 @@ export function Hero({
       )}
 
       {/* OVERLAY ESCURO PARA MÁXIMA LEGIBILIDADE */}
-      <div className="absolute top-0 left-0 w-full h-full bg-slate-950/60 z-10 backdrop-blur-[1px]" />
+      <div className="absolute top-0 left-0 w-full h-full bg-foreground/60 z-10 backdrop-blur-[1px]" />
 
       <motion.div
         initial="hidden"

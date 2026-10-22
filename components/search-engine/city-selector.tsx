@@ -65,11 +65,11 @@ export function CitySelector({
     <div className="relative w-full" ref={containerRef}>
       <div
         onClick={() => setIsOpen(true)}
-        className="w-full h-14 bg-white border border-slate-300 hover:border-primary/70 rounded-xl px-4 flex items-center gap-3 transition shadow-xs focus-within:ring-2 focus-within:ring-primary/20 cursor-text"
+        className="w-full h-14 bg-card border border-input hover:border-primary/70 rounded-xl px-4 flex items-center gap-3 transition shadow-xs focus-within:ring-2 focus-within:ring-primary/20 cursor-text"
       >
         <MapPin className="size-5 text-primary shrink-0" />
         <div className="flex flex-col w-full min-w-0">
-          <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">
+          <span className="text-[11px] font-semibold text-muted-foreground tracking-wide">
             {label}
           </span>
           <input
@@ -82,14 +82,14 @@ export function CitySelector({
               setIsOpen(true);
             }}
             onFocus={() => setIsOpen(true)}
-            className="w-full text-sm font-medium text-slate-900 bg-transparent border-none outline-hidden p-0 truncate placeholder:text-slate-400"
+            className="w-full text-sm font-medium text-slate-900 bg-transparent border-none outline-hidden p-0 truncate placeholder:text-muted-foreground"
           />
         </div>
       </div>
 
       {isOpen && (
         <div className="absolute top-full left-0 mt-2 w-full min-w-[280px] bg-white border border-slate-200 rounded-2xl shadow-xl py-2 z-50 max-h-72 overflow-y-auto animate-in fade-in zoom-in-95 duration-150">
-          <div className="px-3 py-1.5 text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+          <div className="px-3 py-1.5 text-xs font-semibold text-muted-foreground tracking-wide flex items-center gap-1.5">
             <Search className="size-3.5" />
             Destinos Populares
           </div>
@@ -109,12 +109,12 @@ export function CitySelector({
                 className="w-full px-4 py-2.5 text-left flex items-center justify-between hover:bg-slate-50 transition group"
               >
                 <div className="flex items-center gap-2.5 truncate">
-                  <MapPin className="size-4 text-slate-400 group-hover:text-primary transition shrink-0" />
+                  <MapPin className="size-4 text-muted-foreground group-hover:text-primary transition shrink-0" />
                   <div className="truncate">
                     <p className="text-sm font-medium text-slate-800 truncate">
                       {item.city}
                     </p>
-                    <p className="text-xs text-slate-500 truncate">{item.state}</p>
+                    <p className="text-xs text-muted-foreground truncate">{item.state}</p>
                   </div>
                 </div>
                 <span className="text-xs font-mono font-bold bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md shrink-0">
@@ -123,7 +123,7 @@ export function CitySelector({
               </button>
             ))
           ) : (
-            <div className="px-4 py-3 text-sm text-slate-500 text-center">
+            <div className="px-4 py-3 text-sm text-muted-foreground text-center">
               Nenhum destino encontrado.
             </div>
           )}

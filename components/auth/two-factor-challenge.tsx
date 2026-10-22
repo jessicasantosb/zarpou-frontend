@@ -184,7 +184,7 @@ export function TwoFactorChallenge({
     <div className="space-y-6 animate-in fade-in zoom-in-95 duration-200">
       {/* CABEÇALHO COM ÍCONE DE SEGURANÇA */}
       <div className="text-center space-y-2">
-        <div className="size-14 mx-auto rounded-2xl bg-secondary/15 text-[#ebb343] flex items-center justify-center shadow-inner">
+        <div className="size-14 mx-auto rounded-2xl bg-secondary/15 text-secondary flex items-center justify-center shadow-inner">
           <ShieldCheck className="size-8" />
         </div>
         <h2 className={`text-xl sm:text-2xl font-black ${isDark ? "text-white" : "text-slate-900"}`}>
@@ -231,7 +231,7 @@ export function TwoFactorChallenge({
 
       {/* MENSAGEM DE ERRO */}
       {errorMessage && (
-        <div className="p-3 bg-red-50 border border-red-200 text-red-700 text-xs font-semibold rounded-xl flex items-center gap-2">
+        <div className="p-3 bg-destructive/10 border border-destructive/20 text-destructive text-xs font-semibold rounded-xl flex items-center gap-2">
           <AlertCircle className="size-4 shrink-0" />
           <span>{errorMessage}</span>
         </div>
@@ -247,7 +247,7 @@ export function TwoFactorChallenge({
       >
         {useBackupCode ? (
           <div className="space-y-1.5">
-            <label className="text-xs font-bold text-slate-700 uppercase tracking-wider block">
+            <label className="text-xs font-bold text-foreground/80 tracking-wide block">
               Código de Recuperação (Backup)
             </label>
             <div className="relative">
@@ -261,13 +261,13 @@ export function TwoFactorChallenge({
                   setErrorMessage("");
                 }}
                 placeholder="Ex: 9842-1104"
-                className="w-full h-12 pl-10 pr-4 rounded-xl border border-slate-300 text-sm font-mono tracking-wider focus:ring-2 focus:ring-primary/20 focus:border-primary outline-hidden uppercase"
+                className="w-full h-12 pl-10 pr-4 rounded-xl border border-input text-sm font-mono tracking-wider focus:ring-2 focus:ring-primary/20 focus:border-primary outline-hidden uppercase"
               />
             </div>
           </div>
         ) : (
           <div className="space-y-3">
-            <label className="text-xs font-bold text-slate-700 uppercase tracking-wider block text-center">
+            <label className="text-xs font-bold text-foreground/80 tracking-wide block text-center">
               Código de 6 dígitos
             </label>
             <div className="flex justify-center gap-2 sm:gap-3" onPaste={handlePaste}>
@@ -354,7 +354,7 @@ export function TwoFactorChallenge({
         <button
           type="submit"
           disabled={isPending || isVerifying}
-          className="w-full h-12 bg-primary hover:bg-primary-dark text-white font-bold text-sm rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-primary/20 transition cursor-pointer disabled:opacity-75"
+          className="w-full h-12 bg-primary hover:bg-primary-hover text-white font-bold text-sm rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-primary/20 transition cursor-pointer disabled:opacity-75"
         >
           {isPending || isVerifying ? (
             <>
@@ -370,7 +370,7 @@ export function TwoFactorChallenge({
         </button>
 
         {/* OPÇÕES ADICIONAIS DE NAVEGAÇÃO */}
-        <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+        <div className="pt-2 border-t border-border/60 flex items-center justify-between text-xs">
           <button
             type="button"
             onClick={() => {
