@@ -120,7 +120,7 @@ Keep content density consistent across marketing, booking, and admin. Existing p
 
 ## Elevation & Depth
 
-The established approach combines light borders with restrained shadows for cards and controls. Dark admin surfaces rely on fine light borders because shadows have little separation on dark backgrounds. Keep elevation quiet; larger shadows are reserved for modal or floating layers. The shared Button and Card primitives currently use `shadow-xs`, so retain that treatment where building on existing components.
+Use borders to distinguish surfaces. Cards, controls, and menus rely on clear outlines, spacing, and surface color rather than drop shadows. Keep borders subtle on light surfaces and legible on the dark admin rail. Use a stronger semantic border for focus, selection, and active states.
 
 ## Shapes
 

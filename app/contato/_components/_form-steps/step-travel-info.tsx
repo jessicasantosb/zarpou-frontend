@@ -208,7 +208,7 @@ export function StepTravelInfo({ setStep }: SetStepProps) {
 
           <Button
             type="submit"
-            className="h-11 px-6 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold text-xs flex items-center gap-2 cursor-pointer shadow-md"
+            className="h-11 px-6 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold text-xs flex items-center gap-2 cursor-pointer "
           >
             <span>Revisar Solicitação</span>
             <span className="text-secondary font-bold">→</span>

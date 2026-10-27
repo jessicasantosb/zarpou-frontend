@@ -157,7 +157,7 @@ export function ConfirmDialogProvider({ children }: { children: React.ReactNode 
       <Dialog open={confirmOpen} onOpenChange={(open) => !open && handleConfirmClose(false)}>
         <DialogContent
           showCloseButton={false}
-          className="sm:max-w-md bg-card border border-border shadow-xl rounded-2xl p-6"
+          className="sm:max-w-md bg-card border border-border  rounded-2xl p-6"
         >
           <div className="flex items-start gap-4">
             {renderIcon()}
@@ -188,7 +188,7 @@ export function ConfirmDialogProvider({ children }: { children: React.ReactNode 
               type="button"
               variant={confirmOptions.variant === "destructive" ? "destructive" : "default"}
               onClick={() => handleConfirmClose(true)}
-              className={`text-xs font-bold px-4 py-2 h-auto rounded-xl shadow-xs cursor-pointer ${
+              className={`text-xs font-bold px-4 py-2 h-auto rounded-xl  cursor-pointer ${
                 confirmOptions.variant === "warning"
                   ? "bg-amber-600 hover:bg-amber-700 text-white"
                   : confirmOptions.variant === "destructive"
@@ -206,7 +206,7 @@ export function ConfirmDialogProvider({ children }: { children: React.ReactNode 
       <Dialog open={promptOpen} onOpenChange={(open) => !open && handlePromptClose(false)}>
         <DialogContent
           showCloseButton={false}
-          className="sm:max-w-md bg-card border border-border shadow-xl rounded-2xl p-6"
+          className="sm:max-w-md bg-card border border-border  rounded-2xl p-6"
         >
           <DialogHeader className="text-left space-y-1.5 p-0">
             <DialogTitle className="text-base font-bold text-slate-900 leading-tight">
@@ -247,7 +247,7 @@ export function ConfirmDialogProvider({ children }: { children: React.ReactNode 
               </Button>
               <Button
                 type="submit"
-                className="text-xs font-bold px-4 py-2 h-auto rounded-xl bg-primary hover:bg-primary/90 text-white shadow-xs cursor-pointer"
+                className="text-xs font-bold px-4 py-2 h-auto rounded-xl bg-primary hover:bg-primary/90 text-white  cursor-pointer"
               >
                 {promptOptions.confirmText || "Salvar"}
               </Button>

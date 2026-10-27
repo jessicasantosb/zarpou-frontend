@@ -40,7 +40,7 @@ export function ChangePasswordCard({
   onSubmit,
 }: ChangePasswordCardProps) {
   return (
-    <div className="bg-card rounded-3xl p-6 sm:p-8 border border-border shadow-xs space-y-6">
+    <div className="bg-card rounded-3xl p-6 sm:p-8 border border-border  space-y-6">
       <div className="flex items-center justify-between pb-4 border-b border-border/60">
         <div>
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/15 text-primary text-[11px] font-black tracking-wide mb-1">
@@ -149,7 +149,7 @@ export function ChangePasswordCard({
           <button
             type="submit"
             disabled={isChangingPassword}
-            className="px-6 py-3 bg-secondary hover:bg-secondary/90 text-primary font-black text-xs rounded-xl flex items-center gap-2 shadow-xs transition cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+            className="px-6 py-3 bg-secondary hover:bg-secondary/90 text-primary font-black text-xs rounded-xl flex items-center gap-2  transition cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {isChangingPassword ? (
               <>

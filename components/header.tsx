@@ -34,7 +34,7 @@ export function Header() {
     <header
       className={`fixed top-0 w-full z-50 px-4 py-3 transition-all duration-300 ease-in-out select-none ${
         solidHeader
-            ? "bg-white/95 backdrop-blur-md text-primary shadow-sm border-b border-slate-200"
+            ? "bg-white/95 backdrop-blur-md text-primary  border-b border-slate-200"
             : "bg-transparent text-white"
         }`}
       >
@@ -42,10 +42,11 @@ export function Header() {
           {solidHeader ? <InlineLogo /> : <InlineLogoLight />}
 
           <div className="flex items-center gap-6">
-            <nav className="hidden md:flex items-center gap-6 font-medium text-sm">
+            <nav aria-label="Navegação principal" className="hidden lg:flex items-center gap-4 font-medium text-sm">
               <Link
                 href="/destinos"
                 prefetch={true}
+                aria-current={pathname.startsWith("/destinos") ? "page" : undefined}
                 className={`transition hover:text-secondary ${
                   pathname.startsWith("/destinos") ? "text-secondary font-semibold" : ""
                 }`}
@@ -55,6 +56,7 @@ export function Header() {
               <Link
                 href="/hospedagens"
                 prefetch={true}
+                aria-current={pathname.startsWith("/hospedagens") ? "page" : undefined}
                 className={`transition hover:text-secondary ${
                   pathname.startsWith("/hospedagens") ? "text-secondary font-semibold" : ""
                 }`}
@@ -64,6 +66,7 @@ export function Header() {
               <Link
                 href="/passagens"
                 prefetch={true}
+                aria-current={pathname.startsWith("/passagens") ? "page" : undefined}
                 className={`transition hover:text-secondary ${
                   pathname.startsWith("/passagens") ? "text-secondary font-semibold" : ""
                 }`}
@@ -73,6 +76,7 @@ export function Header() {
               <Link
                 href="/minhas-viagens"
                 prefetch={true}
+                aria-current={pathname === "/minhas-viagens" ? "page" : undefined}
                 className={`transition hover:text-secondary ${
                   pathname === "/minhas-viagens" ? "text-secondary font-semibold" : ""
                 }`}
@@ -82,6 +86,7 @@ export function Header() {
               <Link
                 href="/sobre"
                 prefetch={true}
+                aria-current={pathname === "/sobre" ? "page" : undefined}
                 className={`transition hover:text-secondary ${
                   pathname === "/sobre" ? "text-secondary font-semibold" : ""
                 }`}
@@ -91,6 +96,7 @@ export function Header() {
               <Link
                 href="/contato"
                 prefetch={true}
+                aria-current={pathname === "/contato" ? "page" : undefined}
                 className={`transition hover:text-secondary ${
                   pathname === "/contato" ? "text-secondary font-semibold" : ""
                 }`}
@@ -100,7 +106,7 @@ export function Header() {
             </nav>
 
           {/* BOTÃO DE LOGIN / CONTA DO VIAJANTE */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-3">
             {mounted && isCustomerAuthenticated ? (
               <div className="flex items-center gap-2">
                 <Link
@@ -120,6 +126,7 @@ export function Header() {
                   type="button"
                   onClick={logout}
                   title="Sair da conta"
+                  aria-label="Sair da conta"
                   className={`p-1.5 rounded-full transition cursor-pointer ${
                     solidHeader ? "text-muted-foreground/70 hover:text-destructive" : "text-white/70 hover:text-white"
                   }`}
@@ -130,9 +137,9 @@ export function Header() {
             ) : (
               <Link
                 href="/login"
-                className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold transition shadow-xs ${
+                className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold transition  ${
                   solidHeader
-                    ? "bg-secondary text-primary hover:bg-secondary/90 shadow-secondary/20"
+                    ? "bg-secondary text-primary hover:bg-secondary/90 "
                     : "bg-card text-primary hover:bg-muted"
                 }`}
               >
@@ -142,7 +149,7 @@ export function Header() {
             )}
           </div>
 
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <DropdownMenu scrolled={solidHeader} />
           </div>
         </div>

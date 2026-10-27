@@ -20,7 +20,7 @@ export function TripsTabs({
           onClick={() => onTabChange("reservas")}
           className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-xs transition cursor-pointer ${
             activeTab === "reservas"
-              ? "bg-card text-primary shadow-xs"
+              ? "bg-card text-primary "
               : "text-foreground/70 hover:text-foreground"
           }`}
         >
@@ -42,7 +42,7 @@ export function TripsTabs({
           onClick={() => onTabChange("perfil")}
           className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-xs transition cursor-pointer ${
             activeTab === "perfil"
-              ? "bg-card text-primary shadow-xs"
+              ? "bg-card text-primary "
               : "text-foreground/70 hover:text-foreground"
           }`}
         >

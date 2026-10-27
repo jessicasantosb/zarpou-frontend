@@ -37,7 +37,7 @@ export function AdminsTable({
   onToggleStatus,
 }: AdminsTableProps) {
   return (
-    <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-2xs">
+    <div className="overflow-hidden rounded-2xl border border-border bg-card ">
       <div className="overflow-x-auto">
         <table className="w-full text-left text-xs text-foreground/70">
           <thead className="border-b border-border bg-muted text-[11px] font-black tracking-wide text-muted-foreground">
@@ -207,7 +207,7 @@ export function AdminsTable({
                           }
                         >
                           <span
-                            className={`pointer-events-none inline-block size-5 transform rounded-full bg-card shadow-sm ring-0 transition duration-200 ease-in-out ${
+                            className={`pointer-events-none inline-block size-5 transform rounded-full bg-card  ring-0 transition duration-200 ease-in-out ${
                               admin.isActive ? "translate-x-5" : "translate-x-0"
                             }`}
                           />

@@ -234,7 +234,7 @@ export function ImportDataButton({ resource, label }: ImportDataButtonProps) {
                 type="button"
                 onClick={onUpload}
                 disabled={uploading || !file}
-                className="inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-xs font-bold text-white shadow-xs hover:bg-primary-hover transition cursor-pointer disabled:opacity-50"
+                className="inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-xs font-bold text-white  hover:bg-primary-hover transition cursor-pointer disabled:opacity-50"
               >
                 {uploading ? (
                   <>

@@ -76,7 +76,7 @@ export function AdminLoginForm({ form, error, loading, onSubmit }: AdminLoginFor
         <button
           type="submit"
           disabled={loading}
-          className="w-full h-12 bg-primary hover:bg-primary/90 text-white font-bold text-sm rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-primary/20 transition cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed"
+          className="w-full h-12 bg-primary hover:bg-primary/90 text-white font-bold text-sm rounded-xl flex items-center justify-center gap-2   transition cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed"
         >
           {loading ? (
             <>

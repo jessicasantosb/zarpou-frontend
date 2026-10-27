@@ -206,7 +206,7 @@ export function AuthForm({
         <button
           type="submit"
           disabled={loading}
-          className="w-full h-12 bg-primary hover:bg-primary/90 text-white font-bold text-sm rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-primary/20 transition cursor-pointer disabled:opacity-50 mt-2"
+          className="w-full h-12 bg-primary hover:bg-primary/90 text-white font-bold text-sm rounded-xl flex items-center justify-center gap-2   transition cursor-pointer disabled:opacity-50 mt-2"
         >
           {loading ? (
             "Acessando..."

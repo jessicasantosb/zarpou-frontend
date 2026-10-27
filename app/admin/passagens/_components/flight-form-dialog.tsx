@@ -205,11 +205,11 @@ export function FlightFormDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
         showCloseButton={false}
-        className="grid max-h-[92vh] grid-rows-[auto_auto_minmax(0,1fr)] gap-0 overflow-hidden rounded-3xl border-border bg-card p-0 shadow-xl sm:max-w-3xl"
+        className="grid max-h-[92vh] grid-rows-[auto_auto_minmax(0,1fr)] gap-0 overflow-hidden rounded-3xl border-border bg-card p-0  sm:max-w-3xl"
       >
         <div className="flex items-center justify-between p-5 border-b border-border/60 bg-muted/70 shrink-0">
           <div className="flex items-center gap-3">
-            <div className="size-10 rounded-2xl bg-primary text-secondary flex items-center justify-center shadow-xs">
+            <div className="size-10 rounded-2xl bg-primary text-secondary flex items-center justify-center ">
               <Plane className="size-5" />
             </div>
             <div>
@@ -281,7 +281,7 @@ export function FlightFormDialog({
                 <button
                   type="submit"
                   disabled={isSaving}
-                  className="px-6 py-2.5 bg-primary hover:bg-primary/90 disabled:opacity-60 text-white font-bold text-xs rounded-xl flex items-center gap-2 shadow-xs transition cursor-pointer"
+                  className="px-6 py-2.5 bg-primary hover:bg-primary/90 disabled:opacity-60 text-white font-bold text-xs rounded-xl flex items-center gap-2  transition cursor-pointer"
                 >
                   {isSaving ? (
                     <Loader2 className="size-4 animate-spin" />

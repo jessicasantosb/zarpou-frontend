@@ -30,7 +30,7 @@ export function BookingVoucher({
   email,
 }: BookingVoucherProps) {
   return (
-    <div className="bg-card rounded-3xl p-6 md:p-8 border border-border shadow-sm space-y-6">
+    <div className="bg-card rounded-3xl p-6 md:p-8 border border-border  space-y-6">
       <div className="flex items-center justify-between pb-4 border-b border-border/60">
         <div className="flex items-center gap-3">
           <div className="relative size-10">

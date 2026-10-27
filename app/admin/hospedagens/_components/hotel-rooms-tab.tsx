@@ -60,7 +60,7 @@ export function HotelRoomsTab({ form }: HotelRoomsTabProps) {
         <button
           type="button"
           onClick={handleAddRoom}
-          className="flex shrink-0 cursor-pointer items-center gap-1.5 rounded-xl bg-primary px-4 py-2 text-xs font-bold text-white shadow-xs transition hover:bg-primary/90"
+          className="flex shrink-0 cursor-pointer items-center gap-1.5 rounded-xl bg-primary px-4 py-2 text-xs font-bold text-white  transition hover:bg-primary/90"
         >
           <Plus className="size-3.5" />
           Adicionar Quarto

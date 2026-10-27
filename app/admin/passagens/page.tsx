@@ -14,7 +14,6 @@ export default function AdminPassagensPage() {
     onOpenChange,
     onOpenNew,
     onOpenEdit,
-    onRestore,
     onDelete,
   } = usePassagens();
 
@@ -28,7 +27,7 @@ export default function AdminPassagensPage() {
 
   return (
     <div className="space-y-6">
-      <PassagensHeader onRestore={onRestore} onAddNew={onOpenNew} />
+      <PassagensHeader onAddNew={onOpenNew} />
 
       <FlightsGrid flights={flights} onEdit={onOpenEdit} onDelete={onDelete} />
 

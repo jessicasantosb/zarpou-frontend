@@ -40,7 +40,7 @@ export function HotelFormTabs({
             className={cn(
               "flex cursor-pointer items-center gap-2 whitespace-nowrap rounded-t-xl px-4 py-2.5 text-xs font-bold transition",
               activeTab === tab.id
-                ? "border-t-2 border-primary bg-card text-primary shadow-xs"
+                ? "border-t-2 border-primary bg-card text-primary "
                 : "text-muted-foreground hover:text-foreground",
             )}
           >

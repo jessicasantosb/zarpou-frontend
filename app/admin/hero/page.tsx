@@ -2,6 +2,7 @@
 
 import { Check, Loader2, Save } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Form } from "@/components/ui/form";
 import { HeroBackgroundSection } from "./_components/hero-background-section";
 import { HeroCtaSection } from "./_components/hero-cta-section";
 import { HeroHeader } from "./_components/hero-header";
@@ -35,31 +36,33 @@ export default function AdminHeroPage() {
 
       <HeroPreviewCard form={form} />
 
-      <form onSubmit={onSubmit} className="space-y-6 text-xs">
-        <HeroTextsSection form={form} onClearTexts={onClearTexts} />
-        <HeroBackgroundSection form={form} />
-        <HeroCtaSection form={form} />
+      <Form {...form}>
+        <form onSubmit={onSubmit} className="space-y-6 text-xs">
+          <HeroTextsSection form={form} onClearTexts={onClearTexts} />
+          <HeroBackgroundSection form={form} />
+          <HeroCtaSection form={form} />
 
-        <div className="flex justify-end pt-2">
-          <Button
-            type="submit"
-            disabled={isSaving}
-            className="h-auto cursor-pointer rounded-xl bg-secondary px-8 py-3.5 text-sm font-black text-primary shadow-lg shadow-secondary/30 transition hover:scale-102 hover:bg-secondary/90 active:scale-95 disabled:cursor-not-allowed disabled:opacity-60"
-          >
-            {isSaving ? (
-              <>
-                <Loader2 className="size-4 animate-spin" />
-                Salvando alterações...
-              </>
-            ) : (
-              <>
-                <Save className="size-4" />
-                Salvar Alterações do Hero
-              </>
-            )}
-          </Button>
-        </div>
-      </form>
+          <div className="flex justify-end pt-2">
+            <Button
+              type="submit"
+              disabled={isSaving}
+              className="h-auto cursor-pointer rounded-xl bg-secondary px-8 py-3.5 text-sm font-black text-primary   transition hover:scale-102 hover:bg-secondary/90 active:scale-95 disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              {isSaving ? (
+                <>
+                  <Loader2 className="size-4 animate-spin" />
+                  Salvando alterações...
+                </>
+              ) : (
+                <>
+                  <Save className="size-4" />
+                  Salvar Alterações do Hero
+                </>
+              )}
+            </Button>
+          </div>
+        </form>
+      </Form>
     </div>
   );
 }

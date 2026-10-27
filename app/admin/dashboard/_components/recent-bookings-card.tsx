@@ -21,7 +21,7 @@ const getProductName = (booking: Booking) =>
 
 export function RecentBookingsCard({ bookings }: RecentBookingsCardProps) {
   return (
-    <div className="space-y-4 rounded-3xl border border-border bg-card p-6 shadow-xs">
+    <div className="space-y-4 rounded-3xl border border-border bg-card p-6 ">
       <div className="flex items-center justify-between border-b border-border/60 pb-3">
         <div>
           <h2 className="text-lg font-bold text-foreground">

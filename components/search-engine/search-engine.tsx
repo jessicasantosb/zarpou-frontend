@@ -2,11 +2,40 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Hotel, Plane, Luggage, Search } from "lucide-react";
+import { Hotel, Plane, Luggage, Search, LoaderCircle } from "lucide-react";
 import { CitySelector } from "./city-selector";
 import { DateRangeInput } from "./date-range-input";
 import { GuestsPopover } from "./guests-popover";
 import { useSearchStore } from "@/stores/search-store";
+
+function SearchSubmitButton({
+  isSearching,
+  label,
+}: {
+  isSearching: boolean;
+  label: string;
+}) {
+  return (
+    <button
+      type="submit"
+      disabled={isSearching}
+      aria-busy={isSearching}
+      className="w-full sm:w-auto min-h-11 px-6 border border-secondary-hover bg-secondary hover:bg-secondary/90 disabled:opacity-75 text-primary font-bold rounded-lg inline-flex items-center justify-center gap-2 transition-colors cursor-pointer text-sm disabled:pointer-events-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+    >
+      {isSearching ? (
+        <>
+          <LoaderCircle aria-hidden="true" className="size-4 animate-spin" />
+          <span role="status" aria-live="polite">Buscando {label.toLocaleLowerCase("pt-BR")}…</span>
+        </>
+      ) : (
+        <>
+          <Search aria-hidden="true" className="size-4" />
+          <span>Buscar {label}</span>
+        </>
+      )}
+    </button>
+  );
+}
 
 export function SearchEngine() {
   const router = useRouter();
@@ -82,16 +111,17 @@ export function SearchEngine() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto -mt-16 md:-mt-20 relative z-40 px-4 overflow-visible" style={{ overflow: "visible" }}>
-      <div className="bg-card rounded-3xl shadow-xl border border-border/60 relative overflow-visible" style={{ overflow: "visible" }}>
+    <section aria-label="Busca de viagens" className="w-full max-w-5xl mx-auto -mt-16 md:-mt-20 relative z-40 px-4 overflow-visible" style={{ overflow: "visible" }}>
+      <div className="bg-card rounded-xl border border-border relative overflow-visible" style={{ overflow: "visible" }}>
         {/* Abas Superiores de Pesquisa */}
-        <div className="flex border-b border-border/60 overflow-x-auto bg-muted/70 p-2 gap-2 scrollbar-none rounded-t-3xl">
+        <div className="flex border-b border-border overflow-x-auto bg-muted/70 p-2 gap-2 scrollbar-none rounded-t-xl" role="group" aria-label="Tipo de viagem">
           <button
             type="button"
+            aria-pressed={activeTab === "hospedagens"}
             onClick={() => setActiveTab("hospedagens")}
-            className={`flex items-center gap-2.5 px-5 py-3 rounded-2xl font-semibold text-sm transition whitespace-nowrap cursor-pointer ${
+            className={`flex items-center gap-2.5 px-5 py-3 rounded-lg font-semibold text-sm transition-colors whitespace-nowrap cursor-pointer ${
               activeTab === "hospedagens"
-                ? "bg-primary text-white shadow-md shadow-primary/20"
+                ? "bg-primary text-white"
                 : "text-slate-600 hover:text-primary hover:bg-card"
             }`}
           >
@@ -101,10 +131,11 @@ export function SearchEngine() {
 
           <button
             type="button"
+            aria-pressed={activeTab === "passagens"}
             onClick={() => setActiveTab("passagens")}
-            className={`flex items-center gap-2.5 px-5 py-3 rounded-2xl font-semibold text-sm transition whitespace-nowrap cursor-pointer ${
+            className={`flex items-center gap-2.5 px-5 py-3 rounded-lg font-semibold text-sm transition-colors whitespace-nowrap cursor-pointer ${
               activeTab === "passagens"
-                ? "bg-primary text-white shadow-md shadow-primary/20"
+                ? "bg-primary text-white"
                 : "text-slate-600 hover:text-primary hover:bg-card"
             }`}
           >
@@ -114,10 +145,11 @@ export function SearchEngine() {
 
           <button
             type="button"
+            aria-pressed={activeTab === "pacotes"}
             onClick={() => setActiveTab("pacotes")}
-            className={`flex items-center gap-2.5 px-5 py-3 rounded-2xl font-semibold text-sm transition whitespace-nowrap cursor-pointer ${
+            className={`flex items-center gap-2.5 px-5 py-3 rounded-lg font-semibold text-sm transition-colors whitespace-nowrap cursor-pointer ${
               activeTab === "pacotes"
-                ? "bg-primary text-white shadow-md shadow-primary/20"
+                ? "bg-primary text-white"
                 : "text-slate-600 hover:text-primary hover:bg-card"
             }`}
           >
@@ -181,23 +213,7 @@ export function SearchEngine() {
                   </span>
                 </div>
 
-                <button
-                  type="submit"
-                  disabled={isSearching}
-                  className="w-full sm:w-auto h-12 px-8 bg-secondary hover:bg-secondary/90 disabled:opacity-75 text-primary font-bold rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-secondary/30 transition transform hover:-translate-y-0.5 cursor-pointer text-base disabled:pointer-events-none"
-                >
-                  {isSearching ? (
-                    <>
-                      <div className="size-5 border-2 border-primary border-t-transparent rounded-full animate-spin" />
-                      <span>Buscando Hospedagens...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Search className="size-5" />
-                      <span>Buscar Hospedagens</span>
-                    </>
-                  )}
-                </button>
+                <SearchSubmitButton isSearching={isSearching} label="Hospedagens" />
               </div>
             </form>
           )}
@@ -279,23 +295,7 @@ export function SearchEngine() {
                   Companhias parceiras: LATAM, Gol, Azul, TAP, Air France, American Airlines.
                 </div>
 
-                <button
-                  type="submit"
-                  disabled={isSearching}
-                  className="w-full sm:w-auto h-12 px-8 bg-secondary hover:bg-secondary/90 disabled:opacity-75 text-primary font-bold rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-secondary/30 transition transform hover:-translate-y-0.5 cursor-pointer text-base disabled:pointer-events-none"
-                >
-                  {isSearching ? (
-                    <>
-                      <div className="size-5 border-2 border-primary border-t-transparent rounded-full animate-spin" />
-                      <span>Buscando Voos...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Search className="size-5" />
-                      <span>Buscar Voos</span>
-                    </>
-                  )}
-                </button>
+                <SearchSubmitButton isSearching={isSearching} label="Voos" />
               </div>
             </form>
           )}
@@ -352,28 +352,12 @@ export function SearchEngine() {
                   🔥 Economize até 30% reservando voo + hotel juntos no mesmo pacote.
                 </div>
 
-                <button
-                  type="submit"
-                  disabled={isSearching}
-                  className="w-full sm:w-auto h-12 px-8 bg-secondary hover:bg-secondary/90 disabled:opacity-75 text-primary font-bold rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-secondary/30 transition transform hover:-translate-y-0.5 cursor-pointer text-base disabled:pointer-events-none"
-                >
-                  {isSearching ? (
-                    <>
-                      <div className="size-5 border-2 border-primary border-t-transparent rounded-full animate-spin" />
-                      <span>Buscando Pacotes...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Search className="size-5" />
-                      <span>Buscar Pacotes</span>
-                    </>
-                  )}
-                </button>
+                <SearchSubmitButton isSearching={isSearching} label="Pacotes" />
               </div>
             </form>
           )}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

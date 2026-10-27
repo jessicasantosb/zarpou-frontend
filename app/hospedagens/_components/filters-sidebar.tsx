@@ -53,7 +53,7 @@ export function FiltersSidebar({
 }: FiltersSidebarProps) {
   return (
     <aside className="lg:col-span-3 space-y-6">
-      <div className="bg-card rounded-2xl p-5 border border-border shadow-xs space-y-6 sticky top-24">
+      <div className="bg-card rounded-2xl p-5 border border-border  space-y-6 sticky top-24">
         <div className="pb-3 border-b border-border/60 flex flex-col gap-2">
           <div className="flex items-center gap-2 font-bold text-primary text-base">
             <SlidersHorizontal className="size-4 text-secondary shrink-0" />
@@ -118,7 +118,7 @@ export function FiltersSidebar({
                   type="button"
                   disabled={adults <= 1}
                   onClick={onAdultsDecrease}
-                  className="size-6 rounded-md bg-card border border-input flex items-center justify-center text-foreground/80 font-bold hover:bg-muted disabled:opacity-40 disabled:cursor-not-allowed text-xs cursor-pointer shadow-xs"
+                  className="size-6 rounded-md bg-card border border-input flex items-center justify-center text-foreground/80 font-bold hover:bg-muted disabled:opacity-40 disabled:cursor-not-allowed text-xs cursor-pointer "
                 >
                   -
                 </button>
@@ -128,7 +128,7 @@ export function FiltersSidebar({
                 <button
                   type="button"
                   onClick={onAdultsIncrease}
-                  className="size-6 rounded-md bg-card border border-input flex items-center justify-center text-foreground/80 font-bold hover:bg-muted text-xs cursor-pointer shadow-xs"
+                  className="size-6 rounded-md bg-card border border-input flex items-center justify-center text-foreground/80 font-bold hover:bg-muted text-xs cursor-pointer "
                 >
                   +
                 </button>
@@ -144,7 +144,7 @@ export function FiltersSidebar({
                   type="button"
                   disabled={rooms <= 1}
                   onClick={onRoomsDecrease}
-                  className="size-6 rounded-md bg-card border border-input flex items-center justify-center text-foreground/80 font-bold hover:bg-muted disabled:opacity-40 disabled:cursor-not-allowed text-xs cursor-pointer shadow-xs"
+                  className="size-6 rounded-md bg-card border border-input flex items-center justify-center text-foreground/80 font-bold hover:bg-muted disabled:opacity-40 disabled:cursor-not-allowed text-xs cursor-pointer "
                 >
                   -
                 </button>
@@ -155,7 +155,7 @@ export function FiltersSidebar({
                   type="button"
                   disabled={rooms >= adults || rooms >= 5}
                   onClick={onRoomsIncrease}
-                  className="size-6 rounded-md bg-card border border-input flex items-center justify-center text-foreground/80 font-bold hover:bg-muted disabled:opacity-40 disabled:cursor-not-allowed text-xs cursor-pointer shadow-xs"
+                  className="size-6 rounded-md bg-card border border-input flex items-center justify-center text-foreground/80 font-bold hover:bg-muted disabled:opacity-40 disabled:cursor-not-allowed text-xs cursor-pointer "
                   title={
                     rooms >= adults
                       ? "O número de quartos não pode ser maior que o de hóspedes"

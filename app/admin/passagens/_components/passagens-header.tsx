@@ -1,12 +1,11 @@
-import { Plane, Plus, RotateCcw } from "lucide-react";
+import { Plane, Plus } from "lucide-react";
 import { ImportDataButton } from "@/app/admin/_components/import-data-dialog";
 
 interface PassagensHeaderProps {
-  onRestore: () => void;
   onAddNew: () => void;
 }
 
-export function PassagensHeader({ onRestore, onAddNew }: PassagensHeaderProps) {
+export function PassagensHeader({ onAddNew }: PassagensHeaderProps) {
   return (
     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
@@ -26,17 +25,8 @@ export function PassagensHeader({ onRestore, onAddNew }: PassagensHeaderProps) {
 
         <button
           type="button"
-          onClick={onRestore}
-          className="px-4 py-2 text-xs font-semibold text-foreground/70 bg-card border border-border rounded-xl hover:bg-muted transition flex items-center gap-1.5 cursor-pointer shadow-2xs"
-        >
-          <RotateCcw className="size-3.5" />
-          Restaurar Padrões
-        </button>
-
-        <button
-          type="button"
           onClick={onAddNew}
-          className="px-5 py-2.5 bg-primary hover:bg-primary/90 text-white font-bold text-xs rounded-xl flex items-center gap-2 shadow-xs transition cursor-pointer"
+          className="px-5 py-2.5 bg-primary hover:bg-primary/90 text-white font-bold text-xs rounded-xl flex items-center gap-2  transition cursor-pointer"
         >
           <Plus className="size-4" />
           Adicionar Novo Voo

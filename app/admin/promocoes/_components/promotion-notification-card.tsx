@@ -41,7 +41,7 @@ export function PromotionNotificationCard({
     <div className="p-4 bg-emerald-50/70 border border-emerald-200 rounded-2xl space-y-2">
       <div className="flex items-center justify-between gap-3">
         <div className="flex items-center gap-2.5">
-          <div className="size-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-xs">
+          <div className="size-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 ">
             <BellRing className="size-4.5" />
           </div>
           <div>

@@ -65,7 +65,7 @@ export function CitySelector({
     <div className="relative w-full" ref={containerRef}>
       <div
         onClick={() => setIsOpen(true)}
-        className="w-full h-14 bg-card border border-input hover:border-primary/70 rounded-xl px-4 flex items-center gap-3 transition shadow-xs focus-within:ring-2 focus-within:ring-primary/20 cursor-text"
+        className="w-full h-14 bg-card border border-input hover:border-primary/70 rounded-xl px-4 flex items-center gap-3 transition  focus-within:ring-2 focus-within:ring-primary/20 cursor-text"
       >
         <MapPin className="size-5 text-primary shrink-0" />
         <div className="flex flex-col w-full min-w-0">
@@ -88,7 +88,7 @@ export function CitySelector({
       </div>
 
       {isOpen && (
-        <div className="absolute top-full left-0 mt-2 w-full min-w-[280px] bg-white border border-slate-200 rounded-2xl shadow-xl py-2 z-50 max-h-72 overflow-y-auto animate-in fade-in zoom-in-95 duration-150">
+        <div className="absolute top-full left-0 mt-2 w-full min-w-[280px] bg-white border border-slate-200 rounded-2xl  py-2 z-50 max-h-72 overflow-y-auto animate-in fade-in zoom-in-95 duration-150">
           <div className="px-3 py-1.5 text-xs font-semibold text-muted-foreground tracking-wide flex items-center gap-1.5">
             <Search className="size-3.5" />
             Destinos Populares

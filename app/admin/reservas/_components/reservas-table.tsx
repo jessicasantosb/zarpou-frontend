@@ -9,7 +9,7 @@ interface ReservasTableProps {
 
 export function ReservasTable({ bookings }: ReservasTableProps) {
   return (
-    <div className="bg-card rounded-3xl p-6 border border-border shadow-xs">
+    <div className="bg-card rounded-3xl p-6 border border-border ">
       {bookings.length === 0 ? (
         <div className="py-16 text-center space-y-3">
           <CalendarCheck className="size-12 text-muted-foreground/60 mx-auto" />
@@ -98,7 +98,7 @@ export function ReservasTable({ bookings }: ReservasTableProps) {
                     <Link
                       href={`/reserva/confirmada/${booking.id}`}
                       target="_blank"
-                      className="px-3 py-1.5 rounded-lg bg-muted hover:bg-border text-foreground/80 font-bold inline-flex items-center gap-1.5 transition shadow-2xs"
+                      className="px-3 py-1.5 rounded-lg bg-muted hover:bg-border text-foreground/80 font-bold inline-flex items-center gap-1.5 transition "
                     >
                       <Eye className="size-3.5" />
                       Voucher

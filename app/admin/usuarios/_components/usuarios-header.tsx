@@ -1,11 +1,10 @@
-import { Plus, RotateCcw, Users } from "lucide-react";
+import { Plus, Users } from "lucide-react";
 
 interface UsuariosHeaderProps {
-  onReset: () => void;
   onCreate: () => void;
 }
 
-export function UsuariosHeader({ onReset, onCreate }: UsuariosHeaderProps) {
+export function UsuariosHeader({ onCreate }: UsuariosHeaderProps) {
   return (
     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
@@ -25,18 +24,8 @@ export function UsuariosHeader({ onReset, onCreate }: UsuariosHeaderProps) {
       <div className="flex items-center gap-2.5 self-start sm:self-auto">
         <button
           type="button"
-          onClick={onReset}
-          className="px-3.5 py-2 text-xs font-semibold text-foreground/70 bg-card border border-border rounded-xl hover:bg-muted transition flex items-center gap-1.5 shadow-2xs cursor-pointer"
-          title="Restaura a lista inicial de clientes padrão"
-        >
-          <RotateCcw className="size-3.5" />
-          Restaurar Padrão
-        </button>
-
-        <button
-          type="button"
           onClick={onCreate}
-          className="px-4 py-2 text-xs font-bold text-white bg-primary rounded-xl hover:bg-primary/90 transition flex items-center gap-1.5 shadow-sm cursor-pointer"
+          className="px-4 py-2 text-xs font-bold text-white bg-primary rounded-xl hover:bg-primary/90 transition flex items-center gap-1.5  cursor-pointer"
         >
           <Plus className="size-4 text-secondary" />
           Novo Cliente

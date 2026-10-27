@@ -38,7 +38,7 @@ export function LoadingScreen({
 
           {/* Círculo central com logo/ícone */}
           <div
-            className={`relative size-14 sm:size-16 rounded-full flex items-center justify-center shadow-lg transition-transform ${
+            className={`relative size-14 sm:size-16 rounded-full flex items-center justify-center  transition-transform ${
               isDark ? "bg-surface-dark border border-white/10" : "bg-card border border-border/60"
             }`}
           >
@@ -97,7 +97,7 @@ export function LoadingScreen({
 // SKELETON REUTILIZÁVEL PARA CARDS DE PRODUTOS
 export function ProductCardSkeleton() {
   return (
-    <div className="bg-white rounded-3xl p-4 border border-slate-200 shadow-sm animate-pulse space-y-4">
+    <div className="bg-white rounded-3xl p-4 border border-slate-200  animate-pulse space-y-4">
       <div className="w-full h-48 bg-slate-200 rounded-2xl" />
       <div className="space-y-2">
         <div className="h-4 bg-slate-200 rounded w-3/4" />

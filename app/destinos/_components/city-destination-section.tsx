@@ -28,7 +28,7 @@ export function CityDestinationSection({
   return (
     <section
       id={`cidade-${dest.id}`}
-      className="bg-card rounded-3xl border border-border shadow-sm overflow-hidden"
+      className="bg-card rounded-3xl border border-border  overflow-hidden"
     >
       <div className="relative min-h-[290px] md:min-h-[310px] w-full overflow-hidden p-6 md:p-8 flex flex-col justify-between">
         <Image
@@ -45,7 +45,7 @@ export function CityDestinationSection({
 
         <div className="relative z-10 flex items-start justify-between gap-3">
           <div className="flex flex-wrap items-center gap-2">
-            <div className="bg-card/95 backdrop-blur-xs text-foreground text-xs font-black px-3 py-1.5 rounded-full uppercase shadow-md flex items-center gap-1.5">
+            <div className="bg-card/95 backdrop-blur-xs text-foreground text-xs font-black px-3 py-1.5 rounded-full uppercase  flex items-center gap-1.5">
               <span>{dest.flag}</span>
               <span>{dest.country}</span>
             </div>
@@ -57,7 +57,7 @@ export function CityDestinationSection({
             )}
           </div>
 
-          <div className="bg-secondary text-primary text-[10px] font-black px-3 py-1 rounded-md tracking-wide shadow-md">
+          <div className="bg-secondary text-primary text-[10px] font-black px-3 py-1 rounded-md tracking-wide ">
             {dest.tag || "Destino Recomendado"}
           </div>
         </div>

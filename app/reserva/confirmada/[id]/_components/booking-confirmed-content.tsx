@@ -24,7 +24,7 @@ export function BookingConfirmedContent({
     return (
       <div className="min-h-screen bg-muted pt-32 pb-16 flex items-center justify-center">
         <Container>
-          <div className="max-w-md mx-auto bg-card rounded-3xl p-8 text-center border border-border shadow-sm space-y-4">
+          <div className="max-w-md mx-auto bg-card rounded-3xl p-8 text-center border border-border  space-y-4">
             <h1 className="text-xl font-bold text-foreground">
               Reserva não encontrada
             </h1>

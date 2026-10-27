@@ -22,7 +22,7 @@ export default function AdminLoginPage() {
 
   return (
     <div className="min-h-screen bg-surface-dark flex items-center justify-center p-4">
-      <div className="w-full max-w-md bg-card rounded-3xl p-8 shadow-xl border border-white/10 space-y-6">
+      <div className="w-full max-w-md bg-card rounded-3xl p-8  border border-white/10 space-y-6">
         {isVerifyingOtp ? (
           <VerifyingOtpPanel />
         ) : pendingTwoFactor ? (

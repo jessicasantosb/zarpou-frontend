@@ -138,7 +138,7 @@ export function AdminFormDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
         showCloseButton={false}
-        className="grid max-h-[92vh] grid-rows-[auto_minmax(0,1fr)] gap-0 overflow-hidden rounded-3xl border-border bg-card p-0 shadow-xl sm:max-w-lg"
+        className="grid max-h-[92vh] grid-rows-[auto_minmax(0,1fr)] gap-0 overflow-hidden rounded-3xl border-border bg-card p-0  sm:max-w-lg"
       >
         <div className="flex shrink-0 items-center justify-between border-b border-border/60 p-6">
           <div className="flex items-center gap-2">
@@ -252,7 +252,7 @@ export function AdminFormDialog({
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="h-auto rounded-xl bg-primary px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-primary/90"
+                className="h-auto rounded-xl bg-primary px-4 py-2 text-xs font-bold text-white  hover:bg-primary/90"
               >
                 {isSubmitting
                   ? "Salvando..."

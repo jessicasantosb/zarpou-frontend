@@ -10,7 +10,7 @@ export function CityPackageCard({ pkg, onBook }: CityPackageCardProps) {
   const installmentValue = (pkg.price / pkg.installments).toFixed(2);
 
   return (
-    <div className="bg-card rounded-2xl p-6 border border-border shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group space-y-5">
+    <div className="bg-card rounded-2xl p-6 border border-border   transition-all flex flex-col justify-between group space-y-5">
       <div className="space-y-4">
         <div className="flex items-start justify-between gap-3">
           <div>
@@ -22,7 +22,7 @@ export function CityPackageCard({ pkg, onBook }: CityPackageCardProps) {
             </h4>
           </div>
 
-          <div className="bg-emerald-600 text-white text-[10px] font-black px-2 py-1 rounded-md shadow-2xs flex items-center gap-1 shrink-0">
+          <div className="bg-emerald-600 text-white text-[10px] font-black px-2 py-1 rounded-md  flex items-center gap-1 shrink-0">
             <Sparkles className="size-2.5" />
             <span>{pkg.discountPercent}% OFF</span>
           </div>
@@ -66,7 +66,7 @@ export function CityPackageCard({ pkg, onBook }: CityPackageCardProps) {
         <button
           type="button"
           onClick={() => onBook(pkg)}
-          className="px-5 py-3 bg-secondary hover:bg-secondary/90 text-primary font-black text-xs rounded-xl flex items-center gap-2 shadow-md shadow-secondary/20 transition-transform group-hover:scale-102 cursor-pointer shrink-0"
+          className="px-5 py-3 bg-secondary hover:bg-secondary/90 text-primary font-black text-xs rounded-xl flex items-center gap-2   transition-transform group-hover:scale-102 cursor-pointer shrink-0"
         >
           <span>Reservar Pacote</span>
           <ArrowRight className="size-3.5" />

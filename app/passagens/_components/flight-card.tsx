@@ -84,7 +84,7 @@ export function FlightCard({
   const installmentValue = (totalPrice / flight.maxInstallments).toFixed(2);
 
   return (
-    <div className="bg-card rounded-2xl border border-border p-5 md:p-6 shadow-xs hover:shadow-xl transition-all duration-300">
+    <div className="bg-card rounded-2xl border border-border p-5 md:p-6   transition-all duration-300">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
         <div className="lg:col-span-8 space-y-4">
           <div className="flex flex-wrap items-center justify-between gap-2 pb-2.5 border-b border-border/60">
@@ -176,7 +176,7 @@ export function FlightCard({
           <button
             type="button"
             onClick={() => onSelect(flight)}
-            className="mt-4 w-full py-3 bg-secondary hover:bg-secondary/90 text-primary font-bold text-sm rounded-xl flex items-center justify-center gap-2 shadow-md shadow-secondary/20 transition transform hover:scale-102 cursor-pointer"
+            className="mt-4 w-full py-3 bg-secondary hover:bg-secondary/90 text-primary font-bold text-sm rounded-xl flex items-center justify-center gap-2   transition transform hover:scale-102 cursor-pointer"
           >
             Comprar Voo
             <ArrowRight className="size-4" />

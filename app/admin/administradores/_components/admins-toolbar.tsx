@@ -18,7 +18,7 @@ export function AdminsToolbar({
   onStatusFilterChange,
 }: AdminsToolbarProps) {
   return (
-    <div className="flex flex-col items-stretch justify-between gap-3 rounded-2xl border border-border bg-card p-4 shadow-2xs sm:flex-row sm:items-center">
+    <div className="flex flex-col items-stretch justify-between gap-3 rounded-2xl border border-border bg-card p-4  sm:flex-row sm:items-center">
       <div className="relative flex-1">
         <Search className="absolute left-3.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
         <input

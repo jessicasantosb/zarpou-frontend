@@ -203,7 +203,7 @@ export function FlightDetailsTab({ form }: FlightDetailsTabProps) {
                 className={cn(
                   "px-2.5 py-1 rounded-lg text-xs font-semibold transition cursor-pointer flex items-center gap-1",
                   active
-                    ? "bg-primary text-white shadow-2xs"
+                    ? "bg-primary text-white "
                     : "bg-muted text-foreground/70 hover:bg-border",
                 )}
               >

@@ -167,7 +167,7 @@ export function HotelFormDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
         showCloseButton={false}
-        className="grid max-h-[92vh] grid-rows-[auto_auto_minmax(0,1fr)_auto] gap-0 overflow-hidden rounded-3xl border-border bg-card p-0 shadow-xl sm:max-w-3xl"
+        className="grid max-h-[92vh] grid-rows-[auto_auto_minmax(0,1fr)_auto] gap-0 overflow-hidden rounded-3xl border-border bg-card p-0  sm:max-w-3xl"
       >
         <div className="flex shrink-0 items-center justify-between border-b border-border/60 bg-card p-5 pb-3">
           <div>
@@ -228,7 +228,7 @@ export function HotelFormDialog({
                 <Button
                   type="submit"
                   disabled={isSaving}
-                  className="h-auto cursor-pointer rounded-xl bg-primary px-6 py-2.5 text-xs font-bold text-white shadow-xs hover:bg-primary/90 disabled:opacity-60"
+                  className="h-auto cursor-pointer rounded-xl bg-primary px-6 py-2.5 text-xs font-bold text-white  hover:bg-primary/90 disabled:opacity-60"
                 >
                   {isSaving ? (
                     <Loader2 className="size-4 animate-spin" />

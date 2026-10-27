@@ -72,7 +72,7 @@ export function ContactForm() {
       ref={stepContainerRef}
       className="w-full scroll-mt-24"
     >
-      <div className="bg-card rounded-3xl p-6 sm:p-8 md:p-10 shadow-xl border border-border/80">
+      <div className="bg-card rounded-3xl p-6 sm:p-8 md:p-10  border border-border/80">
         <div className="border-b border-border/60 pb-6 mb-6">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/15 text-primary text-xs font-bold tracking-wide mb-2">
             <Sparkles className="size-3 text-secondary fill-secondary" />
@@ -110,7 +110,7 @@ export function ContactForm() {
                     <span
                       className={`size-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${
                         isCurrent
-                          ? "bg-primary text-white shadow-xs"
+                          ? "bg-primary text-white "
                           : isDone
                             ? "bg-emerald-500 text-white"
                             : "bg-muted text-muted-foreground"

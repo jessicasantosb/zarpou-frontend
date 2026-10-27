@@ -27,7 +27,7 @@ export function ProfileInfoCard({
   onSubmit,
 }: ProfileInfoCardProps) {
   return (
-    <div className="bg-card rounded-3xl p-6 sm:p-8 border border-border shadow-xs space-y-6">
+    <div className="bg-card rounded-3xl p-6 sm:p-8 border border-border  space-y-6">
       <div className="flex items-center justify-between pb-4 border-b border-border/60">
         <div>
           <h3 className="text-lg font-bold text-foreground">
@@ -144,7 +144,7 @@ export function ProfileInfoCard({
           <button
             type="submit"
             disabled={isSavingProfile}
-            className="px-6 py-3 bg-primary hover:bg-primary/90 text-white font-bold text-xs rounded-xl flex items-center gap-2 shadow-xs transition cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+            className="px-6 py-3 bg-primary hover:bg-primary/90 text-white font-bold text-xs rounded-xl flex items-center gap-2  transition cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {isSavingProfile ? (
               <>

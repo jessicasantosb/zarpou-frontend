@@ -32,7 +32,7 @@ export function AboutStats() {
 
   return (
     <section className="max-w-6xl mx-auto px-4 py-8">
-      <div className="bg-gradient-to-r from-primary via-primary-light to-primary rounded-3xl p-8 sm:p-12 text-white shadow-xl border border-white/10">
+      <div className="bg-gradient-to-r from-primary via-primary-light to-primary rounded-3xl p-8 sm:p-12 text-white  border border-white/10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
           {stats.map((stat, idx) => {
             const Icon = stat.icon;

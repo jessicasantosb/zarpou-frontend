@@ -29,7 +29,7 @@ export function PromoCardItem({ promo }: PromoCardItemProps) {
 
   return (
     <>
-      <article className="group relative h-[420px] w-full rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 border border-border flex flex-col justify-between p-7 bg-surface-dark">
+      <article className="group relative h-[420px] w-full rounded-3xl overflow-hidden   transition-all duration-500 border border-border flex flex-col justify-between p-7 bg-surface-dark">
         <Image
           src={promo.imageUrl}
           alt={promo.title}
@@ -42,14 +42,14 @@ export function PromoCardItem({ promo }: PromoCardItemProps) {
 
         <div className="relative z-10 flex items-start justify-between gap-3">
           {promo.badge && (
-            <div className="bg-secondary text-primary text-[10px] font-black px-3 py-1.5 rounded-full tracking-wide shadow-md flex items-center gap-1.5 backdrop-blur-xs">
+            <div className="bg-secondary text-primary text-[10px] font-black px-3 py-1.5 rounded-full tracking-wide  flex items-center gap-1.5 backdrop-blur-xs">
               <Zap className="size-3 fill-primary text-primary" />
               <span>{promo.badge}</span>
             </div>
           )}
 
           {promo.discountText && (
-            <div className="bg-emerald-600/95 text-white text-[11px] font-black px-3 py-1.5 rounded-xl shadow-md flex items-center gap-1.5 backdrop-blur-xs border border-emerald-400/30">
+            <div className="bg-emerald-600/95 text-white text-[11px] font-black px-3 py-1.5 rounded-xl  flex items-center gap-1.5 backdrop-blur-xs border border-emerald-400/30">
               <Tag className="size-3" />
               <span>{promo.discountText}</span>
             </div>
@@ -76,7 +76,7 @@ export function PromoCardItem({ promo }: PromoCardItemProps) {
               type="button"
               onClick={handleAproveitarOferta}
               disabled={isLoadingOffer}
-              className="w-full sm:w-auto px-5 py-3 bg-secondary hover:bg-secondary/90 text-primary font-black text-xs rounded-xl flex items-center justify-center gap-2.5 shadow-lg shadow-secondary/30 transition-transform group-hover:translate-x-1 cursor-pointer disabled:opacity-80"
+              className="w-full sm:w-auto px-5 py-3 bg-secondary hover:bg-secondary/90 text-primary font-black text-xs rounded-xl flex items-center justify-center gap-2.5   transition-transform group-hover:translate-x-1 cursor-pointer disabled:opacity-80"
             >
               {isLoadingOffer ? (
                 <>

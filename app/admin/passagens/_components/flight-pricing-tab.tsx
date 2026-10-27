@@ -100,7 +100,7 @@ export function FlightPricingTab({ form }: FlightPricingTabProps) {
           </p>
         </div>
 
-        <label className="flex items-center gap-2 cursor-pointer text-xs font-bold text-foreground/80 bg-card px-3 py-1.5 rounded-xl border border-emerald-200 shadow-2xs">
+        <label className="flex items-center gap-2 cursor-pointer text-xs font-bold text-foreground/80 bg-card px-3 py-1.5 rounded-xl border border-emerald-200 ">
           <input
             type="checkbox"
             checked={featured}

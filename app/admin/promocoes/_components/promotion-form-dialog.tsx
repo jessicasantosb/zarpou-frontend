@@ -201,7 +201,7 @@ export function PromotionFormDialog({
       <DialogContent
         showCloseButton={false}
         aria-describedby={undefined}
-        className="grid max-h-[90vh] grid-rows-[auto_minmax(0,1fr)] gap-0 overflow-hidden rounded-3xl border-border bg-card p-0 shadow-xl sm:max-w-xl"
+        className="grid max-h-[90vh] grid-rows-[auto_minmax(0,1fr)] gap-0 overflow-hidden rounded-3xl border-border bg-card p-0  sm:max-w-xl"
       >
         <div className="flex items-center justify-between p-6 pb-4 border-b border-border/60 shrink-0 bg-card">
           <DialogTitle className="flex items-center gap-2 text-lg font-bold text-foreground">
@@ -355,7 +355,7 @@ export function PromotionFormDialog({
 
               <button
                 type="submit"
-                className="px-6 py-2.5 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition shadow-sm cursor-pointer"
+                className="px-6 py-2.5 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition  cursor-pointer"
               >
                 {promo ? "Salvar Alterações" : "Publicar Promoção"}
               </button>

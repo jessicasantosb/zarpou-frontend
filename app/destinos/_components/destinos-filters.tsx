@@ -28,7 +28,7 @@ export function DestinosFilters({
   onCityFilterChange,
 }: DestinosFiltersProps) {
   return (
-    <div className="bg-card rounded-3xl p-6 border border-border shadow-xs mb-10 space-y-5">
+    <div className="bg-card rounded-3xl p-6 border border-border  mb-10 space-y-5">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="relative flex-1 max-w-md">
           <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
@@ -59,7 +59,7 @@ export function DestinosFilters({
               className={cn(
                 "px-3.5 py-2 rounded-xl text-xs font-bold transition cursor-pointer shrink-0",
                 activeCategory === option.value
-                  ? "bg-primary text-white shadow-xs"
+                  ? "bg-primary text-white "
                   : "bg-muted text-foreground/70 hover:bg-muted",
               )}
             >
@@ -81,7 +81,7 @@ export function DestinosFilters({
               className={cn(
                 "px-3 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer shrink-0",
                 !selectedCityFilter
-                  ? "bg-secondary text-primary shadow-xs"
+                  ? "bg-secondary text-primary "
                   : "bg-muted text-foreground/70 hover:bg-muted",
               )}
             >
@@ -102,7 +102,7 @@ export function DestinosFilters({
                   className={cn(
                     "px-3 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer flex items-center gap-1.5 shrink-0",
                     isSelected
-                      ? "bg-secondary text-primary shadow-xs"
+                      ? "bg-secondary text-primary "
                       : "bg-muted text-foreground/70 hover:bg-muted",
                   )}
                 >

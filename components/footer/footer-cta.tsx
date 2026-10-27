@@ -53,7 +53,7 @@ export function FooterCta() {
             <Link
               href={`https://wa.me/${whatsappNum}?text=${defaultMsg}`}
               target="_blank"
-              className="w-full sm:w-auto px-8 py-4 bg-secondary hover:bg-secondary/90 text-primary font-black text-sm rounded-2xl flex items-center justify-center gap-2.5 shadow-lg shadow-secondary/25 transition transform hover:scale-102 cursor-pointer"
+              className="w-full sm:w-auto px-8 py-4 bg-secondary hover:bg-secondary/90 text-primary font-black text-sm rounded-2xl flex items-center justify-center gap-2.5   transition transform hover:scale-102 cursor-pointer"
             >
               <MessageCircle className="size-5" />
               <span>Falar com Especialista no WhatsApp</span>
@@ -61,7 +61,7 @@ export function FooterCta() {
 
             <Link
               href="/hospedagens"
-              className="w-full sm:w-auto px-7 py-4 bg-primary hover:bg-primary/90 text-white font-bold text-sm rounded-2xl flex items-center justify-center gap-2 shadow-sm transition transform hover:scale-102 cursor-pointer"
+              className="w-full sm:w-auto px-7 py-4 bg-primary hover:bg-primary/90 text-white font-bold text-sm rounded-2xl flex items-center justify-center gap-2  transition transform hover:scale-102 cursor-pointer"
             >
               <Search className="size-4 text-secondary" />
               <span>Explorar Hospedagens</span>

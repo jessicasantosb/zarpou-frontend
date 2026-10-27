@@ -63,7 +63,7 @@ export function TopDestination() {
               onClick={() => onCategoryChange(option.value)}
               className={`px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition cursor-pointer ${
                 selectedCategory === option.value
-                  ? "bg-primary text-white shadow-xs font-bold"
+                  ? "bg-primary text-white  font-bold"
                   : "bg-muted text-foreground/70 hover:bg-muted"
               }`}
             >
@@ -80,7 +80,7 @@ export function TopDestination() {
               <Link
                 key={dest.id}
                 href={destinationLink}
-                className="group relative h-[420px] rounded-3xl overflow-hidden shadow-xs hover:shadow-xl transition-all duration-500 border border-border/90 flex flex-col justify-between p-5 cursor-pointer"
+                className="group relative h-[420px] rounded-3xl overflow-hidden   transition-all duration-500 border border-border/90 flex flex-col justify-between p-5 cursor-pointer"
               >
                 <Image
                   src={
@@ -96,12 +96,12 @@ export function TopDestination() {
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground via-foreground/45 to-foreground/30 pointer-events-none" />
 
                 <div className="relative z-10 flex items-start justify-between gap-2">
-                  <div className="bg-card/95 backdrop-blur-xs text-foreground text-[10px] font-black px-2.5 py-1 rounded-full uppercase shadow-xs flex items-center gap-1.5">
+                  <div className="bg-card/95 backdrop-blur-xs text-foreground text-[10px] font-black px-2.5 py-1 rounded-full uppercase  flex items-center gap-1.5">
                     <span>{dest.flag}</span>
                     <span>{dest.country}</span>
                   </div>
 
-                  <div className="bg-secondary text-primary text-[9px] font-black px-2 py-0.5 rounded-md tracking-wide shadow-xs">
+                  <div className="bg-secondary text-primary text-[9px] font-black px-2 py-0.5 rounded-md tracking-wide ">
                     {dest.tag}
                   </div>
                 </div>

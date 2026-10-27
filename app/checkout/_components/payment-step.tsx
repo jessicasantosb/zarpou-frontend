@@ -69,7 +69,7 @@ export function PaymentStep({
   onFinalize,
 }: PaymentStepProps) {
   return (
-    <div className="bg-card rounded-3xl p-6 md:p-8 border border-border shadow-xs space-y-6">
+    <div className="bg-card rounded-3xl p-6 md:p-8 border border-border  space-y-6">
       <div className="flex items-center justify-between pb-4 border-b border-border/60">
         <div>
           <h2 className="text-xl font-extrabold text-foreground">
@@ -93,7 +93,7 @@ export function PaymentStep({
           className={cn(
             "p-4 rounded-2xl border-2 flex flex-col items-center justify-center text-center transition cursor-pointer",
             selectedMethod === "credit_card"
-              ? "border-primary bg-primary/5 text-primary font-bold shadow-xs"
+              ? "border-primary bg-primary/5 text-primary font-bold "
               : "border-border hover:border-input text-muted-foreground",
           )}
         >
@@ -110,7 +110,7 @@ export function PaymentStep({
           className={cn(
             "p-4 rounded-2xl border-2 flex flex-col items-center justify-center text-center transition cursor-pointer relative overflow-hidden",
             selectedMethod === "pix"
-              ? "border-primary bg-primary/5 text-primary font-bold shadow-xs"
+              ? "border-primary bg-primary/5 text-primary font-bold "
               : "border-border hover:border-input text-muted-foreground",
           )}
         >
@@ -130,7 +130,7 @@ export function PaymentStep({
           className={cn(
             "p-4 rounded-2xl border-2 flex flex-col items-center justify-center text-center transition cursor-pointer",
             selectedMethod === "boleto"
-              ? "border-primary bg-primary/5 text-primary font-bold shadow-xs"
+              ? "border-primary bg-primary/5 text-primary font-bold "
               : "border-border hover:border-input text-muted-foreground",
           )}
         >
@@ -331,7 +331,7 @@ export function PaymentStep({
           type="button"
           disabled={isSubmitting}
           onClick={onFinalize}
-          className="px-8 py-4 bg-secondary hover:bg-secondary/90 text-primary font-black text-base rounded-xl flex items-center gap-2 shadow-xl shadow-secondary/30 transition transform hover:scale-102 disabled:opacity-50 cursor-pointer"
+          className="px-8 py-4 bg-secondary hover:bg-secondary/90 text-primary font-black text-base rounded-xl flex items-center gap-2   transition transform hover:scale-102 disabled:opacity-50 cursor-pointer"
         >
           {isSubmitting ? (
             "Processando Reserva..."

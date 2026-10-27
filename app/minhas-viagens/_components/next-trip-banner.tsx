@@ -10,7 +10,7 @@ export function NextTripBanner({ nextTrip }: NextTripBannerProps) {
   if (!nextTrip) return null;
 
   return (
-    <div className="relative overflow-hidden rounded-3xl bg-linear-to-r from-primary via-primary-light to-primary text-white p-6 md:p-7 shadow-lg border border-white/10">
+    <div className="relative overflow-hidden rounded-3xl bg-linear-to-r from-primary via-primary-light to-primary text-white p-6 md:p-7  border border-white/10">
       <div className="absolute -top-16 -right-16 size-48 rounded-full bg-secondary/10 blur-2xl pointer-events-none" />
       <div className="absolute -bottom-16 -left-16 size-48 rounded-full bg-primary/30 blur-2xl pointer-events-none" />
 
@@ -68,7 +68,7 @@ export function NextTripBanner({ nextTrip }: NextTripBannerProps) {
           <div className="flex gap-2">
             <Link
               href={`/reserva/confirmada/${nextTrip.booking.id}`}
-              className="px-4 py-2 bg-secondary hover:bg-secondary/90 text-primary font-black text-xs rounded-xl flex items-center gap-1.5 shadow-sm transition whitespace-nowrap cursor-pointer"
+              className="px-4 py-2 bg-secondary hover:bg-secondary/90 text-primary font-black text-xs rounded-xl flex items-center gap-1.5  transition whitespace-nowrap cursor-pointer"
             >
               <Printer className="size-3.5" />
               Ver Voucher

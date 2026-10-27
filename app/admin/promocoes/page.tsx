@@ -17,7 +17,6 @@ export default function AdminPromocoesPage() {
     onToggleActive,
     onNotify,
     onDelete,
-    onReset,
   } = usePromocoes();
 
   if (!mounted) {
@@ -30,7 +29,7 @@ export default function AdminPromocoesPage() {
 
   return (
     <div className="space-y-6">
-      <PromocoesHeader onReset={onReset} onAddNew={onOpenNew} />
+      <PromocoesHeader onAddNew={onOpenNew} />
 
       <PromotionsGrid
         promotions={promotions}

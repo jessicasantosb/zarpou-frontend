@@ -10,7 +10,7 @@ export function PacotesContent() {
 
   return (
     <div className="min-h-screen bg-muted pt-[65px] pb-16">
-      <div className="bg-primary text-white py-6 shadow-md border-b border-primary/20 mb-8">
+      <div className="bg-primary text-white py-6  border-b border-primary/20 mb-8">
         <Container>
           <div className="flex items-center gap-3">
             <div className="size-12 rounded-2xl bg-secondary/20 flex items-center justify-center text-secondary">

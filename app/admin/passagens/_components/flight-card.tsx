@@ -23,7 +23,7 @@ export function FlightCard({ flight, onEdit, onDelete }: FlightCardProps) {
   const img = flight.imageUrl || FLIGHT_DEFAULT_IMAGE;
 
   return (
-    <div className="bg-card rounded-3xl border border-border overflow-hidden shadow-xs hover:shadow-md transition flex flex-col sm:flex-row items-stretch">
+    <div className="bg-card rounded-3xl border border-border overflow-hidden   transition flex flex-col sm:flex-row items-stretch">
       <div className="relative w-full sm:w-52 h-48 sm:h-auto shrink-0 bg-muted self-stretch">
         <Image
           src={img}
@@ -34,13 +34,13 @@ export function FlightCard({ flight, onEdit, onDelete }: FlightCardProps) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-foreground/30 pointer-events-none" />
 
-        <div className="absolute top-2.5 left-2.5 bg-card/95 text-foreground text-[10px] font-black px-2 py-0.5 rounded-full flex items-center gap-1 shadow-xs">
+        <div className="absolute top-2.5 left-2.5 bg-card/95 text-foreground text-[10px] font-black px-2 py-0.5 rounded-full flex items-center gap-1 ">
           <span>{flight.flag || "✈️"}</span>
           <span>{flight.country || "Exterior"}</span>
         </div>
 
         {flight.discountPercent && flight.discountPercent > 0 && (
-          <div className="absolute top-2.5 right-2.5 bg-emerald-600 text-white text-[10px] font-black px-1.5 py-0.5 rounded-md shadow-xs">
+          <div className="absolute top-2.5 right-2.5 bg-emerald-600 text-white text-[10px] font-black px-1.5 py-0.5 rounded-md ">
             {flight.discountPercent}% OFF
           </div>
         )}
@@ -130,7 +130,7 @@ export function FlightCard({ flight, onEdit, onDelete }: FlightCardProps) {
           <button
             type="button"
             onClick={() => onEdit(flight)}
-            className="px-3 py-1.5 bg-card border border-border hover:border-primary text-primary text-xs font-bold rounded-lg flex items-center gap-1.5 transition cursor-pointer shadow-2xs"
+            className="px-3 py-1.5 bg-card border border-border hover:border-primary text-primary text-xs font-bold rounded-lg flex items-center gap-1.5 transition cursor-pointer "
           >
             <Edit2 className="size-3.5" />
             Editar

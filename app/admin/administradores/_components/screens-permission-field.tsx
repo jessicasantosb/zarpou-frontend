@@ -60,7 +60,7 @@ export function ScreensPermissionField({
         </span>
       </div>
 
-      <div className="divide-y divide-border/60 overflow-hidden rounded-2xl border border-border bg-card shadow-2xs">
+      <div className="divide-y divide-border/60 overflow-hidden rounded-2xl border border-border bg-card ">
         <FormField
           control={form.control}
           name="isGeneralAdmin"

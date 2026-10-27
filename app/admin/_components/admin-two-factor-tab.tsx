@@ -63,7 +63,7 @@ export function AdminTwoFactorTab({ security }: AdminTwoFactorTabProps) {
             onClick={() => setAdmin2FaMethod("authenticator")}
             className={`p-3 rounded-xl border text-left flex items-center gap-2.5 transition cursor-pointer ${
               admin2FaMethod === "authenticator"
-                ? "border-primary bg-primary/5 text-primary shadow-xs"
+                ? "border-primary bg-primary/5 text-primary "
                 : "border-border text-foreground/70 hover:border-input"
             }`}
           >
@@ -79,7 +79,7 @@ export function AdminTwoFactorTab({ security }: AdminTwoFactorTabProps) {
             onClick={() => setAdmin2FaMethod("email")}
             className={`p-3 rounded-xl border text-left flex items-center gap-2.5 transition cursor-pointer ${
               admin2FaMethod === "email"
-                ? "border-primary bg-primary/5 text-primary shadow-xs"
+                ? "border-primary bg-primary/5 text-primary "
                 : "border-border text-foreground/70 hover:border-input"
             }`}
           >

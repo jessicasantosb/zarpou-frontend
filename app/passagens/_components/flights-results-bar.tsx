@@ -13,7 +13,7 @@ export function FlightsResultsBar({
   onSortByChange,
 }: FlightsResultsBarProps) {
   return (
-    <div className="bg-card rounded-xl p-3 border border-border shadow-xs flex items-center justify-between">
+    <div className="bg-card rounded-xl p-3 border border-border  flex items-center justify-between">
       <span className="text-xs font-medium text-foreground/70">
         <strong>{count}</strong> opções de voos encontrados
       </span>

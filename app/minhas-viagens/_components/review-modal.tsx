@@ -38,7 +38,7 @@ export function ReviewModal({
   return (
     <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
       <div
-        className="bg-card rounded-3xl max-w-lg w-full p-6 md:p-8 shadow-xl border border-border/60 space-y-6 relative animate-in fade-in zoom-in-95 duration-200"
+        className="bg-card rounded-3xl max-w-lg w-full p-6 md:p-8  border border-border/60 space-y-6 relative animate-in fade-in zoom-in-95 duration-200"
         role="dialog"
         aria-modal="true"
       >
@@ -130,7 +130,7 @@ export function ReviewModal({
             <button
               type="submit"
               disabled={isSubmittingReview}
-              className="px-6 py-2.5 bg-primary hover:bg-primary/90 text-white font-bold text-xs rounded-xl shadow-sm transition flex items-center gap-2 cursor-pointer disabled:opacity-50"
+              className="px-6 py-2.5 bg-primary hover:bg-primary/90 text-white font-bold text-xs rounded-xl  transition flex items-center gap-2 cursor-pointer disabled:opacity-50"
             >
               {isSubmittingReview ? (
                 <>

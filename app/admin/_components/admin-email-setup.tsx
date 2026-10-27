@@ -41,7 +41,7 @@ export function AdminEmailSetup({ security }: AdminEmailSetupProps) {
             type="button"
             disabled={adminEmailCooldown > 0 || isSendingEmailCode}
             onClick={handleSendAdminEmailCode}
-            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition shadow-2xs ${
+            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition  ${
               adminEmailCooldown > 0
                 ? "bg-border text-muted-foreground cursor-not-allowed"
                 : "bg-card hover:bg-muted text-primary border border-border cursor-pointer"
@@ -77,7 +77,7 @@ export function AdminEmailSetup({ security }: AdminEmailSetupProps) {
               type="button"
               disabled={adminEmailOtpCode.length !== 6 || isSaving2Fa}
               onClick={handleConfirmEmail2Fa}
-              className="w-full sm:w-auto px-5 py-2.5 bg-primary hover:bg-primary-hover text-white font-bold text-xs rounded-xl flex items-center justify-center gap-2 cursor-pointer shadow-xs disabled:opacity-50 transition"
+              className="w-full sm:w-auto px-5 py-2.5 bg-primary hover:bg-primary-hover text-white font-bold text-xs rounded-xl flex items-center justify-center gap-2 cursor-pointer  disabled:opacity-50 transition"
             >
               {isSaving2Fa ? (
                 <>
@@ -100,7 +100,7 @@ export function AdminEmailSetup({ security }: AdminEmailSetupProps) {
               type="button"
               disabled={isSaving2Fa || (user?.twoFactorEnabled && user?.twoFactorMethod === "email")}
               onClick={handleEnableEmail2Fa}
-              className="px-5 py-2.5 bg-primary hover:bg-primary-hover text-white font-bold text-xs rounded-xl flex items-center gap-2 cursor-pointer shadow-xs disabled:opacity-50 transition"
+              className="px-5 py-2.5 bg-primary hover:bg-primary-hover text-white font-bold text-xs rounded-xl flex items-center gap-2 cursor-pointer  disabled:opacity-50 transition"
             >
               {isSaving2Fa ? (
                 <>

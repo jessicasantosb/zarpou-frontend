@@ -142,7 +142,7 @@ export function AdminPasswordForm({ security }: AdminPasswordFormProps) {
         <button
           type="submit"
           disabled={isSubmittingPassword}
-          className="bg-primary hover:bg-primary-hover text-white px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 cursor-pointer disabled:opacity-50 shadow-xs"
+          className="bg-primary hover:bg-primary-hover text-white px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 cursor-pointer disabled:opacity-50 "
         >
           {isSubmittingPassword ? (
             <>

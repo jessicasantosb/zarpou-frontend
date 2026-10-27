@@ -61,7 +61,7 @@ export function TwoFactorSetupModal({
 }: TwoFactorSetupModalProps) {
   return (
     <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in">
-      <div className="bg-card rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-xl border border-border/60 relative animate-in zoom-in-95">
+      <div className="bg-card rounded-3xl max-w-lg w-full p-6 sm:p-8  border border-border/60 relative animate-in zoom-in-95">
         <div className="flex items-center justify-between pb-4 border-b border-border/60 mb-6">
           <div className="flex items-center gap-2.5">
             <div className="p-2 bg-secondary/15 rounded-xl text-secondary">
@@ -202,7 +202,7 @@ export function TwoFactorSetupModal({
 
                 <div className="flex flex-col sm:flex-row items-center gap-4 bg-muted p-4 rounded-2xl border border-border">
                   {totpQrUrl ? (
-                    <div className="size-36 relative bg-card p-2 rounded-xl shadow-xs border border-border/60 shrink-0">
+                    <div className="size-36 relative bg-card p-2 rounded-xl  border border-border/60 shrink-0">
                       <Image
                         src={totpQrUrl}
                         alt="QR Code 2FA"
@@ -341,7 +341,7 @@ export function TwoFactorSetupModal({
               {generatedBackupCodes.map((code, idx) => (
                 <div
                   key={idx}
-                  className="bg-card p-2.5 rounded-xl border border-border font-mono text-center text-xs font-extrabold text-foreground shadow-2xs"
+                  className="bg-card p-2.5 rounded-xl border border-border font-mono text-center text-xs font-extrabold text-foreground "
                 >
                   {code}
                 </div>
@@ -363,7 +363,7 @@ export function TwoFactorSetupModal({
               <button
                 type="button"
                 onClick={onFinish}
-                className="px-6 py-2.5 bg-primary hover:bg-primary-hover text-white font-bold text-xs rounded-xl flex items-center gap-2 cursor-pointer transition shadow-xs"
+                className="px-6 py-2.5 bg-primary hover:bg-primary-hover text-white font-bold text-xs rounded-xl flex items-center gap-2 cursor-pointer transition "
               >
                 <span>Concluir e Fechar</span>
                 <Check className="size-4 text-secondary" />

@@ -59,7 +59,7 @@ export function TopHotels() {
               onClick={() => onCityChange(city)}
               className={`px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition cursor-pointer ${
                 selectedCity === city
-                  ? "bg-primary text-white shadow-xs font-bold"
+                  ? "bg-primary text-white  font-bold"
                   : "bg-slate-100 text-slate-600 hover:bg-slate-200"
               }`}
             >
@@ -77,7 +77,7 @@ export function TopHotels() {
             return (
               <div
                 key={hotel.id}
-                className="group bg-card rounded-3xl border border-border/90 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                className="group bg-card rounded-3xl border border-border/90 overflow-hidden   transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
                   <div className="relative h-60 w-full overflow-hidden bg-slate-100">
@@ -93,7 +93,7 @@ export function TopHotels() {
 
                     <div className="absolute top-3.5 left-3.5 flex flex-col gap-1.5 items-start">
                       {hotel.badges && hotel.badges[0] && (
-                        <span className="bg-secondary text-primary text-[10px] font-black px-2.5 py-1 rounded-full tracking-wide shadow-xs">
+                        <span className="bg-secondary text-primary text-[10px] font-black px-2.5 py-1 rounded-full tracking-wide ">
                           {hotel.badges[0]}
                         </span>
                       )}
@@ -107,7 +107,7 @@ export function TopHotels() {
                       if (!ratingInfo.shouldShow || !ratingInfo.rating)
                         return null;
                       return (
-                        <div className="absolute top-3.5 right-3.5 bg-primary/95 text-white backdrop-blur-xs px-2.5 py-1 rounded-xl shadow-xs flex items-center gap-1.5 text-xs font-black">
+                        <div className="absolute top-3.5 right-3.5 bg-primary/95 text-white backdrop-blur-xs px-2.5 py-1 rounded-xl  flex items-center gap-1.5 text-xs font-black">
                           <Star className="size-3 fill-secondary text-secondary" />
                           <span>{ratingInfo.rating.toFixed(1)}</span>
                         </div>
@@ -207,7 +207,7 @@ export function TopHotels() {
 
                   <Link
                     href={`/hospedagens/${hotel.id}`}
-                    className="px-4 py-2.5 bg-primary hover:bg-primary/90 text-white font-bold text-xs rounded-xl flex items-center gap-1.5 shadow-sm transition shrink-0 group-hover:bg-primary"
+                    className="px-4 py-2.5 bg-primary hover:bg-primary/90 text-white font-bold text-xs rounded-xl flex items-center gap-1.5  transition shrink-0 group-hover:bg-primary"
                   >
                     <span>Ver Quartos</span>
                     <ArrowRight className="size-3.5 group-hover:translate-x-0.5 transition-transform" />

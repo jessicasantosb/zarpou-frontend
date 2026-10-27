@@ -30,7 +30,7 @@ export function PriceEditorRow({
   onSave,
 }: PriceEditorRowProps) {
   return (
-    <div className="bg-card rounded-3xl p-5 border border-border shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+    <div className="bg-card rounded-3xl p-5 border border-border  flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
       <div className="flex items-center gap-4">
         {icon}
         <div>
@@ -81,7 +81,7 @@ export function PriceEditorRow({
           type="button"
           onClick={onSave}
           className={cn(
-            "h-10 px-5 rounded-xl font-bold text-xs flex items-center gap-1.5 transition self-end cursor-pointer shadow-xs",
+            "h-10 px-5 rounded-xl font-bold text-xs flex items-center gap-1.5 transition self-end cursor-pointer ",
             isSaved
               ? "bg-emerald-600 text-white"
               : "bg-secondary hover:bg-secondary/90 text-primary",

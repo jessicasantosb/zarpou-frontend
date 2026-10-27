@@ -35,7 +35,7 @@ export function CheckoutProgressBar({ currentStep }: CheckoutProgressBarProps) {
           >
             <div
               className={cn(
-                "size-10 rounded-full flex items-center justify-center font-bold text-sm transition-all duration-300 shadow-sm",
+                "size-10 rounded-full flex items-center justify-center font-bold text-sm transition-all duration-300 ",
                 currentStep >= s.step
                   ? "bg-primary text-white ring-4 ring-primary/20"
                   : "bg-card text-muted-foreground/70 border border-input",

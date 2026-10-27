@@ -4,7 +4,7 @@ interface HotelsEmptyStateProps {
 
 export function HotelsEmptyState({ onReset }: HotelsEmptyStateProps) {
   return (
-    <div className="bg-card rounded-2xl p-12 text-center border border-border shadow-xs space-y-4">
+    <div className="bg-card rounded-2xl p-12 text-center border border-border  space-y-4">
       <p className="text-lg font-bold text-foreground">
         Nenhuma acomodação encontrada para estes filtros
       </p>
@@ -15,7 +15,7 @@ export function HotelsEmptyState({ onReset }: HotelsEmptyStateProps) {
       <button
         type="button"
         onClick={onReset}
-        className="px-6 py-2.5 bg-primary text-white text-xs font-bold rounded-xl hover:bg-primary/90 transition shadow-sm"
+        className="px-6 py-2.5 bg-primary text-white text-xs font-bold rounded-xl hover:bg-primary/90 transition "
       >
         Ver Todas as Hospedagens
       </button>

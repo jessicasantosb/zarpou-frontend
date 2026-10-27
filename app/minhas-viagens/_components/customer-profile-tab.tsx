@@ -70,7 +70,7 @@ export function CustomerProfileTab() {
   return (
     <div className="space-y-6">
       {feedbackMessage && (
-        <div className="p-4 bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs sm:text-sm font-bold rounded-2xl flex items-center gap-2 shadow-xs animate-fade-in">
+        <div className="p-4 bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs sm:text-sm font-bold rounded-2xl flex items-center gap-2  animate-fade-in">
           <Check className="size-4 text-emerald-600 shrink-0" />
           <span>{feedbackMessage}</span>
         </div>

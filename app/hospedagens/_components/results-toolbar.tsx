@@ -9,7 +9,7 @@ interface ResultsToolbarProps {
 
 export function ResultsToolbar({ count, sortBy, onSortChange }: ResultsToolbarProps) {
   return (
-    <div className="bg-card rounded-xl p-3 border border-border shadow-xs flex flex-col sm:flex-row items-center justify-between gap-3">
+    <div className="bg-card rounded-xl p-3 border border-border  flex flex-col sm:flex-row items-center justify-between gap-3">
       <span className="text-xs font-medium text-foreground/70">
         Mostrando <strong className="text-foreground">{count}</strong>{" "}
         acomodações disponíveis

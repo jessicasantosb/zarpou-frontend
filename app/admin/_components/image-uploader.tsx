@@ -187,7 +187,7 @@ export function ImageUploader({
           }}
           className={`py-2 px-3 text-xs font-bold rounded-lg flex items-center justify-center gap-1.5 transition cursor-pointer ${
             activeTab === "upload"
-              ? "bg-card text-primary shadow-xs"
+              ? "bg-card text-primary "
               : "text-foreground/70 hover:text-foreground"
           }`}
         >
@@ -203,7 +203,7 @@ export function ImageUploader({
           }}
           className={`py-2 px-3 text-xs font-bold rounded-lg flex items-center justify-center gap-1.5 transition cursor-pointer ${
             activeTab === "url"
-              ? "bg-card text-primary shadow-xs"
+              ? "bg-card text-primary "
               : "text-foreground/70 hover:text-foreground"
           }`}
         >

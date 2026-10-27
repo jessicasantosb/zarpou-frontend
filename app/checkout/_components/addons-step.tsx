@@ -11,7 +11,7 @@ interface AddonsStepProps {
 
 export function AddonsStep({ addons, onToggle, onBack, onNext }: AddonsStepProps) {
   return (
-    <div className="bg-card rounded-3xl p-6 md:p-8 border border-border shadow-xs space-y-6">
+    <div className="bg-card rounded-3xl p-6 md:p-8 border border-border  space-y-6">
       <div className="flex items-center justify-between pb-4 border-b border-border/60">
         <div>
           <h2 className="text-xl font-extrabold text-foreground">
@@ -42,7 +42,7 @@ export function AddonsStep({ addons, onToggle, onBack, onNext }: AddonsStepProps
               className={cn(
                 "p-5 rounded-2xl border-2 transition-all cursor-pointer flex items-center justify-between gap-4",
                 addon.selected
-                  ? "border-primary bg-primary/5 shadow-xs"
+                  ? "border-primary bg-primary/5 "
                   : "border-border hover:border-input bg-card",
               )}
             >
@@ -93,7 +93,7 @@ export function AddonsStep({ addons, onToggle, onBack, onNext }: AddonsStepProps
         <button
           type="button"
           onClick={onNext}
-          className="px-8 py-3.5 bg-secondary hover:bg-secondary/90 text-primary font-bold text-sm rounded-xl flex items-center gap-2 shadow-lg shadow-secondary/20 transition cursor-pointer"
+          className="px-8 py-3.5 bg-secondary hover:bg-secondary/90 text-primary font-bold text-sm rounded-xl flex items-center gap-2   transition cursor-pointer"
         >
           Ir para Pagamento
           <ArrowRight className="size-4" />

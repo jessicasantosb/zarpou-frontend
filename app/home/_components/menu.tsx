@@ -122,7 +122,7 @@ export function Menu() {
             return (
               <div
                 key={index}
-                className="bg-card rounded-3xl p-7 border border-border/80 shadow-xs flex flex-col justify-between cursor-default"
+                className="bg-card rounded-3xl p-7 border border-border/80  flex flex-col justify-between cursor-default"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-5">
@@ -162,7 +162,7 @@ export function Menu() {
           })}
         </div>
 
-        <div className="mt-10 bg-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-sm">
+        <div className="mt-10 bg-slate-900 text-white rounded-3xl p-6 sm:p-8 ">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {trustPillars.map((pillar, pIndex) => {
               const PillarIcon = pillar.icon;

@@ -14,7 +14,6 @@ export default function AdminDestinosPage() {
     onOpenChange,
     onOpenNew,
     onOpenEdit,
-    onRestore,
     onDelete,
   } = useDestinos();
 
@@ -28,7 +27,7 @@ export default function AdminDestinosPage() {
 
   return (
     <div className="space-y-6">
-      <DestinosHeader onRestore={onRestore} onAddNew={onOpenNew} />
+      <DestinosHeader onAddNew={onOpenNew} />
 
       <DestinationsGrid
         destinations={destinations}

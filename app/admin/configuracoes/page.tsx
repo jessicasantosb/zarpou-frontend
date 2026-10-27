@@ -2,6 +2,7 @@
 
 import { Check, Loader2, Save } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Form } from "@/components/ui/form";
 import { AiChatSection } from "./_components/ai-chat-section";
 import { CompanySection } from "./_components/company-section";
 import { ConfiguracoesHeader } from "./_components/configuracoes-header";
@@ -42,37 +43,39 @@ export default function AdminConfiguracoesPage() {
         </div>
       )}
 
-      <form onSubmit={onSubmit} className="space-y-6">
-        <CompanySection control={form.control} />
-        <WhatsappSection control={form.control} />
-        <PaymentSection control={form.control} />
-        <ResendSection control={form.control} />
-        <AiChatSection control={form.control} />
-        <StorageSection control={form.control} />
-        <ContactChannelsSection control={form.control} />
-        <SocialSection control={form.control} />
-        <LegalSection control={form.control} />
+      <Form {...form}>
+        <form onSubmit={onSubmit} className="space-y-6">
+          <CompanySection control={form.control} />
+          <WhatsappSection control={form.control} />
+          <PaymentSection control={form.control} />
+          <ResendSection control={form.control} />
+          <AiChatSection control={form.control} />
+          <StorageSection control={form.control} />
+          <ContactChannelsSection control={form.control} />
+          <SocialSection control={form.control} />
+          <LegalSection control={form.control} />
 
-        <div className="flex justify-end pt-2">
-          <Button
-            type="submit"
-            disabled={isSaving}
-            className="h-auto cursor-pointer rounded-xl bg-secondary px-8 py-3.5 text-sm font-black text-primary shadow-lg shadow-secondary/30 transition hover:scale-102 hover:bg-secondary/90 active:scale-95 disabled:cursor-not-allowed disabled:opacity-60"
-          >
-            {isSaving ? (
-              <>
-                <Loader2 className="size-4 animate-spin" />
-                Salvando configurações...
-              </>
-            ) : (
-              <>
-                <Save className="size-4" />
-                Salvar Todas as Configurações
-              </>
-            )}
-          </Button>
-        </div>
-      </form>
+          <div className="flex justify-end pt-2">
+            <Button
+              type="submit"
+              disabled={isSaving}
+              className="h-auto cursor-pointer rounded-xl bg-secondary px-8 py-3.5 text-sm font-black text-primary   transition hover:scale-102 hover:bg-secondary/90 active:scale-95 disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              {isSaving ? (
+                <>
+                  <Loader2 className="size-4 animate-spin" />
+                  Salvando configurações...
+                </>
+              ) : (
+                <>
+                  <Save className="size-4" />
+                  Salvar Todas as Configurações
+                </>
+              )}
+            </Button>
+          </div>
+        </form>
+      </Form>
     </div>
   );
 }

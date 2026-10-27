@@ -85,7 +85,7 @@ export function AdminTotpSetup({ security }: AdminTotpSetupProps) {
             type="button"
             disabled={adminOtpCode.length !== 6 || isVerifyingTotp}
             onClick={handleVerifyAndEnableAuthenticator}
-            className="w-full sm:w-auto px-5 py-2.5 bg-primary hover:bg-primary-hover text-white font-bold text-xs rounded-xl flex items-center justify-center gap-2 cursor-pointer shadow-xs disabled:opacity-50 transition"
+            className="w-full sm:w-auto px-5 py-2.5 bg-primary hover:bg-primary-hover text-white font-bold text-xs rounded-xl flex items-center justify-center gap-2 cursor-pointer  disabled:opacity-50 transition"
           >
             {isVerifyingTotp ? (
               <>

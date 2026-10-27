@@ -42,7 +42,7 @@ export function MediaTab({ form }: MediaTabProps) {
           Prévia ao Vivo do Card (Como aparecerá para o viajante)
         </p>
 
-        <div className="mx-auto max-w-sm overflow-hidden rounded-3xl border border-border bg-card shadow-md">
+        <div className="mx-auto max-w-sm overflow-hidden rounded-3xl border border-border bg-card ">
           <div className="relative h-44 w-full bg-muted">
             <Image
               src={values.image_url || DESTINATION_DEFAULT_IMAGE}
@@ -53,12 +53,12 @@ export function MediaTab({ form }: MediaTabProps) {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-foreground/25" />
 
-            <div className="absolute top-3 left-3 flex items-center gap-1 rounded-full bg-card/95 px-2.5 py-0.5 text-[10px] font-black text-foreground shadow-xs">
+            <div className="absolute top-3 left-3 flex items-center gap-1 rounded-full bg-card/95 px-2.5 py-0.5 text-[10px] font-black text-foreground ">
               <span>{values.flag}</span>
               <span>{values.country || "País"}</span>
             </div>
 
-            <div className="absolute top-3 right-3 rounded-md bg-secondary px-2 py-0.5 text-[9px] font-black tracking-wide text-primary shadow-xs">
+            <div className="absolute top-3 right-3 rounded-md bg-secondary px-2 py-0.5 text-[9px] font-black tracking-wide text-primary ">
               {values.tag || "Destaque"}
             </div>
 

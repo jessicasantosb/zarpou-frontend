@@ -5,7 +5,7 @@ import { Sparkles, ShieldCheck, HeartHandshake, Plane, Star } from "lucide-react
 export function AboutHeroContent() {
   return (
     <div className="flex flex-col items-center justify-center text-center gap-6 max-w-4xl mx-auto px-4">
-      <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-semibold text-secondary shadow-lg">
+      <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-semibold text-secondary ">
         <Sparkles className="size-4 text-secondary animate-pulse" />
         <span>Quem Somos • Zarpou Viagens e Turismo</span>
       </div>

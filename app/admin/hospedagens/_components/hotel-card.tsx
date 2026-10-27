@@ -18,7 +18,7 @@ export function HotelCard({ hotel, onEdit, onDelete }: HotelCardProps) {
   ).toFixed(2);
 
   return (
-    <div className="flex flex-col justify-between overflow-hidden rounded-3xl border border-border bg-card shadow-xs transition-shadow hover:shadow-md">
+    <div className="flex flex-col justify-between overflow-hidden rounded-3xl border border-border bg-card  transition-shadow ">
       <div>
         <div className="relative h-48 w-full bg-muted">
           <Image
@@ -31,7 +31,7 @@ export function HotelCard({ hotel, onEdit, onDelete }: HotelCardProps) {
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
           {hotel.badges && hotel.badges[0] && (
-            <div className="absolute top-3 left-3 rounded-full bg-secondary px-2.5 py-1 text-[10px] font-black tracking-wide text-primary shadow-xs">
+            <div className="absolute top-3 left-3 rounded-full bg-secondary px-2.5 py-1 text-[10px] font-black tracking-wide text-primary ">
               {hotel.badges[0]}
             </div>
           )}
@@ -122,7 +122,7 @@ export function HotelCard({ hotel, onEdit, onDelete }: HotelCardProps) {
           variant="outline"
           size="sm"
           onClick={() => onEdit(hotel)}
-          className="h-auto cursor-pointer rounded-lg border-border bg-card px-3 py-1.5 text-xs font-bold text-primary shadow-2xs hover:border-primary"
+          className="h-auto cursor-pointer rounded-lg border-border bg-card px-3 py-1.5 text-xs font-bold text-primary  hover:border-primary"
         >
           <Edit2 className="size-3.5" />
           Editar

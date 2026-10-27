@@ -105,7 +105,7 @@ export function DropdownMenu({ scrolled }: DropdownMenuProps) {
                 <SheetClose asChild>
                   <Link
                     href="/login"
-                    className="flex items-center justify-center gap-2 p-3 bg-secondary text-primary font-bold text-xs rounded-xl shadow-xs"
+                    className="flex items-center justify-center gap-2 p-3 bg-secondary text-primary font-bold text-xs rounded-xl "
                   >
                     <User className="size-4" />
                     Entrar ou Cadastrar

@@ -113,7 +113,7 @@ export function HotelPhotosTab({ form }: HotelPhotosTabProps) {
             {gallery.map((photo, index) => (
               <div
                 key={index}
-                className="group relative h-24 overflow-hidden rounded-xl border border-border bg-muted shadow-2xs"
+                className="group relative h-24 overflow-hidden rounded-xl border border-border bg-muted "
               >
                 <Image
                   src={photo}
@@ -125,7 +125,7 @@ export function HotelPhotosTab({ form }: HotelPhotosTabProps) {
                 <button
                   type="button"
                   onClick={() => handleRemoveGalleryPhoto(index)}
-                  className="absolute top-1 right-1 flex size-6 cursor-pointer items-center justify-center rounded-full bg-destructive/90 text-white opacity-0 transition shadow-xs group-hover:opacity-100"
+                  className="absolute top-1 right-1 flex size-6 cursor-pointer items-center justify-center rounded-full bg-destructive/90 text-white opacity-0 transition  group-hover:opacity-100"
                   title="Remover foto"
                 >
                   <X className="size-3.5" />

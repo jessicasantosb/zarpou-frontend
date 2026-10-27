@@ -127,7 +127,7 @@ export function DetailsTab({ form }: DetailsTabProps) {
                 className={cn(
                   "flex cursor-pointer items-center gap-1 rounded-lg px-2.5 py-1 text-xs font-semibold transition",
                   active
-                    ? "bg-primary text-white shadow-2xs"
+                    ? "bg-primary text-white "
                     : "bg-muted text-foreground/70 hover:bg-border",
                 )}
               >

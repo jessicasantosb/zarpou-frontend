@@ -23,7 +23,7 @@ export function DestinationCard({
   onDelete,
 }: DestinationCardProps) {
   return (
-    <div className="flex flex-col justify-between overflow-hidden rounded-3xl border border-border bg-card shadow-xs transition hover:shadow-md">
+    <div className="flex flex-col justify-between overflow-hidden rounded-3xl border border-border bg-card  transition ">
       <div>
         <div className="relative h-44 w-full bg-muted">
           <Image
@@ -35,12 +35,12 @@ export function DestinationCard({
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-foreground/25" />
 
-          <div className="absolute top-3 left-3 flex items-center gap-1 rounded-full bg-card/95 px-2.5 py-0.5 text-[10px] font-black text-foreground shadow-xs">
+          <div className="absolute top-3 left-3 flex items-center gap-1 rounded-full bg-card/95 px-2.5 py-0.5 text-[10px] font-black text-foreground ">
             <span>{destination.flag}</span>
             <span>{destination.country}</span>
           </div>
 
-          <div className="absolute top-3 right-3 rounded-md bg-secondary px-2 py-0.5 text-[9px] font-black tracking-wide text-primary shadow-xs">
+          <div className="absolute top-3 right-3 rounded-md bg-secondary px-2 py-0.5 text-[9px] font-black tracking-wide text-primary ">
             {destination.tag}
           </div>
 
@@ -115,7 +115,7 @@ export function DestinationCard({
             variant="outline"
             size="sm"
             onClick={() => onEdit(destination)}
-            className="h-auto cursor-pointer rounded-lg border-border bg-card px-3 py-1.5 text-xs font-bold text-primary shadow-2xs hover:border-primary"
+            className="h-auto cursor-pointer rounded-lg border-border bg-card px-3 py-1.5 text-xs font-bold text-primary  hover:border-primary"
           >
             <Edit2 className="size-3.5" />
             Editar

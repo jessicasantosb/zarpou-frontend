@@ -28,7 +28,7 @@ export function ContactHeroContent() {
 
   return (
     <div className="flex flex-col items-center justify-center text-center gap-5 max-w-4xl mx-auto px-4">
-      <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-semibold text-secondary shadow-lg">
+      <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-semibold text-secondary ">
         <Sparkles className="size-4 text-secondary animate-pulse" />
         <span>Atendimento Especializado & Roteiros Sob Medida</span>
       </div>
@@ -46,7 +46,7 @@ export function ContactHeroContent() {
       <div className="flex flex-col sm:flex-row items-center gap-3.5 pt-3 w-full sm:w-auto">
         <button
           onClick={scrollToForm}
-          className="w-full sm:w-auto px-7 py-3.5 rounded-2xl bg-secondary hover:bg-secondary-hover text-primary font-extrabold text-sm sm:text-base shadow-xl shadow-secondary/20 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer"
+          className="w-full sm:w-auto px-7 py-3.5 rounded-2xl bg-secondary hover:bg-secondary-hover text-primary font-extrabold text-sm sm:text-base   hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer"
         >
           <span>Montar Meu Roteiro</span>
           <ArrowDown className="size-4" />

@@ -16,7 +16,7 @@ export function BookingSuccessBanner({
   whatsapp,
 }: BookingSuccessBannerProps) {
   return (
-    <div className="bg-card rounded-3xl p-6 md:p-8 border border-border shadow-sm text-center relative overflow-hidden print:border-none print:shadow-none">
+    <div className="bg-card rounded-3xl p-6 md:p-8 border border-border  text-center relative overflow-hidden print:border-none print:shadow-none">
       <div className="size-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4">
         <CheckCircle2 className="size-10" />
       </div>
@@ -62,7 +62,7 @@ export function BookingSuccessBanner({
             `Olá! Acabei de fazer a reserva com o localizador ${booking.locatorCode} e gostaria de confirmar.`,
           )}`}
           target="_blank"
-          className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl flex items-center gap-2 transition shadow-sm"
+          className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl flex items-center gap-2 transition "
         >
           <Share2 className="size-4" />
           Falar com a Zarpou no WhatsApp

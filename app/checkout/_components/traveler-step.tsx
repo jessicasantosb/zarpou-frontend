@@ -97,7 +97,7 @@ export function TravelerStep({
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit, handleError)}
-        className="bg-card rounded-3xl p-6 md:p-8 border border-border shadow-xs space-y-6"
+        className="bg-card rounded-3xl p-6 md:p-8 border border-border  space-y-6"
       >
         <div className="flex items-center justify-between pb-4 border-b border-border/60">
           <div>
@@ -266,7 +266,7 @@ export function TravelerStep({
         <div className="pt-4 border-t border-border/60 flex justify-end">
           <button
             type="submit"
-            className="px-8 py-3.5 bg-secondary hover:bg-secondary/90 text-primary font-bold text-sm rounded-xl flex items-center gap-2 shadow-lg shadow-secondary/20 transition cursor-pointer"
+            className="px-8 py-3.5 bg-secondary hover:bg-secondary/90 text-primary font-bold text-sm rounded-xl flex items-center gap-2   transition cursor-pointer"
           >
             Continuar para Opcionais
             <ArrowRight className="size-4" />

@@ -60,7 +60,7 @@ export function LoginCard({
           onClick={() => onSwitchMode(false)}
           className={`flex-1 py-2 text-xs font-bold rounded-xl transition cursor-pointer ${
             !isRegister
-              ? "bg-card text-primary shadow-xs"
+              ? "bg-card text-primary "
               : "text-muted-foreground hover:text-foreground"
           }`}
         >
@@ -71,7 +71,7 @@ export function LoginCard({
           onClick={() => onSwitchMode(true)}
           className={`flex-1 py-2 text-xs font-bold rounded-xl transition cursor-pointer ${
             isRegister
-              ? "bg-card text-primary shadow-xs"
+              ? "bg-card text-primary "
               : "text-muted-foreground hover:text-foreground"
           }`}
         >

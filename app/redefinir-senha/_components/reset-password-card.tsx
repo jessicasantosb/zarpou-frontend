@@ -39,7 +39,7 @@ export function ResetPasswordCard() {
         </p>
         <Link
           href="/esqueci-senha"
-          className="inline-flex h-12 items-center justify-center gap-2 px-6 bg-primary hover:bg-primary-hover text-white font-bold text-sm rounded-xl shadow-lg shadow-primary/20 transition"
+          className="inline-flex h-12 items-center justify-center gap-2 px-6 bg-primary hover:bg-primary-hover text-white font-bold text-sm rounded-xl   transition"
         >
           <KeyRound className="size-4" />
           Solicitar novo link
@@ -112,7 +112,7 @@ export function ResetPasswordCard() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full h-12 bg-primary hover:bg-primary-hover text-white font-bold text-sm rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-primary/20 transition cursor-pointer disabled:opacity-50"
+            className="w-full h-12 bg-primary hover:bg-primary-hover text-white font-bold text-sm rounded-xl flex items-center justify-center gap-2   transition cursor-pointer disabled:opacity-50"
           >
             {loading ? (
               <>

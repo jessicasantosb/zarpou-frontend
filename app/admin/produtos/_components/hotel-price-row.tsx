@@ -25,7 +25,7 @@ export function HotelPriceRow({
   return (
     <PriceEditorRow
       icon={
-        <div className="relative size-20 rounded-2xl overflow-hidden shrink-0 shadow-xs">
+        <div className="relative size-20 rounded-2xl overflow-hidden shrink-0 ">
           <Image
             src={hotel.imageUrl}
             alt={hotel.name}

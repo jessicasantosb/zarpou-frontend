@@ -12,7 +12,7 @@ export function AdminSecurityModal({ security }: AdminSecurityModalProps) {
 
   return (
     <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in">
-      <div className="bg-card rounded-3xl max-w-lg w-full p-6 sm:p-7 shadow-xl border border-border/60 relative animate-in zoom-in-95">
+      <div className="bg-card rounded-3xl max-w-lg w-full p-6 sm:p-7  border border-border/60 relative animate-in zoom-in-95">
         <div className="flex items-center justify-between pb-3 border-b border-border/60">
           <div className="flex items-center gap-2.5">
             <div className="p-2 bg-secondary/15 rounded-xl text-secondary">
@@ -37,7 +37,7 @@ export function AdminSecurityModal({ security }: AdminSecurityModalProps) {
             type="button"
             onClick={() => setSecurityTab("password")}
             className={`flex-1 py-2 rounded-lg flex items-center justify-center gap-1.5 transition cursor-pointer ${
-              securityTab === "password" ? "bg-card text-primary shadow-xs" : "hover:text-foreground"
+              securityTab === "password" ? "bg-card text-primary " : "hover:text-foreground"
             }`}
           >
             <Key className="size-3.5" />
@@ -47,7 +47,7 @@ export function AdminSecurityModal({ security }: AdminSecurityModalProps) {
             type="button"
             onClick={() => setSecurityTab("2fa")}
             className={`flex-1 py-2 rounded-lg flex items-center justify-center gap-1.5 transition cursor-pointer ${
-              securityTab === "2fa" ? "bg-card text-primary shadow-xs" : "hover:text-foreground"
+              securityTab === "2fa" ? "bg-card text-primary " : "hover:text-foreground"
             }`}
           >
             <ShieldCheck className="size-3.5 text-secondary" />

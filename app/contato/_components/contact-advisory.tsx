@@ -31,7 +31,7 @@ export function ContactAdvisory() {
 
   return (
     <div className="space-y-6">
-      <div className="bg-gradient-to-br from-primary via-primary-light to-primary rounded-3xl p-6 sm:p-7 text-white shadow-xl relative overflow-hidden">
+      <div className="bg-gradient-to-br from-primary via-primary-light to-primary rounded-3xl p-6 sm:p-7 text-white  relative overflow-hidden">
         <div className="absolute top-0 right-0 -mr-10 -mt-10 size-40 rounded-full bg-secondary/20 blur-2xl pointer-events-none" />
 
         <div className="flex items-center gap-2 mb-3">
@@ -54,7 +54,7 @@ export function ContactAdvisory() {
           href={`https://wa.me/${whatsappNum}?text=${defaultMsg}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-5 w-full bg-whatsapp hover:bg-whatsapp-hover active:scale-98 text-white font-bold py-3.5 px-5 rounded-2xl flex items-center justify-center gap-2.5 shadow-lg shadow-whatsapp/30 transition-all duration-200 text-sm group"
+          className="mt-5 w-full bg-whatsapp hover:bg-whatsapp-hover active:scale-98 text-white font-bold py-3.5 px-5 rounded-2xl flex items-center justify-center gap-2.5   transition-all duration-200 text-sm group"
         >
           <MessageCircle className="size-5 fill-white" />
           <span>Falar Agora no WhatsApp</span>
@@ -70,7 +70,7 @@ export function ContactAdvisory() {
         </div>
       </div>
 
-      <div className="bg-card rounded-3xl p-6 sm:p-7 border border-border/80 shadow-md space-y-4">
+      <div className="bg-card rounded-3xl p-6 sm:p-7 border border-border/80  space-y-4">
         <h4 className="text-base font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
           <Award className="size-5 text-secondary" />
           Por que planejar com a Zarpou?

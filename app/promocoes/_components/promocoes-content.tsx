@@ -11,7 +11,7 @@ export function PromocoesContent() {
 
   return (
     <div className="min-h-screen bg-muted pt-28 pb-20">
-      <div className="bg-primary text-white py-12 mb-10 shadow-inner">
+      <div className="bg-primary text-white py-12 mb-10 ">
         <Container>
           <div className="max-w-3xl space-y-4">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary text-primary text-xs font-black tracking-wide">
@@ -50,7 +50,7 @@ export function PromocoesContent() {
         </div>
 
         {activePromos.length === 0 ? (
-          <div className="bg-card rounded-3xl p-16 text-center border border-border shadow-sm max-w-lg mx-auto space-y-4">
+          <div className="bg-card rounded-3xl p-16 text-center border border-border  max-w-lg mx-auto space-y-4">
             <div className="size-16 bg-amber-50 rounded-2xl flex items-center justify-center mx-auto text-amber-500">
               <Percent className="size-8" />
             </div>
@@ -64,7 +64,7 @@ export function PromocoesContent() {
             </p>
             <Link
               href="/contato"
-              className="inline-block px-6 py-2.5 bg-primary text-white text-xs font-bold rounded-xl hover:bg-primary/90 transition shadow-sm"
+              className="inline-block px-6 py-2.5 bg-primary text-white text-xs font-bold rounded-xl hover:bg-primary/90 transition "
             >
               Falar com Especialista
             </Link>

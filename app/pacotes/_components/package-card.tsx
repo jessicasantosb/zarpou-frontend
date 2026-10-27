@@ -11,7 +11,7 @@ export function PackageCard({ pkg }: PackageCardProps) {
   const installmentVal = (pkg.price / pkg.installments).toFixed(2);
 
   return (
-    <div className="bg-card rounded-3xl overflow-hidden border border-border shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+    <div className="bg-card rounded-3xl overflow-hidden border border-border   transition-all duration-300 flex flex-col justify-between group">
       <div>
         <div className="relative h-56 w-full overflow-hidden">
           <Image
@@ -20,7 +20,7 @@ export function PackageCard({ pkg }: PackageCardProps) {
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-500"
           />
-          <div className="absolute top-3 left-3 bg-secondary text-primary text-xs font-black px-3 py-1 rounded-full shadow-md tracking-wide flex items-center gap-1">
+          <div className="absolute top-3 left-3 bg-secondary text-primary text-xs font-black px-3 py-1 rounded-full  tracking-wide flex items-center gap-1">
             <Sparkles className="size-3" />
             Economize {pkg.discountPercent}%
           </div>
@@ -75,7 +75,7 @@ export function PackageCard({ pkg }: PackageCardProps) {
           href={
             pkg.hotel?.id ? `/hospedagens/${pkg.hotel.id}` : "/hospedagens"
           }
-          className="w-full py-3 bg-secondary hover:bg-secondary/90 text-primary font-bold text-sm rounded-xl flex items-center justify-center gap-2 shadow-md shadow-secondary/20 transition transform group-hover:scale-102"
+          className="w-full py-3 bg-secondary hover:bg-secondary/90 text-primary font-bold text-sm rounded-xl flex items-center justify-center gap-2   transition transform group-hover:scale-102"
         >
           Ver Pacote Completo
           <ArrowRight className="size-4" />

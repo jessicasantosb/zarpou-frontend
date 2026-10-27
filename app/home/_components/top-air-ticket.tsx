@@ -63,7 +63,7 @@ export function TopAirTicket() {
               onClick={() => onRegionChange(option.value)}
               className={`px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition cursor-pointer ${
                 selectedRegion === option.value
-                  ? "bg-primary text-white shadow-xs font-bold"
+                  ? "bg-primary text-white  font-bold"
                   : "bg-card text-foreground/70 hover:bg-muted border border-border"
               }`}
             >
@@ -83,7 +83,7 @@ export function TopAirTicket() {
             return (
               <div
                 key={flight.id}
-                className="group bg-card rounded-3xl border border-border/90 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row"
+                className="group bg-card rounded-3xl border border-border/90 overflow-hidden   transition-all duration-300 flex flex-col sm:flex-row"
               >
                 <div className="relative w-full sm:w-52 md:w-56 h-48 sm:h-auto shrink-0 overflow-hidden bg-muted">
                   <Image
@@ -96,13 +96,13 @@ export function TopAirTicket() {
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-foreground/35 sm:bg-gradient-to-r sm:from-transparent sm:to-foreground/30 pointer-events-none" />
 
-                  <div className="absolute top-3 left-3 bg-card/95 backdrop-blur-xs text-slate-900 text-[10px] font-black px-2.5 py-1 rounded-full uppercase shadow-xs flex items-center gap-1.5">
+                  <div className="absolute top-3 left-3 bg-card/95 backdrop-blur-xs text-slate-900 text-[10px] font-black px-2.5 py-1 rounded-full uppercase  flex items-center gap-1.5">
                     <span>{meta.flag}</span>
                     <span>{meta.country}</span>
                   </div>
 
                   {flight.discountPercent && flight.discountPercent > 0 && (
-                    <div className="absolute top-3 right-3 bg-emerald-600 text-white text-[10px] font-black px-2 py-0.5 rounded-lg shadow-xs">
+                    <div className="absolute top-3 right-3 bg-emerald-600 text-white text-[10px] font-black px-2 py-0.5 rounded-lg ">
                       {flight.discountPercent}% OFF
                     </div>
                   )}
@@ -197,7 +197,7 @@ export function TopAirTicket() {
 
                     <Link
                       href={`/passagens?from=${outbound.originIata}&to=${outbound.destinationIata}`}
-                      className="px-4 py-2.5 bg-primary hover:bg-primary/90 text-white font-bold text-xs rounded-xl flex items-center gap-1.5 shadow-sm transition shrink-0 group-hover:bg-primary"
+                      className="px-4 py-2.5 bg-primary hover:bg-primary/90 text-white font-bold text-xs rounded-xl flex items-center gap-1.5  transition shrink-0 group-hover:bg-primary"
                     >
                       <span>Ver Voos</span>
                       <ArrowRight className="size-3.5 group-hover:translate-x-0.5 transition-transform" />

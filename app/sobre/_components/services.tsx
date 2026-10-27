@@ -23,7 +23,7 @@ export function Services() {
         {services.map(({ title, description, src }, idx) => (
           <div
             key={title}
-            className="group relative h-80 sm:h-96 rounded-3xl overflow-hidden shadow-xl border border-border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            className="group relative h-80 sm:h-96 rounded-3xl overflow-hidden  border border-border transition-all duration-300 hover:-translate-y-1 "
           >
             <Image
               alt={title}
@@ -52,7 +52,7 @@ export function Services() {
         ))}
       </div>
 
-      <div className="mt-16 bg-gradient-to-br from-primary via-primary-light to-primary rounded-3xl p-8 sm:p-12 text-white shadow-xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+      <div className="mt-16 bg-gradient-to-br from-primary via-primary-light to-primary rounded-3xl p-8 sm:p-12 text-white  relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
         <div className="absolute -right-16 -top-16 size-60 rounded-full bg-secondary/20 blur-3xl pointer-events-none" />
 
         <div className="space-y-2 text-center md:text-left relative z-10 max-w-xl">
@@ -70,7 +70,7 @@ export function Services() {
         <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto relative z-10 shrink-0">
           <Link
             href="/contato"
-            className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-secondary hover:bg-secondary-hover text-primary font-extrabold text-sm shadow-lg hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2"
+            className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-secondary hover:bg-secondary-hover text-primary font-extrabold text-sm  hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2"
           >
             <span>Falar com Consultor</span>
             <ArrowRight className="size-4" />

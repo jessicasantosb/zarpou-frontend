@@ -14,7 +14,7 @@ export function HotelGallery({
 }: HotelGalleryProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-12 gap-3 mt-6">
-      <div className="relative md:col-span-8 h-80 md:h-[420px] rounded-2xl overflow-hidden shadow-xs">
+      <div className="relative md:col-span-8 h-80 md:h-[420px] rounded-2xl overflow-hidden ">
         <Image
           src={activePhoto}
           alt={hotel.name}

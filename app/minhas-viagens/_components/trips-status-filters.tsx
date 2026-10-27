@@ -38,7 +38,7 @@ export function TripsStatusFilters({
             onClick={() => onStatusFilterChange(filter.id)}
             className={`px-4 py-2 rounded-xl text-xs font-bold transition cursor-pointer flex items-center gap-1.5 ${
               statusFilter === filter.id
-                ? "bg-primary text-white shadow-xs"
+                ? "bg-primary text-white "
                 : "bg-card text-foreground/70 border border-border hover:bg-muted"
             }`}
           >

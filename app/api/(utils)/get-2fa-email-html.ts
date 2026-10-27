@@ -22,7 +22,7 @@ export function get2FaEmailHtml({
   <title>Código de Verificação - Zarpou Viagens</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f8fafc;
@@ -34,7 +34,6 @@ export function get2FaEmailHtml({
       background-color: #ffffff;
       border-radius: 24px;
       overflow: hidden;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
       border: 1px solid #e2e8f0;
     }
     .header {
@@ -103,7 +102,6 @@ export function get2FaEmailHtml({
       border: 1px solid #94a3b8;
       border-radius: 12px;
       text-align: center;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
       margin: 0 3px;
     }
     .expiration {
@@ -114,7 +112,7 @@ export function get2FaEmailHtml({
     }
     .alert-box {
       background-color: #fffbeb;
-      border-left: 4px solid #ebb343;
+      border: 1px solid #fcd34d;
       padding: 14px 18px;
       border-radius: 8px;
       font-size: 12px;

@@ -18,7 +18,7 @@ export function UsuariosFilters({
   onChannelFilterChange,
 }: UsuariosFiltersProps) {
   return (
-    <div className="bg-card p-4 rounded-2xl border border-border shadow-2xs flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between">
+    <div className="bg-card p-4 rounded-2xl border border-border  flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between">
       <div className="relative flex-1">
         <Search className="size-4 text-muted-foreground absolute left-3.5 top-1/2 -translate-y-1/2" />
         <input

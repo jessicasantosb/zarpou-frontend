@@ -30,7 +30,7 @@ export function CustomersTable({
   onToggleStatus,
 }: CustomersTableProps) {
   return (
-    <div className="bg-card rounded-2xl border border-border shadow-2xs overflow-hidden">
+    <div className="bg-card rounded-2xl border border-border  overflow-hidden">
       <div className="overflow-x-auto">
         <table className="w-full text-left text-xs text-foreground/70">
           <thead className="bg-muted text-[11px] font-black tracking-wide text-muted-foreground border-b border-border">
@@ -197,7 +197,7 @@ export function CustomersTable({
                       >
                         <span
                           className={cn(
-                            "pointer-events-none inline-block size-5 transform rounded-full bg-card shadow-sm ring-0 transition duration-200 ease-in-out",
+                            "pointer-events-none inline-block size-5 transform rounded-full bg-card  ring-0 transition duration-200 ease-in-out",
                             isActive ? "translate-x-5" : "translate-x-0",
                           )}
                         />

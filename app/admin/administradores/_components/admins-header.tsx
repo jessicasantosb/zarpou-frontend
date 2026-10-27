@@ -1,12 +1,11 @@
-import { Plus, RotateCcw, ShieldCheck } from "lucide-react";
+import { Plus, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface AdminsHeaderProps {
-  onResetDefaults: () => void;
   onCreate: () => void;
 }
 
-export function AdminsHeader({ onResetDefaults, onCreate }: AdminsHeaderProps) {
+export function AdminsHeader({ onCreate }: AdminsHeaderProps) {
   return (
     <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
       <div>
@@ -28,21 +27,9 @@ export function AdminsHeader({ onResetDefaults, onCreate }: AdminsHeaderProps) {
       <div className="flex items-center gap-2.5 self-start sm:self-auto">
         <Button
           type="button"
-          variant="outline"
-          size="sm"
-          onClick={onResetDefaults}
-          title="Restaura os administradores iniciais padrão"
-          className="h-auto rounded-xl border-border bg-card px-3.5 py-2 text-xs font-semibold text-foreground/70 shadow-2xs hover:bg-muted"
-        >
-          <RotateCcw className="size-3.5" />
-          Restaurar Padrão
-        </Button>
-
-        <Button
-          type="button"
           size="sm"
           onClick={onCreate}
-          className="h-auto rounded-xl bg-primary px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-primary/90"
+          className="h-auto rounded-xl bg-primary px-4 py-2 text-xs font-bold text-white  hover:bg-primary/90"
         >
           <Plus className="size-4 text-secondary" />
           Novo Administrador

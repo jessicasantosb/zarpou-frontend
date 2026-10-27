@@ -32,7 +32,7 @@ export function NotificationChannelsCard({
   const isAnyEnabled = whatsappPromotions || emailPromotions;
 
   return (
-    <div className="bg-card rounded-3xl p-6 sm:p-8 border border-border shadow-xs space-y-6">
+    <div className="bg-card rounded-3xl p-6 sm:p-8 border border-border  space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-border/60">
         <div className="space-y-1">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/15 text-primary text-[11px] font-black tracking-wide mb-1">
@@ -56,7 +56,7 @@ export function NotificationChannelsCard({
               ? "Clique para descadastrar de todos os canais"
               : "Clique para cadastrar em todos os canais"
           }
-          className={`group flex items-center gap-3 px-4 py-2.5 rounded-2xl border transition-all duration-300 cursor-pointer shadow-xs shrink-0 self-start sm:self-auto ${
+          className={`group flex items-center gap-3 px-4 py-2.5 rounded-2xl border transition-all duration-300 cursor-pointer  shrink-0 self-start sm:self-auto ${
             areAllEnabled
               ? "bg-primary/10 hover:bg-primary/15 text-primary border-primary/20"
               : isAnyEnabled
@@ -67,9 +67,9 @@ export function NotificationChannelsCard({
           <div
             className={`size-10 rounded-xl flex items-center justify-center transition-transform group-hover:scale-105 ${
               areAllEnabled
-                ? "bg-primary text-white shadow-xs"
+                ? "bg-primary text-white "
                 : isAnyEnabled
-                  ? "bg-amber-600 text-white shadow-xs"
+                  ? "bg-amber-600 text-white "
                   : "bg-border text-muted-foreground"
             }`}
           >
@@ -99,7 +99,7 @@ export function NotificationChannelsCard({
         <div
           className={`p-5 rounded-2xl border transition-all duration-300 flex flex-col justify-between h-full ${
             whatsappPromotions
-              ? "bg-emerald-50/50 border-emerald-200 shadow-xs"
+              ? "bg-emerald-50/50 border-emerald-200 "
               : "bg-muted/70 border-border"
           }`}
         >
@@ -109,7 +109,7 @@ export function NotificationChannelsCard({
                 <div
                   className={`size-11 rounded-xl flex items-center justify-center shrink-0 ${
                     whatsappPromotions
-                      ? "bg-emerald-600 text-white shadow-md shadow-emerald-600/20"
+                      ? "bg-emerald-600 text-white  "
                       : "bg-muted text-muted-foreground"
                   }`}
                 >
@@ -161,7 +161,7 @@ export function NotificationChannelsCard({
         <div
           className={`p-5 rounded-2xl border transition-all duration-300 flex flex-col justify-between h-full ${
             emailPromotions
-              ? "bg-blue-50/50 border-blue-200 shadow-xs"
+              ? "bg-blue-50/50 border-blue-200 "
               : "bg-muted/70 border-border"
           }`}
         >
@@ -171,7 +171,7 @@ export function NotificationChannelsCard({
                 <div
                   className={`size-11 rounded-xl flex items-center justify-center shrink-0 ${
                     emailPromotions
-                      ? "bg-primary text-white shadow-md shadow-primary/20"
+                      ? "bg-primary text-white  "
                       : "bg-muted text-muted-foreground"
                   }`}
                 >

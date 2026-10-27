@@ -43,7 +43,7 @@ export function DateRangeInput({
   return (
     <div className={`w-full grid ${singleDate ? "grid-cols-1" : "grid-cols-2"} gap-2`}>
       {/* Campo Inicial / Ida / Check-in */}
-      <div className="h-14 bg-card border border-input hover:border-primary/70 rounded-xl px-2.5 sm:px-3 flex items-center gap-2 transition shadow-xs focus-within:ring-2 focus-within:ring-primary/20 relative cursor-pointer group">
+      <div className="h-14 bg-card border border-input hover:border-primary/70 rounded-xl px-2.5 sm:px-3 flex items-center gap-2 transition  focus-within:ring-2 focus-within:ring-primary/20 relative cursor-pointer group">
         <Calendar className="size-4.5 text-primary shrink-0 pointer-events-none group-hover:scale-105 transition-transform" />
         <div className="flex flex-col min-w-0 flex-1">
           <span className="text-[10px] sm:text-[11px] font-semibold text-muted-foreground tracking-wide truncate pointer-events-none">
@@ -71,7 +71,7 @@ export function DateRangeInput({
 
       {/* Campo Final / Volta / Check-out */}
       {!singleDate && (
-        <div className="h-14 bg-card border border-input hover:border-primary/70 rounded-xl px-2.5 sm:px-3 flex items-center gap-2 transition shadow-xs focus-within:ring-2 focus-within:ring-primary/20 relative cursor-pointer group">
+        <div className="h-14 bg-card border border-input hover:border-primary/70 rounded-xl px-2.5 sm:px-3 flex items-center gap-2 transition  focus-within:ring-2 focus-within:ring-primary/20 relative cursor-pointer group">
           <Calendar className="size-4.5 text-primary shrink-0 pointer-events-none group-hover:scale-105 transition-transform" />
           <div className="flex flex-col min-w-0 flex-1">
             <span className="text-[10px] sm:text-[11px] font-semibold text-muted-foreground tracking-wide truncate pointer-events-none">

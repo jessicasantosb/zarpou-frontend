@@ -12,7 +12,7 @@ export function TripsEmptyState({
   onResetFilter,
 }: TripsEmptyStateProps) {
   return (
-    <div className="bg-card rounded-3xl p-12 text-center border border-border shadow-sm space-y-4">
+    <div className="bg-card rounded-3xl p-12 text-center border border-border  space-y-4">
       <div className="size-16 rounded-full bg-muted text-muted-foreground flex items-center justify-center mx-auto">
         <CalendarCheck2 className="size-8" />
       </div>
@@ -28,14 +28,14 @@ export function TripsEmptyState({
         <button
           type="button"
           onClick={onResetFilter}
-          className="px-5 py-2.5 bg-primary text-white font-bold text-xs rounded-xl hover:bg-primary/90 transition shadow-sm cursor-pointer"
+          className="px-5 py-2.5 bg-primary text-white font-bold text-xs rounded-xl hover:bg-primary/90 transition  cursor-pointer"
         >
           Ver Todas as Viagens
         </button>
       ) : (
         <Link
           href="/hospedagens"
-          className="inline-block px-6 py-3 bg-secondary text-primary font-bold text-xs rounded-xl hover:bg-secondary/90 transition shadow-sm"
+          className="inline-block px-6 py-3 bg-secondary text-primary font-bold text-xs rounded-xl hover:bg-secondary/90 transition "
         >
           Explorar Hotéis e Pacotes
         </Link>

@@ -260,7 +260,7 @@ export function AiConciergeChat() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-40 group flex items-center gap-3 bg-gradient-to-r from-primary to-primary-light text-white px-5 py-3.5 rounded-full shadow-xl hover:shadow-primary/30 hover:scale-105 active:scale-95 transition-all duration-300 border border-white/20"
+          className="fixed bottom-6 right-6 z-40 group flex items-center gap-3 bg-gradient-to-r from-primary to-primary-light text-white px-5 py-3.5 rounded-full   hover:scale-105 active:scale-95 transition-all duration-300 border border-white/20"
           aria-label="Abrir chat com a IA"
         >
           <div className="relative flex items-center justify-center size-9 rounded-full bg-card/15 backdrop-blur-sm text-secondary group-hover:rotate-12 transition-transform duration-300">
@@ -288,9 +288,9 @@ export function AiConciergeChat() {
 
       {/* Floating Chat Modal Window */}
       {isOpen && (
-        <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-[calc(100vw-32px)] sm:w-[420px] h-[580px] max-h-[85vh] bg-card rounded-3xl shadow-xl border border-border/90 flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-5 duration-200">
+        <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-[calc(100vw-32px)] sm:w-[420px] h-[580px] max-h-[85vh] bg-card rounded-3xl  border border-border/90 flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-5 duration-200">
           {/* Header */}
-          <div className="bg-gradient-to-r from-primary via-primary-hover to-primary p-4 text-white flex items-center justify-between shadow-md relative">
+          <div className="bg-gradient-to-r from-primary via-primary-hover to-primary p-4 text-white flex items-center justify-between  relative">
             <div className="flex items-center gap-3">
               <div className="relative size-10 rounded-full bg-card/10 backdrop-blur-md flex items-center justify-center border border-white/20 text-secondary">
                 <Bot className="size-6" />
@@ -342,13 +342,13 @@ export function AiConciergeChat() {
                   }`}
                 >
                   {isBot && (
-                    <div className="size-7 rounded-full bg-primary text-secondary flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                    <div className="size-7 rounded-full bg-primary text-secondary flex items-center justify-center shrink-0 mt-0.5 ">
                       <Sparkles className="size-3.5" />
                     </div>
                   )}
 
                   <div
-                    className={`max-w-[82%] rounded-2xl p-3.5 text-[13px] shadow-xs ${
+                    className={`max-w-[82%] rounded-2xl p-3.5 text-[13px]  ${
                       isBot
                         ? "bg-card text-foreground rounded-tl-xs border border-border/80"
                         : "bg-primary text-white rounded-tr-xs"
@@ -383,7 +383,7 @@ export function AiConciergeChat() {
                   </div>
 
                   {!isBot && (
-                    <div className="size-7 rounded-full bg-secondary text-primary flex items-center justify-center shrink-0 mt-0.5 shadow-sm font-bold text-xs">
+                    <div className="size-7 rounded-full bg-secondary text-primary flex items-center justify-center shrink-0 mt-0.5  font-bold text-xs">
                       <User className="size-3.5" />
                     </div>
                   )}
@@ -394,10 +394,10 @@ export function AiConciergeChat() {
             {/* Typing Indicator */}
             {isTyping && (
               <div className="flex gap-2.5 justify-start items-center">
-                <div className="size-7 rounded-full bg-primary text-secondary flex items-center justify-center shrink-0 shadow-sm">
+                <div className="size-7 rounded-full bg-primary text-secondary flex items-center justify-center shrink-0 ">
                   <Sparkles className="size-3.5" />
                 </div>
-                <div className="bg-card text-muted-foreground rounded-2xl rounded-tl-xs px-4 py-3 border border-border/80 shadow-xs flex items-center gap-1.5">
+                <div className="bg-card text-muted-foreground rounded-2xl rounded-tl-xs px-4 py-3 border border-border/80  flex items-center gap-1.5">
                   <span className="size-2 bg-muted-foreground/70 rounded-full animate-pulse [animation-delay:-0.3s]" />
                   <span className="size-2 bg-muted-foreground/70 rounded-full animate-pulse [animation-delay:-0.15s]" />
                   <span className="size-2 bg-muted-foreground/70 rounded-full animate-pulse" />
@@ -462,7 +462,7 @@ export function AiConciergeChat() {
             <button
               type="submit"
               disabled={!input.trim() || isTyping}
-              className="size-10 rounded-xl bg-primary hover:bg-primary-hover disabled:opacity-40 disabled:hover:bg-primary text-white flex items-center justify-center shrink-0 transition shadow-sm active:scale-95"
+              className="size-10 rounded-xl bg-primary hover:bg-primary-hover disabled:opacity-40 disabled:hover:bg-primary text-white flex items-center justify-center shrink-0 transition  active:scale-95"
               aria-label="Enviar mensagem"
             >
               <Send className="size-4" />

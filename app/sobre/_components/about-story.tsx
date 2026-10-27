@@ -40,7 +40,7 @@ export function AboutStory() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-4">
-            <div className="bg-card p-4 rounded-2xl border border-border/80 shadow-xs hover:border-primary/40 transition">
+            <div className="bg-card p-4 rounded-2xl border border-border/80  hover:border-primary/40 transition">
               <div className="size-9 rounded-xl bg-blue-50 text-primary flex items-center justify-center mb-2.5">
                 <Target className="size-5" />
               </div>
@@ -52,7 +52,7 @@ export function AboutStory() {
               </p>
             </div>
 
-            <div className="bg-card p-4 rounded-2xl border border-border/80 shadow-xs hover:border-secondary/40 transition">
+            <div className="bg-card p-4 rounded-2xl border border-border/80  hover:border-secondary/40 transition">
               <div className="size-9 rounded-xl bg-amber-50 text-secondary flex items-center justify-center mb-2.5">
                 <Compass className="size-5" />
               </div>
@@ -64,7 +64,7 @@ export function AboutStory() {
               </p>
             </div>
 
-            <div className="bg-card p-4 rounded-2xl border border-border/80 shadow-xs hover:border-emerald-400/40 transition">
+            <div className="bg-card p-4 rounded-2xl border border-border/80  hover:border-emerald-400/40 transition">
               <div className="size-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-2.5">
                 <Heart className="size-5" />
               </div>
@@ -79,7 +79,7 @@ export function AboutStory() {
         </div>
 
         <div className="lg:col-span-5 space-y-4">
-          <div className="relative aspect-4/5 rounded-3xl overflow-hidden shadow-xl border border-border group">
+          <div className="relative aspect-4/5 rounded-3xl overflow-hidden  border border-border group">
             <Image
               src="/about/do-seu-jeito.png"
               alt="Experiência Zarpou Viagens"
@@ -89,7 +89,7 @@ export function AboutStory() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/25 to-transparent" />
 
-            <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md rounded-full px-3.5 py-1.5 shadow-md border border-white/40 flex items-center gap-1.5 text-xs font-bold text-slate-800">
+            <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md rounded-full px-3.5 py-1.5  border border-white/40 flex items-center gap-1.5 text-xs font-bold text-slate-800">
               <MapPin className="size-3.5 text-secondary" />
               <span>{address.split("-")[0].trim()}</span>
             </div>
@@ -104,7 +104,7 @@ export function AboutStory() {
             </div>
           </div>
 
-          <div className="bg-card rounded-2xl p-4 shadow-lg border border-border/90 flex items-center justify-between gap-3">
+          <div className="bg-card rounded-2xl p-4  border border-border/90 flex items-center justify-between gap-3">
             <div className="flex items-center gap-3">
               <div className="size-11 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 border border-emerald-100">
                 <ShieldCheck className="size-6" />

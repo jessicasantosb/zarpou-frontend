@@ -39,7 +39,7 @@ export function GuestAccess({
             </p>
           </div>
 
-          <div className="bg-card rounded-3xl p-6 md:p-8 border border-border shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="bg-card rounded-3xl p-6 md:p-8 border border-border  flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="space-y-1 text-center sm:text-left">
               <span className="text-xs font-bold text-primary tracking-wide">
                 Já possui conta Zarpou?
@@ -55,7 +55,7 @@ export function GuestAccess({
 
             <Link
               href="/login?redirect=/minhas-viagens"
-              className="w-full sm:w-auto px-6 py-3.5 bg-primary hover:bg-primary/90 text-white font-bold text-xs rounded-xl flex items-center justify-center gap-2 shadow-sm transition whitespace-nowrap"
+              className="w-full sm:w-auto px-6 py-3.5 bg-primary hover:bg-primary/90 text-white font-bold text-xs rounded-xl flex items-center justify-center gap-2  transition whitespace-nowrap"
             >
               <User className="size-4" />
               Acessar com E-mail
@@ -63,7 +63,7 @@ export function GuestAccess({
             </Link>
           </div>
 
-          <div className="bg-card rounded-3xl p-6 md:p-8 border border-border shadow-sm space-y-4">
+          <div className="bg-card rounded-3xl p-6 md:p-8 border border-border  space-y-4">
             <div className="border-b border-border/60 pb-3">
               <span className="text-xs font-bold text-muted-foreground tracking-wide">
                 Consulta Rápida sem Login
@@ -115,7 +115,7 @@ export function GuestAccess({
               <div className="flex justify-end pt-1">
                 <button
                   type="submit"
-                  className="w-full sm:w-auto px-6 py-3 bg-secondary hover:bg-secondary/90 text-primary font-bold text-xs rounded-xl flex items-center justify-center gap-2 shadow-sm transition cursor-pointer"
+                  className="w-full sm:w-auto px-6 py-3 bg-secondary hover:bg-secondary/90 text-primary font-bold text-xs rounded-xl flex items-center justify-center gap-2  transition cursor-pointer"
                 >
                   <Search className="size-4" />
                   Localizar Reserva
@@ -135,7 +135,7 @@ export function GuestAccess({
                 </div>
                 <Link
                   href={`/reserva/confirmada/${foundBookingId}`}
-                  className="px-4 py-2 bg-primary text-white text-xs font-bold rounded-xl flex items-center gap-1.5 shadow-sm"
+                  className="px-4 py-2 bg-primary text-white text-xs font-bold rounded-xl flex items-center gap-1.5 "
                 >
                   <Printer className="size-3.5" />
                   Acessar Voucher

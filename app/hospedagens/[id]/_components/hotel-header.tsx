@@ -52,7 +52,7 @@ export function HotelHeader({ hotel, bookings }: HotelHeaderProps) {
                     : "Avaliação Zarpou"}
                 </p>
               </div>
-              <span className="bg-primary text-white text-lg font-black px-3 py-1.5 rounded-xl shadow-xs">
+              <span className="bg-primary text-white text-lg font-black px-3 py-1.5 rounded-xl ">
                 {ratingInfo.rating.toFixed(1)}
               </span>
             </div>

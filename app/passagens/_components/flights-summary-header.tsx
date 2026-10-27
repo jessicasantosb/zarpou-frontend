@@ -15,7 +15,7 @@ export function FlightsSummaryHeader({
   totalTravelers,
 }: FlightsSummaryHeaderProps) {
   return (
-    <div className="bg-primary text-white py-4 shadow-md border-b border-primary/20 mb-8">
+    <div className="bg-primary text-white py-4  border-b border-primary/20 mb-8">
       <Container>
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
@@ -36,7 +36,7 @@ export function FlightsSummaryHeader({
 
           <Link
             href="/"
-            className="px-4 py-2 bg-secondary text-primary font-bold text-xs rounded-xl hover:bg-secondary/90 transition shadow-sm"
+            className="px-4 py-2 bg-secondary text-primary font-bold text-xs rounded-xl hover:bg-secondary/90 transition "
           >
             Modificar Pesquisa
           </Link>

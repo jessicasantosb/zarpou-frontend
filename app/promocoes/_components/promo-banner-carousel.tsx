@@ -43,7 +43,7 @@ export function PromoBannerCarousel() {
 
           <div className="flex items-center gap-3 self-start md:self-auto">
             {activePromos.length > 3 && (
-              <div className="flex items-center gap-1.5 bg-card p-1 rounded-2xl border border-border shadow-xs">
+              <div className="flex items-center gap-1.5 bg-card p-1 rounded-2xl border border-border ">
                 <button
                   type="button"
                   onClick={() => emblaApi?.scrollPrev()}

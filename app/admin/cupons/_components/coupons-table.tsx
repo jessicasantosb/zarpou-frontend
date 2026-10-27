@@ -69,7 +69,7 @@ export function CouponsTable({
   }
 
   return (
-    <div className="bg-card rounded-3xl border border-border shadow-xs overflow-hidden">
+    <div className="bg-card rounded-3xl border border-border  overflow-hidden">
       <div className="overflow-x-auto">
         <table className="w-full text-xs">
           <thead>

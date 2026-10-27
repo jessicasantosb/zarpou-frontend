@@ -28,7 +28,6 @@ export default function AdministradoresAdminPage() {
     onEdit,
     onDelete,
     onToggleStatus,
-    onResetDefaults,
   } = useAdmins();
 
   if (!mounted) {
@@ -41,7 +40,7 @@ export default function AdministradoresAdminPage() {
 
   return (
     <div className="max-w-7xl space-y-6 pb-16">
-      <AdminsHeader onResetDefaults={onResetDefaults} onCreate={onCreate} />
+      <AdminsHeader onCreate={onCreate} />
 
       <AccessNotice />
 

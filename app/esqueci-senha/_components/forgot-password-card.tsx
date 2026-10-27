@@ -50,7 +50,7 @@ export function ForgotPasswordCard() {
         <button
           type="button"
           onClick={sendToAnotherEmail}
-          className="w-full h-12 bg-primary hover:bg-primary-hover text-white font-bold text-sm rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-primary/20 transition cursor-pointer"
+          className="w-full h-12 bg-primary hover:bg-primary-hover text-white font-bold text-sm rounded-xl flex items-center justify-center gap-2   transition cursor-pointer"
         >
           <Mail className="size-4" />
           Enviar para outro e-mail
@@ -102,7 +102,7 @@ export function ForgotPasswordCard() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full h-12 bg-primary hover:bg-primary-hover text-white font-bold text-sm rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-primary/20 transition cursor-pointer disabled:opacity-50"
+            className="w-full h-12 bg-primary hover:bg-primary-hover text-white font-bold text-sm rounded-xl flex items-center justify-center gap-2   transition cursor-pointer disabled:opacity-50"
           >
             {loading ? (
               <>

@@ -66,7 +66,7 @@ export function ContactFaq() {
               key={idx}
               className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
                 isOpen
-                  ? "bg-white border-primary/40 shadow-md"
+                  ? "bg-white border-primary/40 "
                   : "bg-card/80 border-border hover:border-input"
               }`}
             >

@@ -25,7 +25,7 @@ export function RoteiroCta() {
 
       <Link
         href="/contato"
-        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-white text-sm font-bold hover:bg-primary-hover transition shadow-sm self-start md:self-center shrink-0"
+        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-white text-sm font-bold hover:bg-primary-hover transition  self-start md:self-center shrink-0"
       >
         Monte seu roteiro
         <ArrowRight className="size-4" />

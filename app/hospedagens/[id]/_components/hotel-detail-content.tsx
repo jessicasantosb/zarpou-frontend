@@ -45,7 +45,7 @@ export function HotelDetailContent({ hotelId }: HotelDetailContentProps) {
       <Container>
         <HotelDetailBreadcrumb onShare={onShare} />
 
-        <div className="bg-card rounded-3xl p-6 border border-border shadow-xs mb-6">
+        <div className="bg-card rounded-3xl p-6 border border-border  mb-6">
           <HotelHeader hotel={hotel} bookings={bookings} />
           <HotelGallery
             hotel={hotel}

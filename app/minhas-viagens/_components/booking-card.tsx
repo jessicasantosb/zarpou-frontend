@@ -42,7 +42,7 @@ export function BookingCard({
   const whatsappUrl = `https://wa.me/5511999999999?text=${whatsappMessage}`;
 
   return (
-    <div className="bg-card rounded-3xl p-6 border border-border shadow-sm hover:shadow-md transition-all duration-300 space-y-4">
+    <div className="bg-card rounded-3xl p-6 border border-border   transition-all duration-300 space-y-4">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-3 border-b border-border/60">
         <div className="flex items-center gap-3">
           <div className="size-11 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
@@ -153,7 +153,7 @@ export function BookingCard({
               target="_blank"
               rel="noopener noreferrer"
               title="Falar com especialista sobre esta reserva"
-              className="px-3 py-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 font-bold text-xs rounded-xl flex items-center gap-1.5 shadow-xs transition"
+              className="px-3 py-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 font-bold text-xs rounded-xl flex items-center gap-1.5  transition"
             >
               <MessageCircle className="size-3.5 text-emerald-600" />
               <span>Ajuda WhatsApp</span>
@@ -161,7 +161,7 @@ export function BookingCard({
 
             <Link
               href={`/reserva/confirmada/${b.id}`}
-              className="px-3.5 py-2 bg-primary hover:bg-primary/90 text-white font-bold text-xs rounded-xl flex items-center gap-1.5 shadow-sm transition"
+              className="px-3.5 py-2 bg-primary hover:bg-primary/90 text-white font-bold text-xs rounded-xl flex items-center gap-1.5  transition"
             >
               <Printer className="size-3.5" />
               <span>Voucher</span>
@@ -219,7 +219,7 @@ export function BookingCard({
             <button
               type="button"
               onClick={() => onOpenReview(b)}
-              className="px-3.5 py-1.5 bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 rounded-xl font-bold text-xs flex items-center gap-1.5 transition cursor-pointer self-start sm:self-auto shadow-xs"
+              className="px-3.5 py-1.5 bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 rounded-xl font-bold text-xs flex items-center gap-1.5 transition cursor-pointer self-start sm:self-auto "
             >
               <Star className="size-3.5 fill-amber-400 text-amber-400" />
               <span>Avaliar Viagem</span>

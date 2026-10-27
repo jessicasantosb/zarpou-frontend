@@ -29,7 +29,6 @@ export default function UsuariosAdminPage() {
     onOpenDetails,
     onToggleStatus,
     onDelete,
-    onReset,
     onCloseDetails,
   } = useUsuarios();
 
@@ -43,7 +42,7 @@ export default function UsuariosAdminPage() {
 
   return (
     <div className="space-y-6 max-w-7xl pb-16">
-      <UsuariosHeader onReset={onReset} onCreate={onOpenCreate} />
+      <UsuariosHeader onCreate={onOpenCreate} />
 
       <UsuariosStatsCards stats={stats} />
 

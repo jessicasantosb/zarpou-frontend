@@ -8,7 +8,7 @@ import { useProductStore } from "@/stores/product-store";
 
 export function useHospedagens() {
   const { confirm } = useConfirm();
-  const { hotels, fetchHotels, deleteHotel, resetCatalog } = useProductStore();
+  const { hotels, fetchHotels, deleteHotel } = useProductStore();
 
   const [mounted, setMounted] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
@@ -29,22 +29,6 @@ export function useHospedagens() {
   const handleOpenEdit = (hotel: Hotel) => {
     setEditingHotel(hotel);
     setModalOpen(true);
-  };
-
-  const handleRestore = async () => {
-    const confirmed = await confirm({
-      title: "Restaurar Hospedagens Padrão",
-      description:
-        "Deseja restaurar a lista original de hotéis e hospedagens da Zarpou?",
-      confirmText: "Restaurar",
-      cancelText: "Cancelar",
-      variant: "warning",
-      icon: "warning",
-    });
-    if (!confirmed) return;
-
-    resetCatalog();
-    toast.info("Catálogo de hospedagens restaurado com sucesso!");
   };
 
   const handleDelete = async (hotel: Hotel) => {
@@ -70,7 +54,6 @@ export function useHospedagens() {
     onOpenChange: setModalOpen,
     onOpenNew: handleOpenNew,
     onOpenEdit: handleOpenEdit,
-    onRestore: handleRestore,
     onDelete: handleDelete,
   };
 }

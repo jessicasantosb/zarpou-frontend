@@ -9,7 +9,7 @@ interface BackupCodesModalProps {
 export function BackupCodesModal({ codes, onClose }: BackupCodesModalProps) {
   return (
     <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in">
-      <div className="bg-card rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-xl border border-border/60 relative animate-in zoom-in-95 space-y-4">
+      <div className="bg-card rounded-3xl max-w-md w-full p-6 sm:p-8  border border-border/60 relative animate-in zoom-in-95 space-y-4">
         <div className="flex items-center justify-between pb-3 border-b border-border/60">
           <div className="flex items-center gap-2">
             <Key className="size-5 text-secondary" />

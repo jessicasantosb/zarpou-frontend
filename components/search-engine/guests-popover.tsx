@@ -83,7 +83,7 @@ export function GuestsPopover({
         ref={buttonRef}
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
-        className="w-full h-14 bg-card border border-input hover:border-primary/70 rounded-xl px-4 flex items-center gap-3 text-left transition shadow-xs focus:ring-2 focus:ring-primary/20 focus:outline-hidden cursor-pointer"
+        className="w-full h-14 bg-card border border-input hover:border-primary/70 rounded-xl px-4 flex items-center gap-3 text-left transition  focus:ring-2 focus:ring-primary/20 focus:outline-hidden cursor-pointer"
       >
         <Users className="size-5 text-primary shrink-0" />
         <div className="flex flex-col truncate">
@@ -100,7 +100,7 @@ export function GuestsPopover({
       {isOpen && coords && mounted && typeof document !== "undefined" && createPortal(
         <div
           ref={popoverRef}
-          className="fixed w-80 max-w-[calc(100vw-2rem)] bg-card border border-border rounded-2xl shadow-xl p-5 animate-in fade-in zoom-in-95 duration-150 ring-1 ring-foreground/10 pointer-events-auto"
+          className="fixed w-80 max-w-[calc(100vw-2rem)] bg-card border border-border rounded-2xl  p-5 animate-in fade-in zoom-in-95 duration-150 ring-1 ring-foreground/10 pointer-events-auto"
           style={{
             top: coords.top,
             right: coords.right,
@@ -255,7 +255,7 @@ export function GuestsPopover({
           <button
             type="button"
             onClick={() => setIsOpen(false)}
-            className="w-full mt-5 py-2.5 bg-primary text-white rounded-xl text-xs font-bold hover:bg-primary/90 transition shadow-xs cursor-pointer"
+            className="w-full mt-5 py-2.5 bg-primary text-white rounded-xl text-xs font-bold hover:bg-primary/90 transition  cursor-pointer"
           >
             Aplicar
           </button>

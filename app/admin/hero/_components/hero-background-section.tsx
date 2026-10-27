@@ -37,7 +37,7 @@ export function HeroBackgroundSection({ form }: HeroBackgroundSectionProps) {
                     className={cn(
                       "flex cursor-pointer items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-bold transition",
                       bgType === "image"
-                        ? "bg-card text-primary shadow-xs"
+                        ? "bg-card text-primary "
                         : "text-foreground/70 hover:text-foreground",
                     )}
                   >
@@ -50,7 +50,7 @@ export function HeroBackgroundSection({ form }: HeroBackgroundSectionProps) {
                     className={cn(
                       "flex cursor-pointer items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-bold transition",
                       bgType === "video"
-                        ? "bg-card text-primary shadow-xs"
+                        ? "bg-card text-primary "
                         : "text-foreground/70 hover:text-foreground",
                     )}
                   >

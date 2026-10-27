@@ -45,7 +45,7 @@ export function CuponsHeader({
           <button
             type="button"
             onClick={onAddNew}
-            className="flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-primary text-white text-xs font-bold hover:bg-primary-hover transition shadow-sm cursor-pointer"
+            className="flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-primary text-white text-xs font-bold hover:bg-primary-hover transition  cursor-pointer"
           >
             <Plus className="size-4" />
             Novo cupom

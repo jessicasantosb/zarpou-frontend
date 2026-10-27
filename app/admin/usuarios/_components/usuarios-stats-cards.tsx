@@ -14,7 +14,7 @@ interface UsuariosStatsCardsProps {
 export function UsuariosStatsCards({ stats }: UsuariosStatsCardsProps) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
-      <div className="bg-card p-5 rounded-2xl border border-border shadow-2xs flex items-center justify-between">
+      <div className="bg-card p-5 rounded-2xl border border-border  flex items-center justify-between">
         <div>
           <p className="text-xs text-muted-foreground font-semibold tracking-wide">
             Total de Clientes
@@ -28,7 +28,7 @@ export function UsuariosStatsCards({ stats }: UsuariosStatsCardsProps) {
         </div>
       </div>
 
-      <div className="bg-card p-5 rounded-2xl border border-border shadow-2xs flex items-center justify-between">
+      <div className="bg-card p-5 rounded-2xl border border-border  flex items-center justify-between">
         <div>
           <p className="text-xs text-emerald-600 font-semibold tracking-wide">
             Clientes Ativos
@@ -42,7 +42,7 @@ export function UsuariosStatsCards({ stats }: UsuariosStatsCardsProps) {
         </div>
       </div>
 
-      <div className="bg-card p-5 rounded-2xl border border-border shadow-2xs flex items-center justify-between">
+      <div className="bg-card p-5 rounded-2xl border border-border  flex items-center justify-between">
         <div>
           <p className="text-xs text-emerald-600 font-semibold tracking-wide">
             Inscritos no WhatsApp
@@ -56,7 +56,7 @@ export function UsuariosStatsCards({ stats }: UsuariosStatsCardsProps) {
         </div>
       </div>
 
-      <div className="bg-card p-5 rounded-2xl border border-border shadow-2xs flex items-center justify-between">
+      <div className="bg-card p-5 rounded-2xl border border-border  flex items-center justify-between">
         <div>
           <p className="text-xs text-primary/80 font-semibold tracking-wide">
             Inscritos no E-mail

@@ -20,7 +20,7 @@ export function DestinosList({
 }: DestinosListProps) {
   if (destinations.length === 0) {
     return (
-      <div className="bg-card rounded-3xl p-16 text-center border border-border shadow-sm max-w-md mx-auto space-y-4">
+      <div className="bg-card rounded-3xl p-16 text-center border border-border  max-w-md mx-auto space-y-4">
         <div className="size-16 rounded-2xl bg-amber-50 text-amber-500 flex items-center justify-center mx-auto">
           <MapPin className="size-8" />
         </div>

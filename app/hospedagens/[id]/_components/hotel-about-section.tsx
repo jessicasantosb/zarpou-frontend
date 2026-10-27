@@ -7,7 +7,7 @@ interface HotelAboutSectionProps {
 
 export function HotelAboutSection({ hotel }: HotelAboutSectionProps) {
   return (
-    <div className="bg-card rounded-3xl p-6 border border-border shadow-xs space-y-4">
+    <div className="bg-card rounded-3xl p-6 border border-border  space-y-4">
       <h2 className="text-xl font-bold text-foreground">
         Sobre a Acomodação
       </h2>

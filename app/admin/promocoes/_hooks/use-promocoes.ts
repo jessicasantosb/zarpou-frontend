@@ -17,7 +17,6 @@ export function usePromocoes() {
     deletePromotion,
     togglePromotionActive,
     markNotificationSent,
-    resetPromotions,
   } = usePromotionStore();
 
   const { hotels, flights, fetchHotels, fetchFlights } = useProductStore();
@@ -100,6 +99,5 @@ export function usePromocoes() {
     onToggleActive: handleToggleActive,
     onNotify: handleNotifySubscribers,
     onDelete: handleDelete,
-    onReset: resetPromotions,
   };
 }

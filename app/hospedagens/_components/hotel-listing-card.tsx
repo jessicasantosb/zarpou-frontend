@@ -28,7 +28,7 @@ export function HotelListingCard({
   const installmentValue = (totalPrice / hotel.maxInstallments).toFixed(2);
 
   return (
-    <article className="bg-card rounded-2xl overflow-hidden border border-border shadow-xs hover:shadow-xl transition-all duration-300 grid grid-cols-1 md:grid-cols-12 group">
+    <article className="bg-card rounded-2xl overflow-hidden border border-border   transition-all duration-300 grid grid-cols-1 md:grid-cols-12 group">
       <div className="relative md:col-span-5 h-56 md:h-full min-h-[220px] overflow-hidden">
         <Image
           src={hotel.imageUrl}
@@ -38,7 +38,7 @@ export function HotelListingCard({
           className="object-cover group-hover:scale-105 transition-transform duration-500"
         />
         {hotel.badges && hotel.badges.length > 0 && (
-          <div className="absolute top-3 left-3 bg-secondary text-primary text-[11px] font-extrabold px-3 py-1 rounded-full shadow-md tracking-wide">
+          <div className="absolute top-3 left-3 bg-secondary text-primary text-[11px] font-extrabold px-3 py-1 rounded-full  tracking-wide">
             {hotel.badges[0]}
           </div>
         )}
@@ -76,7 +76,7 @@ export function HotelListingCard({
               if (!ratingInfo.shouldShow || !ratingInfo.rating) return null;
               return (
                 <div className="flex flex-col items-end shrink-0">
-                  <span className="bg-primary text-white text-sm font-extrabold px-2.5 py-1 rounded-lg shadow-xs">
+                  <span className="bg-primary text-white text-sm font-extrabold px-2.5 py-1 rounded-lg ">
                     {ratingInfo.rating.toFixed(1)}
                   </span>
                   <span className="text-[11px] font-bold text-primary mt-0.5">
@@ -139,7 +139,7 @@ export function HotelListingCard({
 
           <Link
             href={`/hospedagens/${hotel.id}?checkIn=${checkIn}&checkOut=${checkOut}&adults=${adults}&rooms=${rooms}`}
-            className="w-full sm:w-auto px-6 py-3 bg-secondary hover:bg-secondary/90 text-primary font-bold text-sm rounded-xl flex items-center justify-center gap-2 shadow-md shadow-secondary/20 transition transform group-hover:scale-102"
+            className="w-full sm:w-auto px-6 py-3 bg-secondary hover:bg-secondary/90 text-primary font-bold text-sm rounded-xl flex items-center justify-center gap-2   transition transform group-hover:scale-102"
           >
             Ver quartos
             <ArrowRight className="size-4" />

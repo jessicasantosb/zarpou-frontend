@@ -40,7 +40,7 @@ export function HotelAmenitiesTab({ form }: HotelAmenitiesTabProps) {
               className={cn(
                 "flex cursor-pointer items-center justify-between rounded-xl border p-3 text-xs font-semibold transition",
                 selected
-                  ? "border-primary bg-primary font-bold text-white shadow-xs"
+                  ? "border-primary bg-primary font-bold text-white "
                   : "border-border bg-card text-foreground/80 hover:bg-muted",
               )}
             >

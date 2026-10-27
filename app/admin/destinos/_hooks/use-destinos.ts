@@ -12,7 +12,6 @@ export function useDestinos() {
     destinations,
     fetchDestinations,
     deleteDestination,
-    resetDestinations,
   } = useDestinationStore();
 
   const [mounted, setMounted] = useState(false);
@@ -33,22 +32,6 @@ export function useDestinos() {
   const handleOpenEdit = (destination: DestinationItem) => {
     setEditingDestination(destination);
     setModalOpen(true);
-  };
-
-  const handleRestore = async () => {
-    const confirmed = await confirm({
-      title: "Restaurar Destinos Padrão",
-      description:
-        "Deseja restaurar a lista original de destinos turísticos da Zarpou?",
-      confirmText: "Restaurar",
-      cancelText: "Cancelar",
-      variant: "warning",
-      icon: "warning",
-    });
-    if (!confirmed) return;
-
-    resetDestinations();
-    toast.info("Destinos padrão restaurados com sucesso!");
   };
 
   const handleDelete = async (destination: DestinationItem) => {
@@ -74,7 +57,6 @@ export function useDestinos() {
     onOpenChange: setModalOpen,
     onOpenNew: handleOpenNew,
     onOpenEdit: handleOpenEdit,
-    onRestore: handleRestore,
     onDelete: handleDelete,
   };
 }

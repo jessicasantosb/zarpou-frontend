@@ -3,7 +3,7 @@ import { Container } from "@/components/shared/container";
 
 export function DestinosHero() {
   return (
-    <div className="bg-primary text-white py-12 mb-8 shadow-inner relative overflow-hidden">
+    <div className="bg-primary text-white py-12 mb-8  relative overflow-hidden">
       <div className="absolute inset-0 bg-radial from-white/10 via-transparent to-transparent pointer-events-none" />
       <Container>
         <div className="max-w-3xl space-y-3 relative z-10">

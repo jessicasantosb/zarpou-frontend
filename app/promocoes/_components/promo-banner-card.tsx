@@ -27,7 +27,7 @@ export function PromoBannerCard({ promo }: PromoBannerCardProps) {
 
   return (
     <>
-      <div className="group relative h-[380px] w-full rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-border/80 flex flex-col justify-between p-6">
+      <div className="group relative h-[380px] w-full rounded-3xl overflow-hidden   transition-all duration-500 border border-border/80 flex flex-col justify-between p-6">
         <Image
           src={promo.imageUrl}
           alt={promo.title}
@@ -39,12 +39,12 @@ export function PromoBannerCard({ promo }: PromoBannerCardProps) {
         <div className="absolute inset-0 bg-gradient-to-t from-foreground via-foreground/60 to-foreground/35 pointer-events-none" />
 
         <div className="relative z-10 flex items-start justify-between gap-3">
-          <div className="bg-secondary text-primary text-[10px] font-black px-3 py-1.5 rounded-full tracking-wide shadow-md flex items-center gap-1.5 backdrop-blur-xs">
+          <div className="bg-secondary text-primary text-[10px] font-black px-3 py-1.5 rounded-full tracking-wide  flex items-center gap-1.5 backdrop-blur-xs">
             <Zap className="size-3 fill-primary text-primary" />
             <span>{promo.badge}</span>
           </div>
 
-          <div className="bg-emerald-600/95 text-white text-[11px] font-black px-3 py-1.5 rounded-xl shadow-md flex items-center gap-1.5 backdrop-blur-xs border border-emerald-400/30">
+          <div className="bg-emerald-600/95 text-white text-[11px] font-black px-3 py-1.5 rounded-xl  flex items-center gap-1.5 backdrop-blur-xs border border-emerald-400/30">
             <Tag className="size-3" />
             <span>{promo.discountText}</span>
           </div>
@@ -68,7 +68,7 @@ export function PromoBannerCard({ promo }: PromoBannerCardProps) {
               type="button"
               onClick={handleAproveitarOferta}
               disabled={isLoadingOffer}
-              className="w-full sm:w-auto px-5 py-3 bg-secondary hover:bg-secondary/90 text-primary font-black text-xs rounded-xl flex items-center justify-center gap-2.5 shadow-lg shadow-secondary/30 transition-transform group-hover:translate-x-1 cursor-pointer disabled:opacity-80"
+              className="w-full sm:w-auto px-5 py-3 bg-secondary hover:bg-secondary/90 text-primary font-black text-xs rounded-xl flex items-center justify-center gap-2.5   transition-transform group-hover:translate-x-1 cursor-pointer disabled:opacity-80"
             >
               {isLoadingOffer ? (
                 <>

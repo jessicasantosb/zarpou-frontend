@@ -29,7 +29,7 @@ export function CheckoutSummarySidebar({
 }: CheckoutSummarySidebarProps) {
   return (
     <aside className="lg:col-span-4 space-y-6">
-      <div className="bg-card rounded-3xl p-6 border border-border shadow-xs sticky top-24 space-y-5">
+      <div className="bg-card rounded-3xl p-6 border border-border  sticky top-24 space-y-5">
         <h3 className="font-bold text-foreground text-base pb-3 border-b border-border/60">
           Resumo da Sua Compra
         </h3>

@@ -23,7 +23,7 @@ export function PricesTabs({
         className={cn(
           "flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-xs transition cursor-pointer",
           activeTab === "hospedagens"
-            ? "bg-primary text-white shadow-sm"
+            ? "bg-primary text-white "
             : "bg-card text-foreground/70 hover:bg-muted",
         )}
       >
@@ -37,7 +37,7 @@ export function PricesTabs({
         className={cn(
           "flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-xs transition cursor-pointer",
           activeTab === "passagens"
-            ? "bg-primary text-white shadow-sm"
+            ? "bg-primary text-white "
             : "bg-card text-foreground/70 hover:bg-muted",
         )}
       >

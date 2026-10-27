@@ -93,7 +93,7 @@ export function MetricCards({
         return (
           <div
             key={card.label}
-            className="flex items-center justify-between rounded-3xl border border-border bg-card p-6 shadow-xs"
+            className="flex items-center justify-between rounded-3xl border border-border bg-card p-6 "
           >
             <div>
               <span className="text-[11px] font-bold tracking-wide text-muted-foreground">

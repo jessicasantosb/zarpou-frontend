@@ -31,7 +31,7 @@ export function PromotionCard({
   return (
     <div
       className={cn(
-        "group bg-card rounded-3xl border overflow-hidden shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between",
+        "group bg-card rounded-3xl border overflow-hidden   transition-all duration-300 flex flex-col justify-between",
         promo.active
           ? "border-border"
           : "border-border opacity-60 bg-muted/60",
@@ -56,12 +56,12 @@ export function PromotionCard({
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-foreground/25 pointer-events-none" />
 
           <div className="absolute top-3 left-3 right-3 flex items-start justify-between gap-2 z-10">
-            <div className="bg-secondary text-primary text-[10px] font-black px-2.5 py-1 rounded-full uppercase shadow-xs flex items-center gap-1">
+            <div className="bg-secondary text-primary text-[10px] font-black px-2.5 py-1 rounded-full uppercase  flex items-center gap-1">
               <Zap className="size-3 fill-primary text-primary" />
               <span>{promo.badge}</span>
             </div>
 
-            <div className="bg-emerald-600 text-white text-[10px] font-black px-2.5 py-1 rounded-lg shadow-xs flex items-center gap-1 border border-emerald-400/30">
+            <div className="bg-emerald-600 text-white text-[10px] font-black px-2.5 py-1 rounded-lg  flex items-center gap-1 border border-emerald-400/30">
               <Tag className="size-3" />
               <span>{promo.discountText}</span>
             </div>

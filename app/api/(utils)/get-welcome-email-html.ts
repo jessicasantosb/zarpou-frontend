@@ -21,7 +21,7 @@ export const getWelcomeEmailHtml = ({ name, email }: WelcomeEmailData): string =
           body {
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background-color: #f8fafc;
             color: #1e293b;
             line-height: 1.6;
@@ -37,7 +37,6 @@ export const getWelcomeEmailHtml = ({ name, email }: WelcomeEmailData): string =
             background-color: #ffffff;
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 51, 102, 0.08);
             border: 1px solid #e2e8f0;
           }
           .header {
@@ -117,13 +116,12 @@ export const getWelcomeEmailHtml = ({ name, email }: WelcomeEmailData): string =
             text-decoration: none;
             padding: 14px 32px;
             border-radius: 14px;
-            box-shadow: 0 4px 12px rgba(0, 51, 102, 0.25);
           }
           .security-note {
             font-size: 12px;
             color: #64748b;
             background-color: #eff6ff;
-            border-left: 3px solid #3b82f6;
+            border: 1px solid #bfdbfe;
             padding: 10px 14px;
             border-radius: 8px;
             margin-top: 20px;

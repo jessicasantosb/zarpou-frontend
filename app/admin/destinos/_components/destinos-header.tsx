@@ -1,13 +1,12 @@
-import { Compass, Plus, RotateCcw } from "lucide-react";
+import { Compass, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ImportDataButton } from "@/app/admin/_components/import-data-dialog";
 
 interface DestinosHeaderProps {
-  onRestore: () => void;
   onAddNew: () => void;
 }
 
-export function DestinosHeader({ onRestore, onAddNew }: DestinosHeaderProps) {
+export function DestinosHeader({ onAddNew }: DestinosHeaderProps) {
   return (
     <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
       <div>
@@ -29,18 +28,8 @@ export function DestinosHeader({ onRestore, onAddNew }: DestinosHeaderProps) {
 
         <Button
           type="button"
-          variant="outline"
-          onClick={onRestore}
-          className="h-auto cursor-pointer rounded-xl border-border bg-card px-4 py-2 text-xs font-semibold text-foreground/70 shadow-2xs hover:bg-muted"
-        >
-          <RotateCcw className="size-3.5" />
-          Restaurar Padrões
-        </Button>
-
-        <Button
-          type="button"
           onClick={onAddNew}
-          className="h-auto cursor-pointer rounded-xl bg-primary px-5 py-2.5 text-xs font-bold text-white shadow-xs hover:bg-primary/90"
+          className="h-auto cursor-pointer rounded-xl bg-primary px-5 py-2.5 text-xs font-bold text-white  hover:bg-primary/90"
         >
           <Plus className="size-4" />
           Adicionar Novo Destino

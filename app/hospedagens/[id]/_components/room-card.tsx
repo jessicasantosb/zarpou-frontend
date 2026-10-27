@@ -13,7 +13,7 @@ export function RoomCard({ hotel, room, nights, onSelectRoom }: RoomCardProps) {
   const installment = (roomTotalPrice / hotel.maxInstallments).toFixed(2);
 
   return (
-    <div className="bg-card rounded-3xl p-6 border border-border shadow-xs hover:border-primary/50 transition-all duration-300 space-y-5">
+    <div className="bg-card rounded-3xl p-6 border border-border  hover:border-primary/50 transition-all duration-300 space-y-5">
       <div className="flex flex-col md:flex-row justify-between gap-4 pb-4 border-b border-border/60">
         <div>
           <h3 className="text-lg font-bold text-foreground">{room.name}</h3>
@@ -81,7 +81,7 @@ export function RoomCard({ hotel, room, nights, onSelectRoom }: RoomCardProps) {
           <button
             type="button"
             onClick={() => onSelectRoom(room)}
-            className="w-full sm:w-auto px-8 py-3 bg-secondary hover:bg-secondary/90 text-primary font-extrabold text-sm rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-secondary/30 transition transform hover:scale-102 cursor-pointer"
+            className="w-full sm:w-auto px-8 py-3 bg-secondary hover:bg-secondary/90 text-primary font-extrabold text-sm rounded-xl flex items-center justify-center gap-2   transition transform hover:scale-102 cursor-pointer"
           >
             Reservar este quarto
             <ArrowRight className="size-4" />

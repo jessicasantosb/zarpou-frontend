@@ -11,7 +11,7 @@ export function PrivacyPolicyContent() {
   return (
     <main className="min-h-screen bg-muted pt-28 pb-16">
       <Container>
-        <div className="max-w-4xl mx-auto bg-card rounded-2xl shadow-sm border border-border p-8 md:p-12">
+        <div className="max-w-4xl mx-auto bg-card rounded-2xl  border border-border p-8 md:p-12">
           <Link
             href="/"
             className="inline-flex items-center gap-2 text-sm text-primary hover:underline font-medium mb-6"

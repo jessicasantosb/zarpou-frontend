@@ -21,7 +21,7 @@ export function TwoFactorCard({
   onShowBackupCodes,
 }: TwoFactorCardProps) {
   return (
-    <div className="bg-card rounded-3xl p-6 md:p-8 border border-border shadow-sm space-y-6">
+    <div className="bg-card rounded-3xl p-6 md:p-8 border border-border  space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-border/60">
         <div className="flex items-center gap-3">
           <div className="size-10 rounded-2xl bg-secondary/15 text-primary font-bold flex items-center justify-center shrink-0">
@@ -75,7 +75,7 @@ export function TwoFactorCard({
             <button
               type="button"
               onClick={onStartSetup}
-              className="px-5 py-2.5 bg-primary hover:bg-primary-hover text-white font-bold text-xs rounded-xl flex items-center gap-2 shadow-xs transition cursor-pointer"
+              className="px-5 py-2.5 bg-primary hover:bg-primary-hover text-white font-bold text-xs rounded-xl flex items-center gap-2  transition cursor-pointer"
             >
               <ShieldCheck className="size-4 text-secondary" />
               <span>Ativar Proteção 2FA</span>
@@ -104,7 +104,7 @@ export function TwoFactorCard({
               </p>
             </div>
           </div>
-          <span className="text-[11px] font-semibold text-emerald-700 bg-card px-3 py-1 rounded-lg border border-emerald-200 shadow-2xs self-start sm:self-auto">
+          <span className="text-[11px] font-semibold text-emerald-700 bg-card px-3 py-1 rounded-lg border border-emerald-200  self-start sm:self-auto">
             Segurança Máxima Ativa
           </span>
         </div>

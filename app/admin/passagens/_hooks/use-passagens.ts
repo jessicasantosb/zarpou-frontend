@@ -8,7 +8,7 @@ import { useProductStore } from "@/stores/product-store";
 
 export function usePassagens() {
   const { confirm } = useConfirm();
-  const { flights, fetchFlights, deleteFlight, resetCatalog } =
+  const { flights, fetchFlights, deleteFlight } =
     useProductStore();
 
   const [mounted, setMounted] = useState(false);
@@ -30,22 +30,6 @@ export function usePassagens() {
   const handleOpenEdit = (flight: Flight) => {
     setEditingFlight(flight);
     setModalOpen(true);
-  };
-
-  const handleRestore = async () => {
-    const confirmed = await confirm({
-      title: "Restaurar Passagens Padrão",
-      description:
-        "Deseja restaurar a lista original de passagens aéreas da Zarpou?",
-      confirmText: "Restaurar",
-      cancelText: "Cancelar",
-      variant: "warning",
-      icon: "warning",
-    });
-    if (!confirmed) return;
-
-    resetCatalog();
-    toast.info("Catálogo de passagens aéreas restaurado com sucesso!");
   };
 
   const handleDelete = async (flight: Flight) => {
@@ -71,7 +55,6 @@ export function usePassagens() {
     onOpenChange: setModalOpen,
     onOpenNew: handleOpenNew,
     onOpenEdit: handleOpenEdit,
-    onRestore: handleRestore,
     onDelete: handleDelete,
   };
 }

@@ -2,7 +2,7 @@ import { Luggage, ShieldCheck, Users } from "lucide-react";
 
 export function DestinosBenefits() {
   return (
-    <div className="mt-16 bg-card rounded-3xl p-8 border border-border shadow-xs grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+    <div className="mt-16 bg-card rounded-3xl p-8 border border-border  grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
       <div className="space-y-2">
         <div className="size-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mx-auto">
           <Luggage className="size-6" />

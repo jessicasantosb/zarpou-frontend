@@ -26,7 +26,7 @@ export function WhatsappLink({
     <Link
       href={link}
       target="_blank"
-      className="flex items-center justify-center gap-2 h-12 w-fit rounded-md px-4 md:px-6 bg-whatsapp text-white shadow-md md:tracking-wider cursor-pointer text-lg hover:opacity-90 transition font-medium"
+      className="flex items-center justify-center gap-2 h-12 w-fit rounded-md px-4 md:px-6 bg-whatsapp text-white  md:tracking-wider cursor-pointer text-lg hover:opacity-90 transition font-medium"
     >
       {children}
       <Image

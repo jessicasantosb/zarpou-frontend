@@ -44,7 +44,7 @@ export function PaymentSection({ control }: PaymentSectionProps) {
                     className={cn(
                       "cursor-pointer rounded-lg px-3 py-1 text-xs font-bold transition",
                       field.value === "sandbox"
-                        ? "bg-amber-500 text-white shadow-xs"
+                        ? "bg-amber-500 text-white "
                         : "text-foreground/70 hover:text-foreground",
                     )}
                   >
@@ -56,7 +56,7 @@ export function PaymentSection({ control }: PaymentSectionProps) {
                     className={cn(
                       "cursor-pointer rounded-lg px-3 py-1 text-xs font-bold transition",
                       field.value === "production"
-                        ? "bg-emerald-600 text-white shadow-xs"
+                        ? "bg-emerald-600 text-white "
                         : "text-foreground/70 hover:text-foreground",
                     )}
                   >

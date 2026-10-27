@@ -20,7 +20,7 @@ export function CustomerDetailsDialog({
       <DialogContent
         showCloseButton={false}
         aria-describedby={undefined}
-        className="grid max-h-[90vh] grid-rows-[auto_minmax(0,1fr)_auto] gap-0 overflow-hidden rounded-3xl border-border bg-card p-0 shadow-xl sm:max-w-2xl"
+        className="grid max-h-[90vh] grid-rows-[auto_minmax(0,1fr)_auto] gap-0 overflow-hidden rounded-3xl border-border bg-card p-0  sm:max-w-2xl"
       >
         <div className="p-6 border-b border-border/60 flex items-center justify-between shrink-0">
           <div className="flex items-center gap-3">

@@ -29,7 +29,7 @@ export function ContactChannels() {
           href={`https://wa.me/${whatsappNum}?text=${defaultMsg}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="group bg-card rounded-2xl p-5 shadow-lg shadow-border/50 border border-border/60 hover:border-emerald-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+          className="group bg-card rounded-2xl p-5   border border-border/60 hover:border-emerald-300  hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
         >
           <div>
             <div className="flex items-center justify-between mb-3">
@@ -56,7 +56,7 @@ export function ContactChannels() {
 
         <a
           href={`tel:${phone.replace(/\D/g, "")}`}
-          className="group bg-card rounded-2xl p-5 shadow-lg shadow-border/50 border border-border/60 hover:border-primary/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+          className="group bg-card rounded-2xl p-5   border border-border/60 hover:border-primary/40  hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
         >
           <div>
             <div className="flex items-center justify-between mb-3">
@@ -83,7 +83,7 @@ export function ContactChannels() {
 
         <a
           href={`mailto:${email}`}
-          className="group bg-card rounded-2xl p-5 shadow-lg shadow-border/50 border border-border/60 hover:border-secondary/70 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+          className="group bg-card rounded-2xl p-5   border border-border/60 hover:border-secondary/70  hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
         >
           <div>
             <div className="flex items-center justify-between mb-3">
@@ -107,7 +107,7 @@ export function ContactChannels() {
           </div>
         </a>
 
-        <div className="group bg-card rounded-2xl p-5 shadow-lg shadow-border/50 border border-border/60 flex flex-col justify-between">
+        <div className="group bg-card rounded-2xl p-5   border border-border/60 flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-3">
               <div className="size-11 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center">

@@ -13,7 +13,7 @@ export function BookingConfirmedActions() {
 
       <Link
         href="/minhas-viagens"
-        className="px-6 py-3 bg-primary text-white font-bold text-xs rounded-xl hover:bg-primary/90 transition shadow-sm flex items-center gap-2"
+        className="px-6 py-3 bg-primary text-white font-bold text-xs rounded-xl hover:bg-primary/90 transition  flex items-center gap-2"
       >
         Acessar Minhas Viagens
         <ArrowRight className="size-4 text-secondary" />

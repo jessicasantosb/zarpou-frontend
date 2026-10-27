@@ -50,7 +50,7 @@ export function AdminSidebar({
                 onClick={() => onNavClick(item.href)}
                 className={`flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-bold transition ${
                   active
-                    ? "bg-secondary text-primary shadow-md"
+                    ? "bg-secondary text-primary "
                     : "text-white/60 hover:text-white hover:bg-card/10"
                 }`}
               >

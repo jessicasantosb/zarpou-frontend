@@ -39,7 +39,7 @@ export function HomeHero() {
     ) : (
       <Link
         href={ctaLink}
-        className="px-8 py-4 bg-secondary hover:bg-secondary/90 text-primary font-black text-sm rounded-2xl flex items-center justify-center gap-2 shadow-xl shadow-secondary/30 transition transform hover:scale-102"
+        className="px-8 py-4 bg-secondary hover:bg-secondary/90 text-primary font-black text-sm rounded-2xl flex items-center justify-center gap-2   transition transform hover:scale-102"
       >
         {ctaText}
       </Link>

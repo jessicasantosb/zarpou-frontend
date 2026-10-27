@@ -24,7 +24,7 @@ export function SearchSummaryBar({
   onClearSearch,
 }: SearchSummaryBarProps) {
   return (
-    <div className="bg-primary text-white py-4 shadow-md border-b border-primary/20 mb-8">
+    <div className="bg-primary text-white py-4  border-b border-primary/20 mb-8">
       <Container>
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
@@ -60,7 +60,7 @@ export function SearchSummaryBar({
             <button
               type="button"
               onClick={onClearSearch}
-              className="whitespace-nowrap px-4 py-2 bg-secondary text-primary font-bold text-xs rounded-xl hover:bg-secondary/90 transition shadow-sm cursor-pointer"
+              className="whitespace-nowrap px-4 py-2 bg-secondary text-primary font-bold text-xs rounded-xl hover:bg-secondary/90 transition  cursor-pointer"
               title="Limpar pesquisa e filtros para ver todas as hospedagens"
             >
               Limpar Busca

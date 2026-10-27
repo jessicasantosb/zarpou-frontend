@@ -34,7 +34,7 @@ export function StepFinish() {
   if (isSuccess) {
     return (
       <div className="py-6 text-center space-y-5 animate-in fade-in zoom-in-95 duration-300">
-        <div className="size-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-md">
+        <div className="size-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto ">
           <CheckCircle2 className="size-9" />
         </div>
 
@@ -61,7 +61,7 @@ export function StepFinish() {
             href={`https://wa.me/${whatsappNum}?text=${whatsappText}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto px-6 py-3 rounded-xl bg-whatsapp hover:bg-whatsapp-hover text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md transition"
+            className="w-full sm:w-auto px-6 py-3 rounded-xl bg-whatsapp hover:bg-whatsapp-hover text-white font-bold text-xs flex items-center justify-center gap-2  transition"
           >
             <MessageCircle className="size-4 fill-white" />
             <span>Agilizar no WhatsApp Agora</span>
@@ -159,7 +159,7 @@ export function StepFinish() {
         <Button
           onClick={onSubmit}
           disabled={isPending}
-          className="w-full h-12 bg-primary hover:bg-primary-hover text-white font-bold rounded-xl flex items-center justify-center gap-2.5 transition shadow-lg shadow-primary/20 text-sm cursor-pointer disabled:opacity-50"
+          className="w-full h-12 bg-primary hover:bg-primary-hover text-white font-bold rounded-xl flex items-center justify-center gap-2.5 transition   text-sm cursor-pointer disabled:opacity-50"
         >
           {isPending ? (
             <>

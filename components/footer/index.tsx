@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { FooterLinks } from "./footer-links";
 import { FooterCta } from "./footer-cta";
@@ -8,6 +9,7 @@ import { useConfigStore } from "@/stores/config-store";
 import { Container } from "../shared/container";
 
 export function Footer() {
+  const pathname = usePathname();
   const currentYear = new Date().getFullYear();
   const { config } = useConfigStore();
   const [mounted, setMounted] = useState(false);
@@ -23,6 +25,8 @@ export function Footer() {
     ? config.companyName
     : "Zarpou Viagens e Turismo Ltda";
   const displayCadastur = mounted ? config.cadastur : "34.120.948/0001-90";
+
+  if (pathname.startsWith("/admin")) return null;
 
   return (
     <footer>

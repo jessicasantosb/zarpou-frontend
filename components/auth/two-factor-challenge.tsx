@@ -184,7 +184,7 @@ export function TwoFactorChallenge({
     <div className="space-y-6 animate-in fade-in zoom-in-95 duration-200">
       {/* CABEÇALHO COM ÍCONE DE SEGURANÇA */}
       <div className="text-center space-y-2">
-        <div className="size-14 mx-auto rounded-2xl bg-secondary/15 text-secondary flex items-center justify-center shadow-inner">
+        <div className="size-14 mx-auto rounded-2xl bg-secondary/15 text-secondary flex items-center justify-center ">
           <ShieldCheck className="size-8" />
         </div>
         <h2 className={`text-xl sm:text-2xl font-black ${isDark ? "text-white" : "text-slate-900"}`}>
@@ -207,7 +207,7 @@ export function TwoFactorChallenge({
               type="button"
               onClick={() => onSwitchMethod("email")}
               className={`flex-1 py-2 rounded-lg flex items-center justify-center gap-1.5 transition cursor-pointer ${
-                currentMethod === "email" ? "bg-white text-primary shadow-xs" : "hover:text-slate-900"
+                currentMethod === "email" ? "bg-white text-primary " : "hover:text-slate-900"
               }`}
             >
               <Mail className="size-3.5" />
@@ -219,7 +219,7 @@ export function TwoFactorChallenge({
               type="button"
               onClick={() => onSwitchMethod("authenticator")}
               className={`flex-1 py-2 rounded-lg flex items-center justify-center gap-1.5 transition cursor-pointer ${
-                currentMethod === "authenticator" ? "bg-white text-primary shadow-xs" : "hover:text-slate-900"
+                currentMethod === "authenticator" ? "bg-white text-primary " : "hover:text-slate-900"
               }`}
             >
               <Smartphone className="size-3.5" />
@@ -284,7 +284,7 @@ export function TwoFactorChallenge({
                   onChange={(e) => handleDigitChange(idx, e.target.value)}
                   onKeyDown={(e) => handleKeyDown(idx, e)}
                   disabled={isPending || isVerifying}
-                  className="size-11 sm:size-12 text-center text-lg sm:text-xl font-black rounded-xl border-2 border-slate-200 bg-white text-slate-900 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-hidden transition shadow-xs disabled:opacity-50"
+                  className="size-11 sm:size-12 text-center text-lg sm:text-xl font-black rounded-xl border-2 border-slate-200 bg-white text-slate-900 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-hidden transition  disabled:opacity-50"
                 />
               ))}
             </div>
@@ -304,7 +304,7 @@ export function TwoFactorChallenge({
                     type="button"
                     onClick={handleResend}
                     disabled={resendCooldown > 0 || isResending || isVerifying}
-                    className={`inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition shadow-2xs ${
+                    className={`inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition  ${
                       resendCooldown > 0
                         ? "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed"
                         : "bg-white hover:bg-slate-50 text-primary border border-primary/30 hover:border-primary cursor-pointer"
@@ -354,7 +354,7 @@ export function TwoFactorChallenge({
         <button
           type="submit"
           disabled={isPending || isVerifying}
-          className="w-full h-12 bg-primary hover:bg-primary-hover text-white font-bold text-sm rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-primary/20 transition cursor-pointer disabled:opacity-75"
+          className="w-full h-12 bg-primary hover:bg-primary-hover text-white font-bold text-sm rounded-xl flex items-center justify-center gap-2   transition cursor-pointer disabled:opacity-75"
         >
           {isPending || isVerifying ? (
             <>

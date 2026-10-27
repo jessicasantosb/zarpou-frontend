@@ -84,6 +84,7 @@
   }
   body {
     @apply bg-background text-foreground font-poppins scroll-smooth selection:bg-primary selection:text-white;
+    caret-color: var(--primary);
   }
 
   /* Estilizar a barra inteira */
@@ -94,14 +95,19 @@
 
   /* Estilizar o trilho (fundo da barra) */
   ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: var(--muted);
     border-radius: 10px;
   }
 
   /* Estilizar o "polegar" (a parte que se move) */
   ::-webkit-scrollbar-thumb {
-    background: var(--color-secondary);;
+    background: var(--secondary);
     border-radius: 10px;
+    border: 2px solid var(--muted);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-hover);
   }
   
   /* Padronização e alinhamento perfeito do ícone dos selects em todos os navegadores e SO */

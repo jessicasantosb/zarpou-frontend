@@ -1,12 +1,11 @@
-import { Plus, RotateCcw } from "lucide-react";
+import { Plus } from "lucide-react";
 import { ImportDataButton } from "@/app/admin/_components/import-data-dialog";
 
 interface PromocoesHeaderProps {
-  onReset: () => void;
   onAddNew: () => void;
 }
 
-export function PromocoesHeader({ onReset, onAddNew }: PromocoesHeaderProps) {
+export function PromocoesHeader({ onAddNew }: PromocoesHeaderProps) {
   return (
     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
@@ -23,17 +22,8 @@ export function PromocoesHeader({ onReset, onAddNew }: PromocoesHeaderProps) {
 
         <button
           type="button"
-          onClick={onReset}
-          className="px-4 py-2 text-xs font-semibold text-foreground/70 bg-card border border-border rounded-xl hover:bg-muted transition flex items-center gap-1.5 cursor-pointer"
-        >
-          <RotateCcw className="size-3.5" />
-          Restaurar Padrão
-        </button>
-
-        <button
-          type="button"
           onClick={onAddNew}
-          className="px-5 py-2.5 bg-primary hover:bg-primary/90 text-white font-bold text-xs rounded-xl flex items-center gap-2 shadow-sm transition cursor-pointer"
+          className="px-5 py-2.5 bg-primary hover:bg-primary/90 text-white font-bold text-xs rounded-xl flex items-center gap-2  transition cursor-pointer"
         >
           <Plus className="size-4 text-secondary" />
           Nova Promoção

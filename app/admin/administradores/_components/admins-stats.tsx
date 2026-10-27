@@ -45,7 +45,7 @@ export function AdminsStats({ stats }: AdminsStatsProps) {
         return (
           <div
             key={card.key}
-            className="flex items-center justify-between rounded-2xl border border-border bg-card p-5 shadow-2xs"
+            className="flex items-center justify-between rounded-2xl border border-border bg-card p-5 "
           >
             <div>
               <p

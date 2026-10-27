@@ -14,7 +14,6 @@ export default function AdminHospedagensPage() {
     onOpenChange,
     onOpenNew,
     onOpenEdit,
-    onRestore,
     onDelete,
   } = useHospedagens();
 
@@ -28,7 +27,7 @@ export default function AdminHospedagensPage() {
 
   return (
     <div className="space-y-6">
-      <HospedagensHeader onRestore={onRestore} onAddNew={onOpenNew} />
+      <HospedagensHeader onAddNew={onOpenNew} />
 
       <HotelsGrid hotels={hotels} onEdit={onOpenEdit} onDelete={onDelete} />
 

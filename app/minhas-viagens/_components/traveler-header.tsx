@@ -9,7 +9,7 @@ interface TravelerHeaderProps {
 
 export function TravelerHeader({ name, email, onLogout }: TravelerHeaderProps) {
   return (
-    <div className="bg-primary text-white py-6 shadow-md border-b border-primary/20 mb-8">
+    <div className="bg-primary text-white py-6  border-b border-primary/20 mb-8">
       <Container>
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex items-center gap-3">

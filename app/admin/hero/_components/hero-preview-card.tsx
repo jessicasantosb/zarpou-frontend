@@ -20,7 +20,7 @@ export function HeroPreviewCard({ form }: HeroPreviewCardProps) {
   const hasText = hasTitle || hasSubtitle;
 
   return (
-    <div className="space-y-3 rounded-3xl border border-white/10 bg-surface-dark p-6 text-white shadow-md">
+    <div className="space-y-3 rounded-3xl border border-white/10 bg-surface-dark p-6 text-white ">
       <div className="flex items-center justify-between">
         <span className="flex items-center gap-1.5 text-xs font-bold tracking-wide text-secondary">
           <Eye className="size-4 text-secondary" />
@@ -33,7 +33,7 @@ export function HeroPreviewCard({ form }: HeroPreviewCardProps) {
 
       <div
         className={cn(
-          "relative flex h-64 w-full flex-col items-center overflow-hidden rounded-2xl border border-white/10 p-6 text-center shadow-inner sm:h-72",
+          "relative flex h-64 w-full flex-col items-center overflow-hidden rounded-2xl border border-white/10 p-6 text-center  sm:h-72",
           hasText ? "justify-center" : "justify-end pb-6",
         )}
       >
@@ -83,7 +83,7 @@ export function HeroPreviewCard({ form }: HeroPreviewCardProps) {
           )}
 
           <div className={hasText ? "pt-2" : ""}>
-            <span className="inline-flex items-center gap-2 rounded-xl bg-secondary px-6 py-2.5 text-xs font-black text-primary shadow-lg shadow-secondary/30">
+            <span className="inline-flex items-center gap-2 rounded-xl bg-secondary px-6 py-2.5 text-xs font-black text-primary  ">
               <MessageCircle className="size-3.5" />
               {values.ctaText || "Falar com um Especialista"}
             </span>
