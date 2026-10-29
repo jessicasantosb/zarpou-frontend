@@ -2,24 +2,24 @@
    <img src="https://img.icons8.com/?size=100&id=MWiBjkuHeMVq&format=png&color=000000" width="99">
   <img src="https://img.icons8.com/?size=100&id=Xf1sHBmY73hA&format=png&color=000000" width="99">
 </p>
-<h1 align="center">Zarpou Viagens e Turismo</h1>
+<h1 align="center">Zarpou Travel and Tourism</h1>
 <p align="center">
-  Descubra a Zarpou Viagens e Turismo: uma agência online com pacotes personalizados, preços justos e uma plataforma segura para planejar sua próxima viagem.
+  Discover Zarpou Travel and Tourism: an online travel agency offering personalized packages, fair prices, and a secure platform to plan your next trip.
 </p>
 
 ---
 
-## 📍 Visão Geral
+## 📍 Overview
 
-**_Objetivo_**
+**_Goal_**
 
-Fortalecer a presença digital da Zarpou oferecendo uma comunicação ágil, acessível e alinhada com os sonhos de viagem dos clientes.
+Strengthen Zarpou's digital presence with fast, accessible communication aligned with customers' travel aspirations.
 
 ---
 
-## 🚀 Começando
+## 🚀 Getting Started
 
-### ⚙️ Instalação
+### ⚙️ Installation
 
 #### [![yarn](https://img.shields.io/badge/Yarn-3775A9.svg?style=flat&logo=Yarn&logoColor=white)](https://github.com/jessicasantosb/freelance-zarpou)
 
@@ -41,19 +41,23 @@ Fortalecer a presença digital da Zarpou oferecendo uma comunicação ágil, ace
 
 ---
 
-## 💻 Tecnologias
+## 💻 Technologies
 
-- NextJS
-- Typescript
+- Next.js
+- TypeScript
 - Shadcn UI
 - React Hook Form
 - Zod
 - Zustand
 - Motion
 
+## 🔗 Backend
+
+The backend repository is available at [zarpou-backend](https://github.com/jessicasantosb/zarpou-backend).
+
 ---
 
-## 🤝 Contribuições
+## 🤝 Contributions
 
-- 🔰 Mencione quaisquer problemas conhecidos ou limitações.
-- 🐛 Esboce seus planos para melhorias futuras.
+- 🔰 Mention any known issues or limitations.
+- 🐛 Outline your plans for future improvements.
